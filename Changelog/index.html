@@ -11,7 +11,7 @@
 
     <title>
         
-          Anuluca&#39;s blog
+          Changelog - Anuluca&#39;s blog
         
     </title>
 
@@ -121,56 +121,50 @@ function sidebar_toggle() {
 
         </div>
         <div class="book-content">
-          <div class='book-archive'>
-  <!-- Title -->
-  
-    <h1>Archives</h1>
-  
-
-  
-    <!-- Split post by year -->
-    
-  
-
-  
-      <div class="years">
-          <h2>2020</h2>
-          <ul class="archive-list-item">
-          
-              <li>
-                <span>2020-04-20</span>
-                <a href="/hexo-theme-book-demo/home/">
-                  Home
-                </a>
-              </li>
-          
-              <li>
-                <span>2020-04-20</span>
-                <a href="/hexo-theme-book-demo/menu/">
-                  menu
-                </a>
-              </li>
-          
-              <li>
-                <span>2020-04-20</span>
-                <a href="/hexo-theme-book-demo/Changelog/">
-                  Changelog
-                </a>
-              </li>
-          
-              <li>
-                <span>2020-04-20</span>
-                <a href="/hexo-theme-book-demo/test/hexo-unit-test/elements/">
-                  Elements
-                </a>
-              </li>
-          
-          </ul>
-      </div>
-  
-
-  
+          <div class="book-post">
+  <hr>
+<p><strong>v0.0.1 - 2020/04/27</strong></p>
+<ul>
+<li>开始重建博客的工作</li>
+<li>Bugs: <ul>
+<li>引号<code>&quot;&quot;</code> <code>&#39;&#39;</code> <code>“”</code> <code>‘’</code>全都转换成了全角字符</li>
+<li>定位项目中的图片的时候很有可能显示不出来，原因暂时没找到，最好还是指向网络图片</li>
+<li>markdown-container无法正确显示</li>
+<li>特殊字符无法正确显示</li>
+<li>美观的注释无法正确显示</li>
+</ul>
+</li>
+</ul>
+<p><a class="btn btn-primary" href="https://github.com/kaiiiz/hexo-theme-book/releases" target="_blank" rel="noopener">Releases</a></p>
+<style>
+.btn.btn-primary {
+    background: #004ed0;
+    background-color: #004ed0;
+}
+.btn.btn-primary:active {
+    background: #004ed0;
+    border-color: #004ed0;
+}
+.btn.btn-primary:focus, .btn.btn-primary:hover {
+    background: #004ed0;
+    border-color: #004ed0;
+}
+</style>
 </div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/hexo-theme-book-demo/js/book-post.js"></script>
+
         </div>
       </div>
       <div class="column col-2 hide-lg">
@@ -192,7 +186,7 @@ function sidebar_toggle() {
     <!-- Author title -->
     <div class="author-title">
       <div>anuluca</div>
-      <div></div>
+      <div>2020-04-20</div>
     </div>
   </div>
 
