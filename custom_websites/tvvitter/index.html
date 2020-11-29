@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>堆特</title>
+</head>
+<link type="text/css" rel="stylesheet" href="css/common.css">
+<link type="text/css" rel="stylesheet" href="css/index.css">
+
+<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="js/jquery.color.js"></script>
+<script src="js/common.js"></script>
+<script src="js/index.js"></script>
+<body>
+
+<main>
+    <article>
+        <ul>
+            <li><div></div> 关注你的兴趣所在</li>
+            <li><div></div> 听听大家在谈论什么。</li>
+            <li><div></div> 加入对话。</li>
+        </ul>
+    </article>
+    <aside>
+        <div class="title">
+            <div class="bird_title"></div>
+            <h1>查看世界上正在发生的事情</h1>
+            <p>立即加入Tvvitter。</p>
+            <div class="register btn" onclick="onRegister('#register')">注册</div>
+            <a href="pages/homePage.html"><div class="loginbtn">登录</div></a>
+        </div>
+    </aside>
+</main>
+
+<!--底部开始-->
+<footer><a href="#">本页面为Anuluca制作的HTML5+CSS+js+jQ练习，未使用jQuery.Color以外的任何jQ插件。</a><a href="#">© 2020 Anuluca All rights reserved.</a>
+</footer>
+<!--底部结束-->
+
+
+<!--注册对话框开始-->
+<div id="register_box">
+
+<!--    第一页-->
+    <div class="page1">
+        <div class="re1">
+            <div class="bird_title"></div>
+            <div class="next_btn btn">下一步</div>
+        </div>
+        <div class="re2">
+            <h1>创建你的账号</h1>
+            <div class="options">
+                <p>名字</p>
+                <b></b>
+                <input type="text" class="name" value="" placeholder="请输入名字" onblur="verify(1)">
+            </div>
+            <div class="tip">
+                <span class="tip_text_name">你的姓名是什么</span>
+                <span class="count">0/50</span>
+            </div>
+
+            <div class="options tel_option">
+                <p>手机</p>
+                <b></b>
+                <input type="text" class="tel" value="" placeholder="请输入手机号" onblur="verify(2)">
+            </div>
+            <div class="tip tel_tip">
+                <span class="tip_text_phone">请输入一个有效的手机号码</span>
+            </div>
+
+            <div class="options mail_option">
+                <p>电子邮件</p>
+                <b></b>
+                <input type="text" value="" class="mail" placeholder="请输入电子邮箱" onblur="verify(3)">
+            </div>
+            <div class="tip mail_tip">
+                <span class="tip_text_mail">请输入一个有效的邮件地址</span>
+            </div>
+
+            <a href="#" onclick="changeWay()" style="display: block;!important;">改用电子邮件</a>
+    <!--        <a>改用手机</a>-->
+
+            <p class="birth">出生日期</p>
+            <p class="birthps">这不会公开显示。确认你自己的年龄，即使此账号是用于业务、宠物或其他内容的。</p>
+            <div class="birthday">
+                <b></b>
+                <div>
+                    <p>月</p>
+                    <select name="month" id="month">
+                        <option value=""></option>
+                        <option value="1">1 月</option>
+                        <option value="2">2 月</option>
+                        <option value="3">3 月</option>
+                        <option value="4">4 月</option>
+                        <option value="5">5 月</option>
+                        <option value="6">6 月</option>
+                        <option value="7">7 月</option>
+                        <option value="8">8 月</option>
+                        <option value="9">9 月</option>
+                        <option value="10">10 月</option>
+                        <option value="11">11 月</option>
+                        <option value="12">12 月</option>
+                    </select>
+                </div>
+                <div>
+                    <p>日</p>
+                    <select name="day" id="day">
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div>
+                    <p>年</p>
+                    <select name="year" id="year">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--    第二页-->
+    <div class="page2">
+        <div class="re1">
+            <div class="bird_title"></div>
+            <div class="next_btn btn">下一步</div>
+        </div>
+        <div class="back">←</div>
+        <div class="re2">
+            <h1>定制你的体验</h1>
+            <h2>跟踪你在网络上看到Tvvitter内容的位置</h2>
+            <div class="re21"><span>Tvvitter 使用此数据对你的体验进行个性化。该网页浏览历史绝不会与你的姓名、邮件或电话号码一起存储。</span>
+            <input type="checkbox" name="ifSubs" class="ifSubs"></div>
+            <span>关于这些设置的更多详细信息，访问</span><a href="#">帮助中心</a><span>。</span>
+
+        </div>
+    </div>
+
+<!--    第三页-->
+    <div class="page3">
+        <div class="re1">
+            <p>第3步，共5步</p>
+        </div>
+        <div class="back">←</div>
+        <div class="re2">
+            <h1>创建你的账号</h1>
+            <div class="last_input"><input type="text" value="" name="name"></div>
+            <div class="last_input"><input type="text" value="" name="email"></div>
+            <div class="last_input"><input type="text" value="" name="date"></div>
+            <span>注册即表示你同意<a>服务条款</a>和<a>隐私政策</a>，包括<a>Cookie的使用</a>。其他人将能够通过电子邮件或手机号码找到你 · <a>隐私选项</a></span>
+            <div class="register btn" onclick="onRegister('#register')">注册</div>
+        </div>
+    </div>
+</div>
+<!--注册对话框结束-->
+
+<!--登录对话框开始-->
+<div id="login_box">
+
+</div>
+<!--登录对话框结束-->
+
+<div id="container" onclick="back()"></div>
+
+<div id="anuluca">
+    本页面编码重点
+</div>
+<script>
+    $("#anuluca").click(function () {
+        alert("1.页面左右两块自适应浏览器大小\n"+
+              "2.弹出框移动（需要在js设置上下左右边距，移动时才能正常移动，上下左右边距需要自适应浏览器）\n"+
+              "3.登录、注册界面里的输入框去掉继承于父元素的事件\n"+
+              "4.注册界面中的年份在js里遍历出来后赋值到select里去\n" +
+              "5.日期选择需要判断平闰年、大小月\n" +
+              "6.注册到第三步时需要获取到第一步填写的姓名、手机号、生日；点击时跳转到第一步并获取到对应输入框焦点")
+    })
+</script>
+</body>
+</html>

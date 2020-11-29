@@ -1,0 +1,345 @@
+main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+footer{
+    height:50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+article{
+    /*width: 50%;*/
+    flex: 1;
+    height: 100%;
+    background-image: url(../img/bird.png);
+    background-repeat: no-repeat;
+    position: relative;
+}
+aside{
+    /*width: 50%;*/
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+article>ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+}
+/*左边*/
+article>ul>li{
+    white-space:nowrap;
+    width: auto;
+    line-height: 80px;
+    font-weight: bold;
+    color: white;
+}
+article>ul>li>div {
+    width: 25px;
+    height: 25px;
+    float: left;
+    background-image: url("../img/ico.png");
+    margin-right: 10px;
+    margin-top: 27px;
+}
+article>ul>li:nth-of-type(2)>div{
+    background-position: -50px 0;
+}
+article>ul>li:nth-of-type(3)>div{
+    background-position: -25px 0;
+}
+
+/*右边*/
+.title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.title .bird_title{
+    width: 39px;
+    height: 34px;
+    background-image: url("../img/ico.png");
+    background-position: 0 -25px;
+    margin: revert;
+}
+.title h1{
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.title p{
+    font-size: 15px;
+    font-weight: bold;
+}
+.register{
+    width: 360px;
+}
+.loginbtn{
+    color: #1DA1F2;
+    background-color: white;
+    width: 360px;
+    height: 40px;
+    display: block;
+    font-weight: bold;
+    border:1px solid #1DA1F2;
+    border-radius: 20px;
+    font-size: 15px;
+    margin-top: 25px;
+    cursor: pointer;
+    line-height: 40px;
+    text-align: center;
+}
+/*.title button:nth-of-type(1):hover{*/
+/*    background-color: #1b94de;*/
+/*}*/
+
+/*.title button:nth-of-type(2):hover{*/
+/*    background-color: #f5f5f5;*/
+/*}*/
+
+
+
+/*底部*/
+footer a{
+    font-size: 13px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    overflow-wrap: break-word;
+    padding-left: 15px;
+}
+footer a:hover{
+    text-decoration: underline;
+}
+
+/*注册对话框、登录对话框*/
+#register_box,#login_box{
+    width: 600px;
+    height: 650px;
+    background-color: white;
+    border-radius: 12px;
+    position: fixed;
+    /*top: 50%;*/
+    /*left:50%;*/
+    /*transform: translateX(-50%) translateY(-50%);*/
+    z-index: 2;
+    display: none;
+    cursor: move;
+    top: 100px;
+}
+.re1{
+    position: revert;
+}
+#register_box .bird_title{
+    width: 24px;
+    height: 20px;
+    background-image: url("../img/ico.png");
+    background-size: 790%;
+    background-position: 0 -16px;
+    margin-top: 17px;
+}
+.next_btn{
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    right: 15px;
+    top: -12px;
+}
+
+/*第一页*/
+.re2{
+    width: 540px;
+    height: auto;
+    margin-left: 30px;
+    margin-top: 50px;
+    position: relative;
+}
+.re2 h1{
+    font-size: 23px;
+}
+.options{
+    margin-top: 35px;
+    background-color: #F5F8FA;
+    border-radius: 4px;
+    width: 100%;
+    height: 55px;
+    border-bottom: 2px solid #657786;
+    color: #8695A1;
+}
+.options p{
+    display: block;
+    font-size: 15px;
+    margin-left: 10px;
+    padding-top: 6px;
+}
+.options input{
+    margin-left: 10px;
+    margin-top: 2px;
+    width: 95%;
+}
+.re2 span{
+    font-size: 15px;
+    margin-left: 10px;
+    color: #657786;
+}
+.count{
+    float: right;
+    margin-right: 10px;
+    margin-top: 4px;
+}
+.re2 a{
+    color: #1DA1F2;
+    font-size: 15px;
+    margin-top: 15px;
+}
+.birth{
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 35px;
+}
+.birthps{
+    font-size: 15px;
+    color: #657786;
+}
+.tip{
+    height:25px ;
+}
+.tip_text_name,.tip_text_phone{
+    display: none;
+    float: left;
+}
+.mail_option,.mail_tip{
+    display: none;
+}
+.birthday{
+    margin-top: 15px;
+    width: 100%;
+    height: 58px;
+    color: #8695A1;
+    overflow: hidden;
+}
+.birthday>div{
+    flex: 1;
+    height: 55px;
+    border-bottom: 2px solid #657786;
+    background-color: #F5F8FA;
+    border-radius: 4px;
+    float: left;
+}
+.birthday>div:nth-of-type(1){
+    width: 226px;
+}
+.birthday>div:nth-of-type(2){
+    width: 137px;
+    margin-left: 10px;
+}
+.birthday>div:nth-of-type(3){
+    width: 156px;
+    margin-left: 10px;
+}
+.birthday>div>p{
+    margin-left: 10px;
+    margin-top: 7px;
+    font-size: 15px;
+}
+.birthday>div>select{
+    width: 95%;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 3px;
+    margin-left: 5px;
+}
+.birthday>div>select>option{
+    height:30px;
+}
+
+/*第二页*/
+.page2,.page3{
+    display: none;
+}
+.re2 h2{
+    margin-top: 48px;
+}
+.re2 span:nth-child(1){
+    margin-top: 15px;
+    font-size: 15px;
+    color: #8695A1;
+    display: block;
+    width: 500px;
+    margin-left: 0px;
+    float: left;
+}
+.ifSubs{
+    display: block;
+    margin-top: 15px;
+    margin-left: 4px;
+    margin-bottom: 35px;
+    width: 16px;
+    border: 2px;
+    zoom: 150%;
+    float: left;
+    cursor: pointer;
+}
+.re21{
+    overflow: hidden;
+}
+.re2 span:nth-child(4),.re2 span:nth-child(6){
+    font-size: 15px;
+    color: #8695A1;
+    margin-left: 0px;
+}
+.back{
+    position: absolute;
+    top:18px;
+    left: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #1DA1F2;
+}
+.re1 p{
+    letter-spacing: 5px;
+    font-weight: bold;
+    margin-left: 80px;
+    margin-top: 15px;
+}
+.last_input{
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #657786;
+    border-radius: 3px;
+    background-color: #F5F8FA;
+    margin-bottom: 20px;
+}
+.last_input input{
+    width: 100%;
+    height: 100%;
+    margin-left: 20px;
+}
+.last_input:nth-of-type(1){
+    margin-top: 30px;
+}
+.last_input:nth-of-type(3){
+    margin-bottom: 60px;
+}
+.page3 span{
+    font-size: 14px;
+    margin-left: 0px;
+}
+.page3 .register{
+    width: 100%;
+}
+
+
+#container{
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 1;
+    display: none;
+}

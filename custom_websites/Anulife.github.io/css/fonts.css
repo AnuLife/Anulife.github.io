@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+    font-family: bank;
+    src: url("../lib/font/BankGothicBt.otf");
+}
+@font-face {
+    font-family: pokemondp;
+    src: url("../lib/font/pkmndp.ttf");
+}
+@font-face {
+    font-family: pokemon;
+    src: url("../lib/font/Pokemon.ttf");
+}
+@font-face {
+    font-family: pokemon-font;
+    src: url("../lib/font/pokemon-font.ttf");
+}
+@font-face {
+    font-family: pokpix1;
+    src: url("../lib/font/POKPIX1.ttf");
+}
+@font-face {
+    font-family: pokpix2;
+    src: url("../lib/font/POKPIX3.ttf");
+}
+*{
+    padding:0px;
+    margin:0px auto;
+    list-style:none;
+}
