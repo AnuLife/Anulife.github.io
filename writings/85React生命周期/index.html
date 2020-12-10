@@ -11,7 +11,7 @@
 
     <title>
         
-          Vue的生命周期函数相关 - 路卡的自由庭院岛
+          React生命周期 - 路卡的自由庭院岛
         
     </title>
 
@@ -108,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </ul>
 <h2 id="笔记-Phase-2">笔记 ( Phase 2 )</h2>
 <ul>
+<li><a href="/writings/85React%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><strong>85</strong> React生命周期</a></li>
 <li><a href="/writings/84React%E5%85%A5%E9%97%A8%E4%BA%95%E5%AD%97%E6%A3%8B"><strong>84</strong> React入门 : 井字棋</a></li>
 <li><a href="/writings/83Vscode%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5"><strong>83</strong> Vscode自定义代码片段</a></li>
 <li><a href="/writings/82webpack%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E%E5%8F%8A%E4%BD%BF%E7%94%A8"><strong>82</strong> webpack配置文件说明及使用</a></li>
@@ -183,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <li><a href="/writings/15%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98%E6%95%B4%E7%90%86"><strong>15</strong> 浏览器兼容性问题整理</a></li>
 <li><a href="/writings/14HTTP%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3"><strong>14</strong> HTTP协议详解</a></li>
 <li><a href="/writings/13JSONP%E6%B5%85%E8%A7%A3"><strong>13</strong> JSONP浅解</a></li>
-<li><a href="/writings/12Vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3"><strong>12</strong> Vue的生命周期函数相关</a></li>
+<li><a href="/writings/12Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><strong>12</strong> Vue生命周期</a></li>
 <li><a href="/writings/11%E5%8E%9F%E7%94%9F%E9%A1%B5%E9%9D%A2%E7%9A%84%E4%B8%80%E7%A7%8D%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD%E6%80%9D%E8%B7%AF"><strong>11</strong> 原生页面的一种图片懒加载思路</a></li>
 <li><a href="/writings/10%E4%B8%AA%E4%BA%BA%E5%AF%B9%E4%BA%8EMVVM%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%90%86%E8%A7%A3"><strong>10</strong> 个人对于MVVM模型的理解</a></li>
 <li><a href="/writings/09%E8%A7%A3%E5%86%B3%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%82%B9%E5%87%BB%E5%BB%B6%E8%BF%9F%E7%9A%84%E9%97%AE%E9%A2%98"><strong>9</strong> 解决移动端点击延迟的问题</a></li>
@@ -277,20 +278,45 @@ function sidebar_toggle() {
         </div>
         <div class="book-content">
           <div class="book-post">
-  <h1 id="Vue的生命周期函数相关">Vue的生命周期函数相关</h1>
-<p><strong>Anuluca</strong>     <strong>Date :</strong> 2020-08-02   <strong>Tags :</strong> 1</p>
-<div class = "articlehead" style="background-image:url('https://s1.ax1x.com/2020/08/17/devITf.jpg')"></div>
-<h3 id="Vue的生命周期：Vue实例从创建到销毁的过程就是生命周期">Vue的生命周期：Vue实例从创建到销毁的过程就是生命周期</h3>
-<p>//第一次页面加载开始<br>
-<strong><code>beforeCreate</code></strong>:（创建前）el和data未初始化<br>
-<strong><code>created</code></strong>:（创建后）el未初始化，data初始化完成</p>
-<p><strong><code>beforeMount</code></strong>:（挂载前）el和data完成初始化，但还未挂载到页面上<br>
-<strong><code>mounted</code></strong>:（挂载后）完成挂载<br>
-//第一次页面加载结束，Dom渲染完成</p>
-<p><strong><code>beforeUpdate</code></strong>:（更新前）数据更新前<br>
-<strong><code>updated</code></strong>:（更新后）数据更新后</p>
-<p><strong><code>beforeDestory</code></strong>:（销毁前）实例被销毁前，实例还可以使用<br>
-<strong><code>destoryed</code></strong>:（销毁后）实例被销毁后，实例里的所有东西都解除绑定。不可再使用</p>
+  <h1 id="￼0">React生命周期</h1>
+<p><strong>Anuluca</strong>     <strong>Date :</strong> 2020-12-03   <strong>Tags :</strong> 2</p>
+<div class = "articlehead" style="background-image:url('图片链接')"></div>
+<h1 id="React-16-4">React 16.4+</h1>
+<p><strong>相较16.0-的改动概要 : 引入了两个新的生命周期函数： <code>getDerivedStateFromProps</code>，<code>getSnapshotBeforeUpdate</code></strong></p>
+<h3 id="该版本包含的所有生命周期函数">该版本包含的所有生命周期函数:</h3>
+<p><strong><code>constructor()</code></strong> : 组件内容初始化</p>
+<p><strong><code>componentWillMount()</code></strong> : 组件渲染前前调用一次<br>
+<strong><code>[16.4新增] getSnapshotBeforeUpdate()</code></strong> : render更新前调用<br>
+<strong><code>render()</code></strong> : Return 一个React元素，不负责组件实际渲染工作 <strong>*不能在里面执行this.setState</strong><br>
+<strong><code>componentDidMount()</code></strong> : 组件渲染完毕后调用一次<br>
+<strong><code>componentWillReceiveProps(nextProps)</code></strong> : 组件将要接收数据</p>
+<p><strong>//页面加载结束，Dom渲染完成</strong></p>
+<p><strong><code>[16.4新增] getDerivedStateFromProps(props, state)</code></strong> : 在组件创建时和更新时的render方法之前调用，它应该返回一个对象来更新状态，或者返回null来不更新任何内容。<br>
+<strong>[注意:getDerivedStateFromProps前面要加上static保留字，声明为静态方法，不然会被react忽略掉]</strong><br>
+<strong><code>shouldComponentUpdate(nextProps, nextState)</code></strong> : 组件接收到新的state或者props，判断是否要更新返回布尔值<br>
+<strong><code>componentWillUpdate(nextProps, nextState)</code></strong> : 组件更新前调用<br>
+<strong><code>render()</code></strong> : 组件重新渲染<br>
+<strong><code>[16.4新增] getSnapshotBeforeUpdate()</code></strong> : render更新前调用,代替componentWillUpdate<br>
+<strong><code>componentDidUpdate(prevProps, prevState)</code></strong> : 组件更新后调用</p>
+<p><strong>//卸载阶段开始</strong></p>
+<p><strong><code>componentWillUnmount()</code></strong> : 卸载前被调用</p>
+<p><strong>//卸载阶段结束</strong></p>
+<h1 id="React-16-0">React 16.0-</h1>
+<h3 id="该版本包含的所有生命周期函数-v2">该版本包含的所有生命周期函数:</h3>
+<p><strong>//页面加载开始</strong></p>
+<p><strong><code>constructor()</code></strong> : 组件内容初始化</p>
+<p><strong><code>componentWillMount()</code></strong> : 组件挂载到DOM前调用一次<br>
+<strong><code>render()</code></strong> : Return 一个React元素，不负责组件实际渲染工作 <strong>*不能在里面执行this.setState</strong><br>
+<strong><code>componentDidMount()</code></strong> : 组件挂载到DOM后调用，且只会被调用一次</p>
+<p><strong>//页面加载结束，Dom渲染完成</strong></p>
+<p><strong><code>componentWillReceiveProps(nextProps)</code></strong> : 调用于props引起的组件更新过程中,用于响应 Props 变化之后进行更新.参数nextProps是父组件传给当前组件的新props<br>
+<strong><code>shouldComponentUpdate(nextProps, nextState)</code></strong> : 此方法通过比较nextProps，nextState及当前组件的this.props，this.state，返回true时当前组件将继续执行更新过程，返回false则当前组件更新停止<br>
+<strong><code>componentWillUpdate(nextProps, nextState)</code></strong> : render重新调用前调用<br>
+<strong><code>render()</code></strong> : 更新后重新调用render<br>
+<strong><code>componentDidUpdate(prevProps, prevState)</code></strong> : 此方法在组件更新后被调用，可以操作组件更新的DOM，prevProps和prevState这两个参数指的是组件更新前的props和state</p>
+<p><strong>//卸载阶段开始</strong></p>
+<p><strong><code>componentWillUnmount()</code></strong> : 卸载前被调用</p>
+<p><strong>//卸载阶段结束</strong></p>
 
   <a onclick="go_top()"><div class="to_top">↑</div></a>
 </div>
@@ -392,7 +418,7 @@ function sidebar_toggle() {
     <!-- Author title -->
     <div class="author-title">
       <div>Anuluca</div>
-      <div style="font-family: 等线">Update:2020-08-02</div>
+      <div style="font-family: 等线">Update:2020-12-03</div>
     </div>
   </div>
 
@@ -402,7 +428,7 @@ function sidebar_toggle() {
     <div class="link">
       
 
-      <a class="tag-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">#web前端</a>
+      <a class="tag-link" href="/tags/React/" rel="tag">#React</a> <a class="tag-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">#web前端</a>
     </div>
     
   
