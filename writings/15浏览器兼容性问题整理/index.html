@@ -288,31 +288,31 @@ function sidebar_toggle() {
 <h3 id="2-IE6双边距问题；在IE6中设置了float，同时又设置margin，就会出现边距问题">2.IE6双边距问题；在IE6中设置了float，同时又设置margin，就会出现边距问题</h3>
 <p>解决方案：设置<code>display：inline；</code></p>
 <h3 id="3-当标签的高度设置小于10px，在IE6、IE7中会超出自己设置的高度">3.当标签的高度设置小于10px，在IE6、IE7中会超出自己设置的高度</h3>
-<p>解决方案：超出高度的标签设置<code>overflow：hidden</code>，或者设置line-height的值小于你的设置高度</p>
+<p>解决方案：超出高度的标签设置<code>overflow：hidden</code>，或者设置<code>line-height</code>的值小于你的设置高度</p>
 <h3 id="4-图片默认有间距">4.图片默认有间距</h3>
-<p>解决方案：使用float为img布局</p>
+<p>解决方案：使用<code>float</code>为<code>img</code>布局</p>
 <h3 id="5-IE9以下浏览器不能使用opacity">5.IE9以下浏览器不能使用opacity</h3>
 <p>解决方案：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">opacity</span>：0<span class="selector-class">.5</span>；</span><br><span class="line">filter：alfha（opacity=50）；</span><br><span class="line"><span class="selector-tag">filter</span>：<span class="selector-tag">progid</span>：</span><br><span class="line">DXlmageTransform.Microsoft.Alfha(style=0,opacity=50);</span><br></pre></td></tr></table></figure>
 <h3 id="6-边距重叠问题">6.边距重叠问题</h3>
-<p>当相邻两个元素都设置了margin边距时，margin将取最大值，舍弃最小值；</p>
+<p>当相邻两个元素都设置了<code>margin</code>边距时，<code>margin</code>将取最大值，舍弃最小值；</p>
 <h3 id="7-cursor：hand显示手型在safari上不支持">7.cursor：hand显示手型在safari上不支持</h3>
 <p>解决方案：统一使用<code>cursor：pointer</code></p>
 <h3 id="8-两个块级元素，父元素设置了overflow：auto；子元素设置了position：relative；且高度大于父元素，在IE6、IE7会被隐藏而不是溢出；">8.两个块级元素，父元素设置了overflow：auto；子元素设置了position：relative；且高度大于父元素，在IE6、IE7会被隐藏而不是溢出；</h3>
 <p>解决方案：父级元素设置<code>position：relative</code></p>
 <h3 id="9-const问题">9.const问题</h3>
-<p>Firefox下，可以使用const关键字来定义常量；<br>
-IE下，只能使用var关键字来定义常量。<br>
-解决方法：统一使用var关键字来定义常量。</p>
+<p>Firefox下，可以使用<code>const</code>关键字来定义常量；<br>
+IE下，只能使用<code>var</code>关键字来定义常量。<br>
+解决方法：统一使用<code>var</code>关键字来定义常量。</p>
 <h3 id="10-event-srcElement问题">10.event.srcElement问题</h3>
-<p>IE下，event对象有srcElement属性，但是没有target属性；Firefox下，event对象有target属性，但是没有srcElement属性。<br>
+<p>IE下，<code>event</code>对象有<code>srcElement</code>属性，但是没有<code>target</code>属性；Firefox下，event对象有<code>target</code>属性，但是没有<code>srcElement</code>属性。<br>
 解决方法：使用<code>srcObj = event.srcElement?event.srcElement:event.target;</code></p>
 <h3 id="11-事件绑定">11.事件绑定</h3>
 <p>IE:<code>dom.attachEvent();</code><br>
 其他浏览器：<code>dom.addEventListener();</code><br>
-标准浏览器采用事件捕获的方式对应IE的事件冒泡机制（即标准由最外元素至最内元素或者IE由最内元素到最外元素）最后标准方亦觉得IE这方面的比较合理，所以便将事件冒泡纳入了标准，这也是addEventListener第三个参数的由来，而且事件冒泡作为了默认值。</p>
+标准浏览器采用事件捕获的方式对应IE的事件冒泡机制（即标准由最外元素至最内元素或者IE由最内元素到最外元素）最后标准方亦觉得IE这方面的比较合理，所以便将事件冒泡纳入了标准，这也是<code>addEventListener</code>第三个参数的由来，而且事件冒泡作为了默认值。</p>
 <h3 id="12-操作tr的html">12.操作tr的html</h3>
-<p>在ie9以下，不能操作tr的innerHTML</p>
+<p>在ie9以下，不能操作<code>tr</code>的<code>innerHTML</code></p>
 <h3 id="13-ajax区别">13.ajax区别</h3>
 <p>IE：<code>ActiveXObject</code><br>
 其他：<code>xmlHttpReuest</code></p>
@@ -320,78 +320,78 @@ IE下，只能使用var关键字来定义常量。<br>
 <p>问题说明：FireFox中类似<code>obj.style.height = imgObj.height</code>的语句无效。</p>
 <h1 id="CSS">CSS</h1>
 <h3 id="1-cursor-hand-VS-cursor-pointer">1. cursor:hand VS cursor:pointer</h3>
-<p>firefox不支持hand，但ie支持pointer<br>
-解决方法: 统一使用pointer</p>
+<p>firefox不支持<code>hand</code>，但ie支持<code>pointer</code><br>
+解决方法: 统一使用<code>pointer</code></p>
 <h3 id="2-innerText在IE中能正常工作，但在FireFox中却不行">2. innerText在IE中能正常工作，但在FireFox中却不行.</h3>
-<p>需用textContent。<br>
+<p>需用<code>textContent</code>。<br>
 解决方法:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(navigator.appName.indexOf(<span class="string">"Explorer"</span>) &gt; <span class="number">-1</span>)&#123;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'element'</span>).innerText = <span class="string">"my text"</span>;</span><br><span class="line">&#125; <span class="keyword">else</span>&#123;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'element'</span>).textContent = <span class="string">"my text"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="3-CSS透明">3. CSS透明</h3>
 <p>IE：<code>filter:progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=60)</code><br>
 FF：<code>opacity:0.6</code></p>
 <h3 id="4-css中的width和padding">4. css中的width和padding</h3>
-<p>在IE7和FF中width宽度不包括padding，在Ie6中包括padding.</p>
+<p>在IE7和FF中width宽度不包括<code>padding</code>，在Ie6中包括<code>padding</code>.</p>
 <h3 id="5-FF和IEBOX模型解释不一致导致相差2px">5. FF和IEBOX模型解释不一致导致相差2px</h3>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">box</span><span class="selector-class">.style</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100</span>;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">1px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>ie理解为<code>box.width =100</code><br>
 ff理解为<code>box.width =100 + 1*2 = 102 //加上边框2px</code></p>
 <p>解决方法：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">30px</span><span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">28px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意这两个margin的顺序一定不能写反， IE不能识别<code>!important</code>这个属性，但别的浏览器可以识别。所以在IE下其实解释成这样：<code>div{maring:30px;margin:28px}</code><br>
+<p>注意这两个<code>margin</code>的顺序一定不能写反， IE不能识别<code>!important</code>这个属性，但别的浏览器可以识别。所以在IE下其实解释成这样：<code>div{maring:30px;margin:28px}</code><br>
 重复定义的话按照最后一个来执行，所以不可以只写<code>margin:XXpx!important;</code></p>
 <h3 id="6-IE5-和IE6的BOX解释不一致">6. IE5 和IE6的BOX解释不一致</h3>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">0</span> <span class="number">10px</span> <span class="number">0</span> <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>IE5下div的宽度会被解释为300px-10px(右填充)-10px(左填充)，最终div的宽度为280px，而在IE6和其他浏览器上宽度则是以 300px+10px(右填充)+10px(左填充)=320px来计算的。这时我们可以做如下修改</p>
+<p>IE5下div的宽度会被解释为<code>300px-10px(右填充)-10px(左填充)</code>，最终<code>div</code>的宽度为<code>280px</code>，而在IE6和其他浏览器上宽度则是以 <code>300px+10px(右填充)+10px(左填充)=320px</code>来计算的。这时我们可以做如下修改</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">300px</span><span class="meta">!important</span>;</span><br><span class="line">    width /**/:340px;</span><br><span class="line">    <span class="selector-tag">margin</span><span class="selector-pseudo">:0</span> 10<span class="selector-tag">px</span> 0 10<span class="selector-tag">px</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="7-ul和ol列表缩进问题">7. ul和ol列表缩进问题</h3>
-<p>消除ul、ol等列表的缩进时，样式应写成：<code>list-style:none;  margin:0px;padding:0px;</code><br>
-经验证，在IE中，设置margin:0px可以去除列表的上下左右缩进、空白以及列表编号或圆点，设置padding对样式没有影响；在 Firefox 中，设置margin:0px仅仅可以去除上下的空白，设置padding:0px后仅仅可以去掉左右缩进，还必须设置list- style:none才能去除列表编号或圆点。也就是说，在IE中仅仅设置margin:0px即可达到最终效果，而在Firefox中必须同时设置margin:0px、 padding:0px以及list-style:none三项才能达到最终效果。</p>
+<p>消除<code>ul</code>、<code>ol</code>等列表的缩进时，样式应写成：<code>list-style:none;  margin:0px;padding:0px;</code><br>
+经验证，在IE中，设置<code>margin:0px</code>可以去除列表的上下左右缩进、空白以及列表编号或圆点，设置<code>padding</code>对样式没有影响；在 Firefox 中，设置margin:0px仅仅可以去除上下的空白，设置<code>padding:0px</code>后仅仅可以去掉左右缩进，还必须设置<code>list- style:none</code>才能去除列表编号或圆点。也就是说，在IE中仅仅设置<code>margin:0px</code>即可达到最终效果，而在Firefox中必须同时设置<code>margin:0px</code>、 <code>padding:0px</code>以及<code>list-style:none</code>三项才能达到最终效果。</p>
 <h3 id="8-元素水平居中问题">8. 元素水平居中问题</h3>
 <p>FF: <code>margin:0auto;</code></p>
 <p>IE: 父级<code>text-align:center;</code></p>
 <h3 id="9-Div的垂直居中问题">9. Div的垂直居中问题</h3>
-<p>vertical-align:middle; 将行距增加到和整个DIV一样高：line-height:200px;然后插入文字，就垂直居中了。缺点是要控制内容不要换行。</p>
+<p><code>vertical-align:middle;</code> 将行距增加到和整个DIV一样高：<code>line-height:200px;</code>然后插入文字，就垂直居中了。缺点是要控制内容不要换行。</p>
 <h3 id="10-margin加倍的问题">10. margin加倍的问题</h3>
-<p>设置为float的div在ie下设置的margin会加倍。这是一个ie6都存在的bug。解决方案是在这个div里面加上display:inline;</p>
+<p>设置为<code>float</code>的<code>div</code>在IE下设置的<code>margin</code>会加倍。这是一个IE6都存在的bug。解决方案是在这个<code>div</code>里面加上<code>display:inline</code>;</p>
 <p>例如：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#imfloat</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>:left;</span><br><span class="line">    margin:5px;//IE下理解为10px</span><br><span class="line">    display:inline;//IE下再理解为5px</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="11-IE与宽度和高度的问题">11. IE与宽度和高度的问题</h3>
-<p>IE不认得min-这个定义，但实际上它把正常的width和height当作有min的情况来使。这样问题就大了，如果只用宽度和高度，正常的浏览器里这两个值就不会变，如果只用min-width和min-height的话，IE下面根本等于没有设置宽度和高度。</p>
+<p>IE不认得<code>min</code>这个定义，但实际上它把正常的<code>width</code>和<code>height</code>当作有<code>min</code>的情况来使。这样问题就大了，如果只用宽度和高度，正常的浏览器里这两个值就不会变，如果只用<code>min-width</code>和<code>min-height</code>的话，IE下面根本等于没有设置宽度和高度。</p>
 <p>比如要设置背景图片，这个宽度是比较重要的。要解决这个问题，可以这样：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#box</span>&#123; </span><br><span class="line">    <span class="attribute">width</span>: <span class="number">80px</span>; </span><br><span class="line">    <span class="attribute">height</span>: <span class="number">35px</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="selector-tag">html</span>&gt;<span class="selector-tag">body</span> <span class="selector-id">#box</span>&#123; </span><br><span class="line">    <span class="attribute">width</span>: auto;</span><br><span class="line">    <span class="attribute">height</span>: auto; </span><br><span class="line">    <span class="attribute">min-width</span>: <span class="number">80px</span>; </span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">35px</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="12-页面的最小宽度">12. 页面的最小宽度</h3>
-<p>如上一个问题，IE不识别min，要实现最小宽度，可用下面的方法：</p>
+<p>如上一个问题，IE不识别<code>min</code>，要实现最小宽度，可用下面的方法：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#container</span>&#123; </span><br><span class="line">    <span class="attribute">min-width</span>: <span class="number">600px</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="built_in">expression</span>(document.body.clientWidth&lt; 600? <span class="string">"600px"</span>: <span class="string">"auto"</span> );</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>第一个min-width是正常的；但第2行的width使用了Javascript，这只有IE才认得，这也会让你的HTML文档不太正规。它实际上通过Javascript的判断来实现最小宽度。</p>
+<p>第一个<code>min-width</code>是正常的；但第2行的<code>width</code>使用了js，这只有IE才认得，这也会让你的HTML文档不太正规。它实际上通过js的判断来实现最小宽度。</p>
 <h3 id="13-DIV浮动IE文本产生3象素的bug">13. DIV浮动IE文本产生3象素的bug</h3>
-<p>左边对象浮动，右边采用外补丁的左边距来定位，右边对象内的文本会离左边有3px的间距.</p>
+<p>左边对象浮动，右边采用外补丁的左边距来定位，右边对象内的文本会离左边有<code>3px</code>的间距.</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#box</span>&#123; </span><br><span class="line">    <span class="attribute">float</span>:left; </span><br><span class="line">    <span class="attribute">width</span>:<span class="number">800px</span>;</span><br><span class="line">    &#125; </span><br><span class="line"><span class="selector-id">#left</span>&#123; </span><br><span class="line">    <span class="attribute">float</span>:left; </span><br><span class="line">    <span class="attribute">width</span>:<span class="number">50%</span>;&#125; </span><br><span class="line"><span class="selector-id">#right</span>&#123; </span><br><span class="line">    <span class="attribute">width</span>:<span class="number">50%</span>;</span><br><span class="line">    &#125; </span><br><span class="line">*<span class="selector-tag">html</span> <span class="selector-id">#left</span>&#123; </span><br><span class="line">    margin-right:-3px; //这句是关键</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="14-IE捉迷藏的问题">14. IE捉迷藏的问题</h3>
-<p>当div应用复杂的时候每个栏中又有一些链接，DIV等这个时候容易发生捉迷藏的问题。</p>
+<p>当<code>div</code>应用复杂的时候每个栏中又有一些链接，DIV等这个时候容易发生捉迷藏的问题。</p>
 <p>有些内容显示不出来，当鼠标选择这个区域是发现内容确实在页面。</p>
-<p>解决办法：对#layout使用line-height属性或者给#layout使用固定高和宽。页面结构尽量简单。</p>
+<p>解决办法：对<code>#layout</code>使用<code>line-height</code>属性或者给<code>#layout</code>使用固定高和宽。页面结构尽量简单。</p>
 <h3 id="15-float的div闭合-清除浮动-自适应高度">15. float的div闭合;清除浮动;自适应高度</h3>
 <p>① 例如：<code>&lt;div id=&quot;floatA&quot;&gt;&lt;div id=&quot;floatB&quot;&gt;&lt;div id=&quot;NOTfloatC&quot;&gt;</code></p>
-<p>这里的NOTfloatC并不希望继续平移，而是希望往下排。(其中floatA、floatB的属性已经设置为<code>float:left;</code>)</p>
-<p>这段代码在IE中毫无问题，问题出在FF。原因是NOTfloatC并非float标签，必须将float标签闭合。在<code>&lt;divclass=”floatB”&gt;&lt;div class=”NOTfloatC”&gt;</code>之间加上<code>&lt;div class=”clear”&gt;</code>这个div一定要注意位置，而且必须与两个具有float属性的div同级，之间不能存在嵌套关系，否则会产生异常。并且将clear这种样式定义为为如下即可：<code>.clear{clear:both;}</code></p>
-<p>②作为外部 wrapper 的 div 不要定死高度,为了让高度能自适应，要在wrapper里面加上overflow:hidden; 当包含float的box的时候，高度自适应在IE下无效，这时候应该触发IE的layout私有属性(万恶的IE啊！)用zoom:1;可以做到，这样就达到了兼容。<br>
+<p>这里的NOTfloatC并不希望继续平移，而是希望往下排。(其中<code>floatA</code>、<code>floatB</code>的属性已经设置为<code>float:left;</code>)</p>
+<p>这段代码在IE中毫无问题，问题出在FF。原因是<code>NOTfloatC</code>并非<code>float</code>标签，必须将<code>float</code>标签闭合。在<code>&lt;divclass=”floatB”&gt;&lt;div class=”NOTfloatC”&gt;</code>之间加上<code>&lt;div class=”clear”&gt;</code>这个div一定要注意位置，而且必须与两个具有<code>float</code>属性的<code>div</code>同级，之间不能存在嵌套关系，否则会产生异常。并且将<code>clear</code>这种样式定义为为如下即可：<code>.clear{clear:both;}</code></p>
+<p>②作为外部 <code>wrapper</code> 的 <code>div</code> 不要定死高度,为了让高度能自适应，要在<code>wrapper</code>里面加上<code>overflow:hidden;</code> 当包含<code>float</code>的盒子的时候，高度自适应在IE下无效，这时候应该触发IE的<code>layout</code>私有属性，用<code>zoom:1;</code>可以做到，这样就达到了兼容。<br>
 例如某一个wrapper如下定义：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.colwrapper</span>&#123;</span><br><span class="line">    <span class="attribute">overflow</span>:hidden; </span><br><span class="line">    <span class="attribute">zoom</span>:<span class="number">1</span>; </span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">5px</span> auto;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>③对于排版,我们用得最多的css描述可能就是float:left.有的时候我们需要在n栏的float div后面做一个统一的背景,譬如:</p>
+<p>③对于排版,我们用得最多的css描述可能就是<code>float:left</code>有的时候我们需要在n栏的<code>float div</code>后面做一个统一的背景,譬如:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">”page”</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">”left”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">”center”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">”right”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="16-高度不适应">16. 高度不适应</h3>
-<p>高度不适应是当内层对象的高度发生变化时外层高度不能自动进行调节，特别是当内层对象使用margin 或padding时。</p>
+<p>高度不适应是当内层对象的高度发生变化时外层高度不能自动进行调节，特别是当内层对象使用<code>margin</code> 或<code>padding</code>时。</p>
 <p>例：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#box</span> &#123;<span class="attribute">background-color</span>:<span class="number">#eee</span>; &#125; </span><br><span class="line"><span class="selector-id">#box</span> <span class="selector-tag">p</span> &#123;<span class="attribute">margin-top</span>: <span class="number">20px</span>;<span class="attribute">margin-bottom</span>: <span class="number">20px</span>; <span class="attribute">text-align</span>:center; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#box</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>:<span class="number">#eee</span>; </span><br><span class="line">    &#125; </span><br><span class="line"><span class="selector-id">#box</span> <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">margin-bottom</span>: <span class="number">20px</span>; </span><br><span class="line">    <span class="attribute">text-align</span>:center; </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p对象中的内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>解决技巧：在P对象上下各加2个空的div对象CSS代码{height:0px;overflow:hidden;}或者为DIV加上border属性。</p>
+<p>解决技巧：在P对象上下各加2个空的div对象CSS代码<code>{height:0px;overflow:hidden;}</code>或者为<code>div</code>加上<code>border</code>属性。</p>
 <h3 id="17-IE6下图片下有空隙产生">17. IE6下图片下有空隙产生</h3>
-<p>解决这个BUG的技巧有很多,可以是改变html的排版,或者设置img为display:block或者设置vertical-align属性为vertical-align:top/bottom/middle/text-bottom都可以解决.</p>
+<p>解决这个BUG的技巧有很多,可以是改变html的排版,或者设置<code>img</code>为<code>display:block</code>或者设置<code>vertical-align</code>属性为<code>vertical-align:top/bottom/middle/text-bottom</code>都可以解决.</p>
 <h3 id="18-对齐文本与文本输入框">18. 对齐文本与文本输入框</h3>
-<p>加上vertical-align:middle;</p>
+<p>加上<code>vertical-align:middle;</code></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span> &#123;</span><br><span class="line"><span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line"><span class="attribute">height</span>:<span class="number">30px</span>;</span><br><span class="line"><span class="attribute">border</span>:<span class="number">1px</span> solid red;</span><br><span class="line"><span class="attribute">vertical-align</span>:middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>经验证，在IE下任一版本都不适用，而ff、opera、safari、chrome均OK！</p>
+<p>经验证，在IE下任一版本都不适用，而ff、opera、safari、chrome均OK</p>
 <h3 id="19-LI中内容超过长度后以省略号显示">19. LI中内容超过长度后以省略号显示</h3>
 <p>此技巧适用与IE、Opera、safari、chrom浏览器，FF暂不支持。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span> &#123;</span><br><span class="line"><span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line"><span class="attribute">white-space</span>:nowrap;</span><br><span class="line"><span class="attribute">text-overflow</span>:ellipsis;</span><br><span class="line"><span class="attribute">-o-text-overflow</span>:ellipsis;</span><br><span class="line"><span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -400,24 +400,24 @@ ff理解为<code>box.width =100 + 1*2 = 102 //加上边框2px</code></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPEhtml PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html;charset=gb2312"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">html &#123;</span></span><br><span class="line"><span class="css"><span class="selector-tag">scrollbar-face-color</span>:<span class="selector-id">#f6f6f6</span>;</span></span><br><span class="line"><span class="css"><span class="selector-tag">scrollbar-highlight-color</span>:<span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="css"><span class="selector-tag">scrollbar-shadow-color</span>:<span class="selector-id">#eeeeee</span>;</span></span><br><span class="line"><span class="css"><span class="selector-tag">scrollbar-3dlight-color</span>:<span class="selector-id">#eeeeee</span>;</span></span><br><span class="line"><span class="css"><span class="selector-tag">scrollbar-arrow-color</span>:<span class="selector-id">#000</span>;</span></span><br><span class="line"><span class="css"><span class="selector-tag">scrollbar-track-color</span>:<span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="css"><span class="selector-tag">scrollbar-darkshadow-color</span>:<span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="21-为什么无法定义1px左右高度的容器">21. 为什么无法定义1px左右高度的容器</h3>
 <p>IE6下这个问题是因为默认的行高造成的,解决的技巧也有很多：</p>
-<p>例如:overflow:hidden　 zoom:0.08 　line-height:1px</p>
+<p>例如:<code>overflow:hidden　 zoom:0.08 　line-height:1px</code></p>
 <h3 id="22-链接-a标签-的边框与背景">22. 链接(a标签)的边框与背景</h3>
-<p>a链接加边框和背景色，需设置 display: block, 同时设置 float: left 保证不换行。参照menubar, 给 a 和menubar设置高度是为了避免底边显示错位, 若不设 height, 可以在menubar中插入一个空格。</p>
+<p>a链接加边框和背景色，需设置 <code>display: block</code>, 同时设置 <code>float: left</code> 保证不换行。参照<code>menubar</code>, 给 <code>a 和menubar</code>设置高度是为了避免底边显示错位, 若不设 <code>height</code>, 可以在<code>menubar</code>中插入一个空格。</p>
 <h3 id="23-超链接访问过后hover样式就不出现的问题">23. 超链接访问过后hover样式就不出现的问题</h3>
-<p>被点击访问过的超链接样式不在具有hover和active了,很多人应该都遇到过这个问题,解决技巧是改变CSS属性的排列顺序: L-V-H-A</p>
+<p>被点击访问过的超链接样式不在具有<code>hover</code>和<code>active</code>了,很多人应该都遇到过这个问题,解决技巧是改变CSS属性的排列顺序: L-V-H-A</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123;&#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123;&#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;&#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="24-FORM标签">24. FORM标签</h3>
-<p>这个标签在IE中,将会自动margin一些边距,而在FF中margin则是0,因此,如果想显示一致,所以最好在css中指定margin和 padding,针对上面两个问题,我的css中一般首先都使用这样的样式ul,form{margin:0;padding:0;}。</p>
+<p>这个标签在IE中,将会自动<code>margin</code>一些边距,而在FF中<code>margin</code>则是0,因此,如果想显示一致,所以最好在css中指定<code>margin</code>和 <code>padding</code>,针对上面两个问题,我的css中一般首先都使用这样的样式:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span>,<span class="selector-tag">form</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="25-属性选择器-这个不能算是兼容-是隐藏css的一个bug">25. 属性选择器(这个不能算是兼容,是隐藏css的一个bug)</h3>
-<p>p[id]{}div[id]{}</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[id]</span>&#123;&#125;<span class="selector-tag">div</span><span class="selector-attr">[id]</span> &#123;</span><br><span class="line">    //元素样式</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这个对于IE6.0和IE6.0以下的版本都隐藏,FF和OPera作用.属性选择器和子选择器还是有区别的,子选择器的范围从形式来说缩小了,属性选择器的范围比较大,如p[id]中,所有p标签中有id的都是同样式的.</p>
 <h3 id="26-为什么FF下文本无法撑开容器的高度">26. 为什么FF下文本无法撑开容器的高度</h3>
-<p>标准浏览器中固定高度值的容器是不会象IE6里那样被撑开的,那我又想固定高度,又想能被撑开需要怎样设置呢？办法就是去掉height设置min-height:200px; 这里为了照顾不认识min-height的IE6 可以这样定义:</p>
+<p>标准浏览器中固定高度值的容器是不会象IE6里那样被撑开的,那我又想固定高度,又想能被撑开需要怎样设置呢？办法就是去掉<code>height</code>设置<code>min-height:200px</code>; 这里为了照顾不认识<code>min-height</code>的IE6 可以这样定义:</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attribute">height</span>:auto<span class="meta">!important</span>;</span><br><span class="line"><span class="attribute">height</span>:<span class="number">200px</span>;</span><br><span class="line"><span class="attribute">min-height</span>:<span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="27-怎样才能让层显示在FLASH之上">27.怎样才能让层显示在FLASH之上</h3>
 <p>解决的办法是给FLASH设置透明<code>&lt;paramname=&quot;wmode&quot; value=&quot;transparent&quot; /&gt;</code></p>
-<blockquote class="pullquote right"><p><font color = gray>* 版权声明：本文部分内容摘自<a href="https://www.jianshu.com/p/6afd596440bb" target="_blank" rel="noopener">火烧冰山的博文</a></font></p>
-</blockquote>
+
   <a onclick="go_top()"><div class="to_top">↑</div></a>
 </div>
 

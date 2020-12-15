@@ -291,53 +291,53 @@ function sidebar_toggle() {
 <h3 id="2-标签说明">2.标签说明</h3>
 <ul>
 <li>
-<p>grid:gridtile标签:生成外围的蓝色边框<br>
-caption:指示性文字标题说明；<br>
-collection:结果集,用于获取记录数；<br>
-其中记录数的条数取自于collection=&quot;result.list&quot;所配置的结果集中数据行数。</p>
+<p><code>grid:gridtile标签</code>: 生成外围的蓝色边框<br>
+<code>caption</code>: 指示性文字标题说明；<br>
+<code>collection</code>: 结果集,用于获取记录数；<br>
+<strong>其中记录数的条数取自于collection=&quot;result.list&quot;所配置的结果集中数据行数。</strong></p>
 </li>
 <li>
-<p>grid:gridreport标签:生成报表<br>
-property:用于唯一标识此报表；<br>
-caption:报表的头信息结果集(如&quot;卷烟名称&quot;,“入库总量”,…)；<br>
-collection:报表中的内容结果集(如&quot;厦门(礼珍品，厦门),112,112,…&quot;)；<br>
-totalcollection:生成合计行所引用的结果集；<br>
-showtotal:是否将totalcollection所表示的结果集中的最后一条数据放置到报表底部作为合计行(true表示是)；<br>
-showcheckbox:是否在报表中显示checkbox(true表示是)；<br>
-function:2表示报表中右击菜单功能激活；<br>
-固定列:在caption结果集中将对应的标题的fixcol字段设置为1；<br>
-可输入列:在caption结果集中将对应的标题的type字段设置为&quot;input&quot;,否则设置为&quot;label&quot;；<br>
-隐藏列:在caption结果集中将对应的标题的width设置为0；<br>
-可保存列:在caption结果中将对应的标题的isreturn设置为&quot;true&quot;,在调用billgridgetsavevalue()可以直接获取设置为isreturn为&quot;true&quot;的字段值。</p>
+<p><code>grid:gridreport标签</code>: 生成报表<br>
+<code>property</code>: 用于唯一标识此报表；<br>
+<code>caption</code>: 报表的头信息结果集(如&quot;卷烟名称&quot;,“入库总量”,…)；<br>
+<code>collection</code>: 报表中的内容结果集(如&quot;厦门(礼珍品，厦门),112,112,…&quot;)；<br>
+<code>totalcollection</code>: 生成合计行所引用的结果集；<br>
+<code>showtotal</code>: 是否将totalcollection所表示的结果集中的最后一条数据放置到报表底部作为合计行(true表示是)；<br>
+<code>showcheckbox</code>: 是否在报表中显示checkbox(true表示是)；<br>
+<code>function</code>: 2表示报表中右击菜单功能激活；<br>
+<code>固定列</code>: 在caption结果集中将对应的标题的fixcol字段设置为1；<br>
+<code>可输入列</code>: 在caption结果集中将对应的标题的type字段设置为&quot;input&quot;,否则设置为&quot;label&quot;；<br>
+<code>隐藏列</code>: 在caption结果集中将对应的标题的width设置为0；<br>
+<code>可保存列</code>: 在caption结果中将对应的标题的isreturn设置为&quot;true&quot;,在调用billgridgetsavevalue()可以直接获取设置为isreturn为&quot;true&quot;的字段值。</p>
 </li>
 </ul>
 <h3 id="3-常用函数">3.常用函数</h3>
 <ul>
 <li>
-<p>grid标签函数命名规则:proerty属性值+函数名,如billgridgetsavevalue()</p>
+<p>grid标签函数命名规则: <strong>proerty属性值+函数名,如&quot;billgridgetsavevalue()&quot;</strong></p>
 </li>
 <li>
 <p>读取报表内容数据函数：<br>
-billgridgetselectvalue(colname):获取当前选中行列名为colname的内容值；<br>
-colname可以为是隐式或显式列名,使用逗号分隔多个列名组成colname字符串可以取多个列内容值；<br>
-billgridgetdetailbycheck(colname, checked):获取选中或未选中行指定的列对应内容；<br>
-checked:0表示未选中行,1表示选中行,-1或null表示所有行，使用逗号分隔多个列名组成colname字符串可以取多个列内容值；<br>
-billgridgetdetail(colname):与上面函数checked为-1或null等价，使用逗号分隔多个列名组成colname字符串可以取多个列内容值；<br>
-billgridgetsavevalue():获取所有可保存列的内容，可保存列由caption结果集中的isreturn字段值控制；</p>
+<code>billgridgetselectvalue(colname)</code>: 获取当前选中行列名为colname的内容值；<br>
+<code>colname</code>: 可以为是隐式或显式列名,使用逗号分隔多个列名组成colname字符串可以取多个列内容值；<br>
+<code>billgridgetdetailbycheck(colname, checked)</code>: 获取选中或未选中行指定的列对应内容；<br>
+<code>checked</code>: 0表示未选中行,1表示选中行,-1或null表示所有行，使用逗号分隔多个列名组成colname字符串可以取多个列内容值；<br>
+<code>billgridgetdetail(colname)</code>: 与上面函数checked为-1或null等价，使用逗号分隔多个列名组成colname字符串可以取多个列内容值；<br>
+<code>billgridgetsavevalue()</code>: 获取所有可保存列的内容，可保存列由caption结果集中的isreturn字段值控制；</p>
 </li>
 <li>
 <p>获取报表行或列索引<br>
-billgridreportrownumber:当前选中行的报表行号；<br>
-billgridgetcolnumber(type, colname):获取列所在报表中的索引；<br>
-type:0表示报表中内容字段,1表示固定列中的字段；<br>
-colname:隐式或显式列名,可以多个列内容值；</p>
+<code>billgridreportrownumber</code>: 当前选中行的报表行号；<br>
+<code>billgridgetcolnumber(type, colname)</code>: 获取列所在报表中的索引；<br>
+<code>type</code>: 0表示报表中内容字段,1表示固定列中的字段；<br>
+<code>colname</code>: 隐式或显式列名,可以多个列内容值；</p>
 </li>
 <li>
 <p>获取指定行列单元格中的数据<br>
-billgridgettable(type)函数:获取特定类型的表对象；<br>
-type:&quot;01&quot;固定列的内容,&quot;11&quot;非固定列的内容；<br>
-使用billgridreportrownumber参数可以定位到某行；<br>
-使用billgridgetcolnumber(type, colname)函数可以定位到某列；<br>
+<code>billgridgettable(type)</code>: 获取特定类型的表对象；<br>
+<code>type</code>: &quot;01&quot;固定列的内容,&quot;11&quot;非固定列的内容；<br>
+使用<code>billgridreportrownumber</code>参数可以定位到某行；<br>
+使用<code>billgridgetcolnumber(type, colname)</code>函数可以定位到某列；<br>
 共有代码:获取单元格数据；<br>
 如果单元格为非输入类型tab.rows(rowIndex).cells(colIndex).innerText<br>
 如果单元格为输入类型tab.rows(rowIndex).cells(colIndex).value<br>
@@ -353,28 +353,28 @@ tab.rows(rowIndex).cells(colIndex).value = value2</p>
 <h3 id="1-示例代码-v2">1.示例代码</h3>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select:treeview</span> <span class="attr">property</span>=<span class="string">"nodescomp"</span> <span class="attr">expandlevel</span>=<span class="string">"1"</span> <span class="attr">showroot</span>=<span class="string">"false"</span> 	<span class="attr">collection</span>=<span class="string">"company.list"</span>	<span class="attr">nodeid</span>=<span class="string">"code"</span><span class="attr">nodetype</span>=<span class="string">"ifcompany"</span> <span class="attr">showcheckbox</span>=<span class="string">"true"</span>	<span class="attr">nodeparentid</span>=<span class="string">"parentcode"</span> <span class="attr">nodetext</span>=<span class="string">"shortname"</span> <span class="attr">onclick</span>=<span class="string">"show();"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://s1.ax1x.com/2020/05/18/YfLI4e.png" alt=""></p>
-<blockquote class="pullquote right"><p>*以上数据均为虚构，与任何公司项目没有关联</p>
+<blockquote class="pullquote right"><p>*以上数据均为虚构</p>
 </blockquote>
 <h3 id="2-标签说明-v2">2.标签说明</h3>
 <ul>
-<li>select:treeview标签:通过提供具有父子层次级别的结果集可以生树<br>
-property:唯一标识此树；<br>
-collection:具有层次的结果集,生成树的数据源；<br>
-expandlevel:展开第几层次，1表示第一层；<br>
-showcheckbox:是否在节点上显示checkbox(&quot;true&quot;显示,&quot;false&quot;不显示)；<br>
-nodeid:节点id(与结果集中字段对应，必须小写，下面一样)；<br>
-nodeparentid:父节点id(与结果集中字段对应)；<br>
-nodetype:节点类型(与结果集中字段对应)；<br>
-nodetext:节点名称(与结果集中字段对应)；<br>
-onclick:点击节点所调用的方法。</li>
+<li><code>select:treeview标签</code>: 通过提供具有父子层次级别的结果集可以生树<br>
+<code>property</code>: 唯一标识此树；<br>
+<code>collection</code>: 具有层次的结果集,生成树的数据源；<br>
+<code>expandlevel</code>: 展开第几层次，1表示第一层；<br>
+<code>showcheckbox</code>: 是否在节点上显示checkbox(&quot;true&quot;显示,&quot;false&quot;不显示)；<br>
+<code>nodeid</code>: 节点id(与结果集中字段对应，必须小写，下面一样)；<br>
+<code>nodeparentid</code>: 父节点id(与结果集中字段对应)；<br>
+<code>nodetype</code>: 节点类型(与结果集中字段对应)；<br>
+<code>nodetext</code>: 节点名称(与结果集中字段对应)；<br>
+<code>onclick</code>: 点击节点所调用的方法。</li>
 </ul>
 <h3 id="3-select-treeview标签常用函数">3.select:treeview标签常用函数:</h3>
 <ul>
-<li>nodescomp.getselectid():获取选中(点击)节点的nodeid所对应的字段在结果集的值；</li>
-<li>nodescomp.getselectid(nodetype):获取选中(点击)节点的nodeid所对应的字段在结果集的值；</li>
-<li>nodetype:表示nodetype属性所代表的字段在结果集中值,主要用于筛选出某类型(如只取公司类型的节点)的节点nodeid集合,在多选中常用到；</li>
-<li>nodescomp.getselecttype():获取选中(点击)节点的nodetype所对应的字段在结果集的值；</li>
-<li>nodescomp.getselecttext():获取选中(点击)节点的nodetext所对应的字段在结果集的值。</li>
+<li><code>nodescomp.getselectid()</code>: 获取选中(点击)节点的nodeid所对应的字段在结果集的值；</li>
+<li><code>nodescomp.getselectid(nodetype)</code>: 获取选中(点击)节点的nodeid所对应的字段在结果集的值；</li>
+<li><code>nodetype</code>: 表示nodetype属性所代表的字段在结果集中值,主要用于筛选出某类型(如只取公司类型的节点)的节点nodeid集合,在多选中常用到；</li>
+<li><code>nodescomp.getselecttype()</code>: 获取选中(点击)节点的nodetype所对应的字段在结果集的值；</li>
+<li><code>nodescomp.getselecttext()</code>: 获取选中(点击)节点的nodetext所对应的字段在结果集的值。</li>
 </ul>
 
   <a onclick="go_top()"><div class="to_top">↑</div></a>

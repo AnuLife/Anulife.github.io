@@ -283,7 +283,7 @@ function sidebar_toggle() {
 <p><strong>Anuluca</strong>     <strong>Date :</strong> 2020-05-11   <strong>Tags :</strong> 1</p>
 <div class = "articlehead" style="background-image:url('https://s1.ax1x.com/2020/08/20/dGB4Rx.jpg')"></div>
 <h3 id="1-什么是BFC？">1. 什么是BFC？</h3>
-<p>BFC全称为Block Formatting Context，即“块级格式化上下文”，它是页面中相对独立的一块渲染区域，它决定了内部的子元素如何进行摆放和定位，以及区域内部元素和区域外部元素之间的相互作用关系。</p>
+<p>全称：Block Formatting Context，即“块级格式化上下文”，它是页面中相对独立的一块渲染区域，它决定了内部的子元素如何进行摆放和定位，以及区域内部元素和区域外部元素之间的相互作用关系。</p>
 <h3 id="2-BFC有什么特点？">2. BFC有什么特点？</h3>
 <p>当一个元素容器创建BFC后，主要有以下表现特点：</p>
 <ul>
@@ -297,10 +297,10 @@ function sidebar_toggle() {
 <p>若某个元素满足以下任一条件，则会对其创建BFC：</p>
 <ul>
 <li>&lt;html&gt;根元素</li>
-<li>float的值不为none</li>
-<li>overflow的值为auto、scroll或hidden</li>
-<li>display的值为table-cell、table-caption或inline-block</li>
-<li>position的值为fixed或absolute</li>
+<li><code>float</code>的值不为<code>none</code></li>
+<li><code>overflow</code>的值为<code>auto</code>、<code>scroll</code>或<code>hidden</code></li>
+<li><code>display</code>的值为<code>table-cell</code>、<code>table-caption</code>或<code>inline-block</code></li>
+<li><code>position</code>的值为<code>fixed</code>或<code>absolute</code></li>
 </ul>
 <h3 id="4-BFC的常见用途">4. BFC的常见用途</h3>
 <p>既然BFC有如上特点，那么该如何将其利用到我们日常的布局中呢？一般来说，BFC的常见用途有如下三个：</p>
@@ -317,11 +317,11 @@ function sidebar_toggle() {
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/* HTML代码 */</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box1"</span>&gt;</span>我是box1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"bfc"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box2"</span>&gt;</span>我是box2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* CSS代码 */</span></span><br><span class="line"><span class="selector-id">#bfc</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: auto;  <span class="comment">/* 创建BFC */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样一来，<code>box1</code>和<code>box2</code>就属于两个不同的上下文，也就不会发生margin重叠了：<br>
-<img src="https://upload-images.jianshu.io/upload_images/9397803-0bd9132dc34854e6.png" alt="BFC阻止margin重叠"><br>
+<img src="https://s3.ax1x.com/2020/12/15/rKH8d1.png" alt="BFC阻止margin重叠"><br>
 不过需要注意的是，不要错误地以为BFC容器也能与<code>box1</code>之间发生margin不叠加；事实上由于此时变成了BFC容器与<code>box1</code>在同一上下文中，所以BFC容器仍会与<code>box1</code>发生margin重叠，如：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#bfc</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: auto;  <span class="comment">/* 创建BFC */</span></span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>则有：<br>
-<img src="https://upload-images.jianshu.io/upload_images/9397803-a73f49e1180d7f1a.png" alt="BFC容器与box1发生margin重叠"></p>
+<img src="https://s3.ax1x.com/2020/12/15/rKHYi6.png" alt="BFC容器与box1发生margin重叠"></p>
 <h4 id="自适应流体布局">自适应流体布局</h4>
 <p>BFC最强大的用途其实是用于自适应流体布局，这是基于BFC所确定的区域不会与外部浮动元素发生重叠的特性实现的：<br>
 假设我们需要创建一个左侧宽度固定为200px，右侧宽度自适应的两列布局，一般情况下有如下解决方案：</p>
@@ -331,8 +331,7 @@ function sidebar_toggle() {
 <p>但如果利用BFC的特点，将<code>#right</code>中的代码改为：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#right</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: auto;  <span class="comment">/* 创建BFC */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样就既保留了<code>right</code>原有的流体特性（默认占满父元素宽度），也通过BFC根据左侧浮动元素的尺寸对右侧栏的宽度进行自动剪裁，从而完成了自适应的布局效果。</p>
-<blockquote class="pullquote right"><p><font color = gray>* 版权声明：本文部分内容摘自<a href="https://www.jianshu.com/p/4ed27e9ea441" target="_blank" rel="noopener">放羊的小桃桃的博文《什么是数据仓库》</a></font></p>
-</blockquote>
+
   <a onclick="go_top()"><div class="to_top">↑</div></a>
 </div>
 

@@ -293,10 +293,10 @@ function sidebar_toggle() {
 <p>5.查看/etc/inetd.conf文件的以下字段是否被注释掉，如果被注释掉，说明开机时不自动打开Telnet服务</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@HAN04UX] /home/root <span class="comment">#more /etc/inetd.conf</span></span><br><span class="line"><span class="comment">## @(#)62 1.17.1.14 src/tcpip/etc/inetd.conf, tcpinet, tcpip610 11/2/99 09:16:20</span></span><br><span class="line"><span class="comment">## IBM_PROLOG_BEGIN_TAG</span></span><br><span class="line">......</span><br><span class="line">ftp stream tcp6 nowait root /usr/sbin/ftpd ftpd</span><br><span class="line">telnet stream tcp6 nowait root /usr/sbin/telnetd telnetd -a</span><br><span class="line">shell stream tcp6 nowait root /usr/sbin/rshd rshd</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
 <p>命令说明：<br>
-startsrc 是开启进程，stopsrc 是停止进程<br>
-lssrc   是获取子系统的状态<br>
--s　    是指定子系统<br>
--t        是指定类型</p>
+<code>startsrc</code> 是开启进程，stopsrc 是停止进程<br>
+<code>lssrc</code>   是获取子系统的状态<br>
+<code>-s</code>　    是指定子系统<br>
+<code>-t</code>        是指定类型</p>
 
   <a onclick="go_top()"><div class="to_top">↑</div></a>
 </div>
