@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+
+
+
+
+    <head>
+        <title>个人主页登陆</title>
+        <script language=javascript>
+            function toopen(){
+                if(document.getElementById("password").value=="123456"){
+                    document.forms[0].action="index.html";
+                    return true;
+                }else{
+                    alert("密码不正确！")
+                    return false;
+                }
+            }
+        </script>
+    </head>
+<body class="img">
+<div class="wrapper">
+    <div class="loginBox">
+        <div class="loginBoxCenter">
+            <form method="post" action="404.html" name="myform" >
+                <p><label for="username">用户名：</label></p>
+                <p>531680742</p>
+                <p><label for="password">密码：</p>
+                <p><input type="password" id="password" name="password" class="loginInput" placeholder="请输入密码" value=""
+
+                /></p>         </div>
+        <div class="loginBoxButtons">
+            <input type="submit" value="登陆" class="loginBtn" onclick="return toopen();">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

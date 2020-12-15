@@ -1,0 +1,71 @@
+*{
+    margin: 0 auto;
+    font-size: 19px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    padding: 0px;
+}
+.bodybox{
+    min-width: 848px;
+    min-height:424px;
+}
+a{
+    text-decoration: none;
+    color: rgb(101, 119, 134);
+}
+li{
+    list-style: none;
+}
+input,select{
+    background-color: transparent;
+    border: 0px;
+    text-decoration: none;
+    outline: none;
+}
+div{
+    word-wrap:break-word
+}
+#anuluca{
+    width: 150px;
+    height: 30px;
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 30px;
+    text-align: center;
+    background-color: rgba(14,14,14,0.5);
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btn{
+    width: 75px;
+    height: 40px;
+    display: block;
+    font-weight: bold;
+    border:1px solid #1DA1F2;
+    color: white;
+    background-color: #1DA1F2;
+    border-radius: 20px;
+    font-size: 15px;
+    margin-top: 25px;
+    cursor: pointer;
+    line-height: 40px;
+    text-align: center;
+}
+textarea{
+    height: auto;
+    border: 0;
+    text-decoration: none;
+    resize: none;
+    outline: none;
+    margin-top: 24px;
+    overflow: hidden;
+}
+.hoverbtn{
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+}

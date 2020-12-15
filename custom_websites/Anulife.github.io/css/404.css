@@ -1,0 +1,36 @@
+.middle{
+    height: 778px;
+}
+.middlein{
+    height: 778px;
+    background-color:rgba(8,8,8,0.7);
+    position: relative;
+    margin-top:0;
+    z-index:-1;
+}
+.blackback{
+    height: 1080px;
+}
+.anulife{
+    font-style: normal;
+}
+.anulife .black{
+    color:rgba(255,255,255,0.8)
+}
+.intro{
+    width: 400px;
+    height: 0;
+    font-size: 30px;
+    margin-top: 465px;
+    font-weight: bold;
+    font-family:pokemondp;
+    letter-spacing: 2px;
+    color:white;
+    text-shadow:2px 2px 1px orangered;
+}
+.p2{
+    font-size: 25px;
+    font-weight: 900;!important;
+    letter-spacing: 4px;
+    text-shadow:2px 2px 1px orangered;
+}

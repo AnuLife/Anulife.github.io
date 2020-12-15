@@ -1,0 +1,760 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+    padding:0px;
+    margin:0px auto;
+    list-style:none;
+}
+body{
+    background-color: black;
+    background-image: url("../images/homePage/temp2.jpg");
+}
+.neckhair{
+    width: 0;
+    height: 10px;
+    background-color: orangered;
+    z-index: 0;
+    text-align: center;
+    position: fixed;
+}
+.title{
+    width: 100%;
+    height: 650px;
+    background-image: url("../images/homePage/titleback.png");
+    background-size: cover;
+    background-position:bottom;
+    padding-top: 30px;
+    border-bottom: 1px solid #003b3d;
+}
+.titlein{
+    width: 1100px;
+}
+.anulife{
+    font-size: 200px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: pokemondp;
+    text-align: center;
+    padding-top: 180px;
+}
+.anulife .black{
+    position: absolute;
+    left:0;
+    right:0;
+    color:rgba(255,255,255,0.9)
+}
+.anulife .red{
+    position: absolute;
+    left:8px;
+    right:0;
+    color:orangered;
+}
+.anulife .blue{
+    position: absolute;
+    left:0;
+    right:8px;
+    color:#38f7ff;
+}
+.circle{
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    left:0;
+    right:0px;
+    margin-top: 180px;
+    border-radius: 50%;
+    border: 100px double orangered;
+    z-index: 0;
+    /*background-color: #222222;*/
+    background-image: url("../images/homePage/circleback.png");
+    background-position: center;
+}
+.titlebg{
+    width: 100%;
+    height: 650px;
+    background-color: white;
+    z-index: 100;
+    position: absolute;
+}
+.intro{
+    width: 700px;
+    height: 0px;
+    position: relative;
+    bottom: 270px;
+    font-size: 20px;
+    font-family: bank;
+    color:white;
+}
+.profilebtn{
+    width: 80px;
+    height: 80px;
+    background-color: orangered;
+    background-image: url("../images/homePage/profilebtn.png");
+    background-size: cover;
+    border-radius: 50%;
+    position: absolute;
+    left:0;
+    right:0;
+    top:560px;
+    cursor: pointer;
+    transition:width 0.5s, background 0.5s, transform 0.5s;
+}
+.profilebtn:hover{
+    width: 200px;
+    border-radius: 50px;
+    background-color: orangered;
+    background-image: url("../images/homePage/aboutme.jpg");
+}
+.neck{
+    width: 0;
+    height: 5px;
+    background-color: orangered;
+}
+
+.yinying{
+    width: 100%;
+    height: 30px;
+    background-image: url("../images/homePage/jb.png");
+    background-size: contain;
+    position: absolute;
+    z-index: -1;
+}
+.yinying2{
+    width: 100%;
+    height: 30px;
+    background-image: url("../images/homePage/jb2.png");
+    background-size: contain;
+    position: absolute;
+    top: 1462px;
+    z-index: -1;
+}
+.middle{
+    width: 100%;
+    height: 812px;
+
+    background-size: cover;
+}
+.middlein{
+    width: 1100px;
+    height: 792px;
+    background-color:rgba(8,8,8,0.3);
+    position: absolute;
+    margin-top: 20px;
+    border-left: 1px solid #222222;
+    border-right: 1px solid #222222;
+    left: 0;
+    right: 0;
+
+}
+.functions{
+    width: 100%;
+    height: 120px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    border: 1px solid #222222;
+    cursor: pointer;
+}
+.redstick1{
+    width: 55%;
+    height: 5px;
+    background-color: orangered;
+    position: absolute;
+    left: 30px;
+    bottom:10% ;
+    z-index: 20;
+}
+.bluestick1{
+    width: 0px;
+    height: 5px;
+    background-color: black;
+    position: absolute;
+    left: 30px;
+    bottom:10% ;
+    z-index: 20;
+}
+.blogdate{
+    font-size: 10px;
+    position: absolute;
+    right: 3%;
+    top: -40px;
+    font-family: pokemon-font;
+    color: orangered;
+    z-index: 20;
+}
+.blogbtn{
+    width: 600px;
+    height: 120px;
+    line-height: 120px;
+    color: #888888;
+    font-family: pokemondp;
+    font-size: 25px;
+    position: absolute;
+    float: left;
+    transition:transform 0.5s;
+}
+.blog{
+    margin-left: 250px;
+    float: left;
+    position: absolute;
+    z-index: 20;
+    text-shadow:1px 1px 1px orangered;
+}
+.blogbtn:hover{
+    background-color: black;
+}
+.bloglogo{
+    width: 50px;
+    height: 50px;
+    margin-left: 180px;
+    margin-top: 35px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    z-index: 20;
+}
+.bloglogo img{
+    position: absolute;
+    z-index: 20;
+}
+.logoback{
+    position: absolute;
+    top: -50px;
+    z-index: 20;
+}
+.blueback1{
+    width: 0px;
+    height: 120px;
+    position: absolute;
+    background-color: rgba(56,247,255,0.8);
+    z-index: 1;
+}
+.links{
+    width: 499px;
+    height: 120px;
+    float: right;
+    font-family: pokemondp;
+}
+.weibobtn{
+    width: 33%;
+    height: 120px;
+    float: left;
+    border-left: 1px solid #222222;
+}
+.weibobtn:hover{
+    background-color: black;
+    text-shadow:1px 1px 1px orangered;
+}
+.twitterbtn{
+    width: 33%;
+    height: 120px;
+    float: left;
+}
+.twitterbtn:hover{
+    background-color: black;
+    text-shadow:1px 1px 1px orangered;
+}
+.githubbtn{
+    width: 33%;
+    height: 120px;
+    float: left;
+}
+.githubbtn:hover{
+    background-color: black;
+    text-shadow:1px 1px 1px orangered;
+}
+.weibologo{
+    width: 50px;
+    height: 50px;
+    margin-top: 25px;
+    overflow: hidden;
+}
+.weibo{
+    text-align: center;
+    color: #888888;
+}
+.twitterlogo{
+    width: 50px;
+    height: 50px;
+    margin-top: 25px;
+    overflow: hidden;
+}
+.twitter{
+    text-align: center;
+    color: #888888;
+}
+.githublogo{
+    width: 50px;
+    height: 50px;
+    margin-top: 25px;
+    overflow: hidden;
+}
+.links img{
+    margin-top: -50px;
+}
+.github{
+    text-align: center;
+    color: #888888;
+}
+.pics{
+    width: 1100px;
+    height: 500px;
+    margin-top: 130px;
+}
+.blackback{
+    width: 1096px;
+    height: 150px;
+    margin-top: 360px;
+    margin-left: 2px;
+    position: absolute;
+    background-color:rgba(9,9,9,0.5);
+}
+.functions2{
+    width: 1100px;
+    height: 150px;
+    margin-top: 10px;
+    position: absolute;
+    background-color:rgba(9,9,9,0.5);
+}
+/*.functions3{*/
+/*width: 1100px;*/
+/*height: 150px;*/
+/*background-color: rgba(123,56,86,0.5);*/
+/*}*/
+.redstick2{
+    width: 55%;
+    height: 5px;
+    background-color: orangered;
+    position: absolute;
+    left: 30px;
+    bottom:10% ;
+    z-index: 20;
+}
+.bluestick2{
+    width: 0px;
+    height: 5px;
+    background-color: black;
+    position: absolute;
+    left: 30px;
+    bottom:10% ;
+    z-index: 20;
+}
+.blueback2{
+    width: 0px;
+    height: 150px;
+    position: absolute;
+    background-color: rgba(56,247,255,0.8);
+    z-index: 1;
+}
+.resourcebtn{
+    width: 400px;
+    height: 150px;
+    float: left;
+    border: 1px solid #222222;
+    cursor: pointer;
+    position: relative;
+    text-shadow:1px 1px 1px orangered;
+}
+.resourcebtn:hover{
+    background-color: black;
+}
+
+.resourcelogo{
+    width: 60px;
+    height: 60px;
+    margin-top: 42px;
+    margin-left: 65px;
+    float: left;
+    overflow: hidden;
+    position: absolute;
+    z-index: 20;
+}
+.resourcelogo img{
+    margin-top: -60px;
+}
+.resource{
+    width: 210px;
+    height: 80px;
+    margin-top: 35px;
+    line-height: 80px;
+    float: left;
+    color: #888888;
+    font-family: pokemondp;
+    font-size: 25px;
+    margin-left: 10px;
+    position: absolute;
+    left: 125px;
+    z-index: 20;
+}
+.privatebtn{
+    width: 697px;
+    height: 150px;
+    border: 1px solid #222222;
+    border-left: 0px;
+    float: right;
+    font-size: 25px;
+    font-family: pokemondp;
+    color: orangered;
+    text-align: center;
+    line-height: 150px;
+    cursor: pointer;
+    position: relative;
+}
+.privatebox{
+    width: 0;
+    height: 150px;
+    float: left;
+    margin-left: 402px;
+    background-color: whitesmoke;
+    position: absolute;
+}
+.plz{
+    font-family: pokemondp;
+    color: black;
+    position: absolute;
+    font-size: 25px;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+#password{
+    width: 400px;
+    border: 0px;
+    outline:none;
+    margin-left: 100px;
+    background-color:rgba(0,0,0,0);
+    font-size: 30px;
+    caret-color:orangered;
+    margin-top: 75px;
+}
+.passwordbtn{
+    width: 0px;
+    height: 2px;
+    background-color: black;
+    margin-left: 100px;
+    margin-top: 6px;
+}
+.confirm{
+    width: 60px;
+    height: 45px;
+    border: 0;
+    float: right;
+    margin-right: 120px;
+    margin-top: 75px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 黑体;
+    background-color: rgba(0,0,0,0);
+}
+.confirm:hover{
+    color: orangered;
+}
+.x{
+    font-family: pokemon-font;
+    font-size: 10px;
+    color: orangered;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+}
+.x:hover{
+    color: black;
+}
+.privatebtn:hover{
+    background-color: black;
+}
+.redstick3{
+    width: 30%;
+    height: 5px;
+    background-color: orangered;
+    position: absolute;
+    left: 30px;
+    bottom:10% ;
+    z-index: 20;
+}
+.bluestick3{
+    width: 0px;
+    height: 5px;
+    background-color: #38f7ff;
+    position: absolute;
+    left: 30px;
+    bottom:10% ;
+    z-index: 20;
+}
+.foot{
+    width: 100%;
+    height: 210px;
+    background-image: url("../images/homePage/footback.png");
+    border-top: 1px solid #003b3d;
+}
+.footin{
+    width: 1100px;
+    height: 210px;
+}
+.leftfoot{
+    width: 200px;
+    height: 100px;
+    font-size: 40px;
+    font-family: pokemondp;
+    font-weight: bold;
+    padding-top:40px;
+    padding-left: 40px;
+    color: white;
+    float: left;
+    text-shadow:2px 2px 1px orangered;
+}
+.rightfoot{
+    color: silver;
+    float: right;
+    text-align: right;
+    font-family: pokemondp;
+    margin-right: 40px;
+    margin-top: 40px;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 1px;
+}
+.rightfoot a{
+    text-decoration:none;
+    color:silver;
+}
+.rightfoot a:hover{
+    color: white;
+}
+.other{
+    width: 1100px;
+    height: 30px;
+    padding-top: 170px;
+    color: silver;
+    line-height: 20px;
+    font-size: 18px;
+}
+.shijian{
+    padding-left: 40px;
+    font-family: pokemondp;
+    float: left;
+}
+.updatetime{
+    padding-right: 40px;
+    font-family: 微软雅黑;
+    font-size: 14px;
+    float: right;
+}
+.welcome{
+    width: 100%;
+    height: 0px;
+    background-color: rgba(34,34,34,0.9);
+    color: silver;
+    font-family: pokemondp;
+    letter-spacing: 1px;
+    position: fixed;
+    bottom: 0px;
+    border-top:1px solid rgba(56,247,255,0.2);
+    border-right: 0px;
+    display: block;
+    text-align: center;
+    padding-top: 0px;
+}
+.welcome b{
+    margin-left: 10%;
+}
+.gocha:hover{
+    color: white;
+    cursor: pointer;
+}
+.sidebar{
+    height: 214px;
+    position: fixed;
+    top: 40%;
+    right: 0;
+    cursor: pointer;
+    color: silver;
+}
+.sidetxt{
+    float: right;
+    line-height: 70px;
+    margin-right: 25px;
+    font-family: pokemondp;
+}
+.qqbtn{
+    width: 200px;
+    height: 70px;
+    border: 1px solid #111111;
+    background-color: #222222;
+    border-right: 0;
+    border-bottom: 0;
+    position: absolute;
+    right:-130px;
+}
+.wxbtn{
+    width: 220px;
+    height: 70px;
+    border: 1px solid #111111;
+    background-color: #222222;
+    border-right: 0;
+    position: absolute;
+    right:-150px;
+    margin-top: 71px;
+}
+.mailbtn{
+    width: 280px;
+    height: 70px;
+    border: 1px solid #111111;
+    background-color: #222222;
+    border-right: 0;
+    position: absolute;
+    right:-210px;
+    margin-top: 142px;
+}
+.qqlogo{
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+    float: left;
+}
+.qqlogo2{
+    position: absolute;
+}
+.wxlogo{
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+    float: left;
+}
+.wxlogo2{
+    position: absolute;
+}
+.maillogo{
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+    float: left;
+}
+.maillogo2{
+    position: absolute;
+}
+.blackscreen{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    position: fixed;
+    z-index: 200;
+}
+.qqqr,.wxqr{
+    width: 300px;
+    height: 340px;
+    background-color: rgba(255,255,255,0.9);
+    position: fixed;
+    top: 35%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 201;
+}
+.qqqr img,.wxqr img{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.wrongcode{
+    width: 300px;
+    height: 130px;
+    background-color: rgba(255,255,255,0.9);
+    position: fixed;
+    top: 35%;
+    left: 0;
+    right: 0;
+    z-index: 201;
+    padding-left: 30px;
+}
+.nocode{
+    width: 330px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.9);
+    position: fixed;
+    top: 35%;
+    left: 0;
+    right: 0;
+    z-index: 201;
+    font-family: pokemon-font;
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.wrongcode .a{
+    margin-top: 30px;
+    font-size: 20px;
+    font-family: pokemon-font;
+    color: orangered;
+    text-shadow:1px 1px 1px #38f7ff;
+    font-weight: bold;
+}
+.wrongcode .b{
+    margin-top: 20px;
+    font-family: pokemon-font;
+    font-size: 12px;
+    cursor: pointer;
+}
+.wrongcode .b:hover{
+    color: #38f7ff;
+    text-shadow:1px 1px 1px black;
+}
+
+
+
+
+
+
+
+#wrap{
+    position: absolute;
+    overflow: hidden;
+    top:0; left:0; right:0; bottom:0;
+    margin:auto;
+    margin-top: 150px;
+    width: 1000px;
+    height: 450px;
+    border-left: 5px solid orangered;
+    border-right: 5px solid #00dce6;
+}
+#wrap > ul{
+    width: 120%;
+    list-style: none;
+}
+#wrap > ul > li{
+    float: left;
+    width: 100px;
+    height: 450px;
+    cursor: pointer;
+}
+#wrap > ul > li:nth-child(1){
+    background: url('../images/homePage/1.jpg') no-repeat center/cover;
+    width: 700px;
+}
+#wrap > ul > li:nth-child(2){
+    background: url('../images/homePage/2.jpg') no-repeat center/cover;
+}
+#wrap > ul > li:nth-child(3){
+    background: url('../images/homePage/3.jpg') no-repeat center/cover;
+}
+#wrap > ul > li:nth-child(4){
+    background: url('../images/homePage/4.jpg') no-repeat center/cover;
+}
+#wrap > ul > li > .text{
+    width: 100px;
+    height: 100%;
+    float: left;
+    background: #000;
+    opacity: .7;
+}
+#wrap > ul > li > .text p{
+    padding: 20px 40px;
+    font-family: 'Microsoft yahei';
+    color: #fff;
+    font-weight: bold;
+    font-size: 30px;
+}
