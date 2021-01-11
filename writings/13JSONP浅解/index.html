@@ -108,7 +108,8 @@ document.addEventListener('DOMContentLoaded', function () {
 </ul>
 <h2 id="笔记-Phase-2">笔记 ( Phase 2 )</h2>
 <ul>
-<li><a href="/writings/85React%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><strong>86</strong> React项目结构</a></li>
+<li><a href="/writings/87Homebrew%E5%A4%A7%E9%99%86%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC"><strong>87</strong> Homebrew大陆安装脚本</a></li>
+<li><a href="/writings/86React%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><strong>86</strong> React项目结构</a></li>
 <li><a href="/writings/85React%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><strong>85</strong> React生命周期</a></li>
 <li><a href="/writings/84React%E5%85%A5%E9%97%A8%E4%BA%95%E5%AD%97%E6%A3%8B"><strong>84</strong> React入门 : 井字棋</a></li>
 <li><a href="/writings/83Vscode%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5"><strong>83</strong> Vscode自定义代码片段</a></li>
@@ -291,7 +292,7 @@ function sidebar_toggle() {
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, &#123;<span class="string">"buckle"</span>: <span class="string">"my shoe"</span>&#125;]</span><br></pre></td></tr></table></figure>
 <p>JSONP看起来与JSON差不多，只不过是被包含在函数调用中的JSON，它会发送这样一个包裹后的JSON响应：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">handleResponse([l, <span class="number">2</span>, &#123;<span class="string">"buckle"</span>: <span class="string">"my shoe"</span>&#125;])</span><br></pre></td></tr></table></figure>
-<p>包裹后的响应会成为&lt;script&gt;元素的内容，它先判断JSON编码后的数据，然后把它传递给handleResponse()函数</p>
+<p>包裹后的响应会成为&lt;script&gt;元素的内容，它先判断JSON编码后的数据，然后把它传递给<code>handleResponse()</code>函数</p>
 <p>在实践中，支持JSONP的服务不会强制指定客户端必须实现的回调函数名称，比如handleResponse。相反，它们使用査询参数的值，允许客户端指定一个函数名，然后使用函数名去填充响应。许多支持JSONP的服务都能分辨出这个参数名。另一个常见的参数名称是callback，为了让使用到的服务支持类似特殊的需求，就需要在代码上做一些修改了</p>
 <p>JSONP由两部分组成：回调函数和数据。回调函数是当响应到来时应该在页面中调用的函数。回调函数的名字一般是在请求中指定的。而数据就是传入回调函数中的JSON数据</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//freegeoip.net/json/?callback=handleResponse</span></span><br></pre></td></tr></table></figure>
