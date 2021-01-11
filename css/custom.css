@@ -459,3 +459,6 @@
     display: inline-block!important;
     position: absolute;
 }
+.book-post-info{
+  background-color: #fff;
+}
