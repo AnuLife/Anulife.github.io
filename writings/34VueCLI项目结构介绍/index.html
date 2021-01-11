@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <li><a href="/writings/64Chrome%E8%B7%A8%E5%9F%9F%E9%85%8D%E7%BD%AE"><strong>64</strong> Chrome跨域配置</a></li>
 <li><a href="/writings/63windows%E5%85%B3%E9%97%AD%E8%A2%AB%E5%8D%A0%E7%94%A8%E7%9A%84%E7%AB%AF%E5%8F%A3"><strong>63</strong> windows关闭被占用的端口</a></li>
 <li><a href="/writings/62fatal-HttpRequestExceptionencountered%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><strong>62</strong> fatal:HttpRequestException encountered解决方法</a></li>
-<li><a href="/writings/61nodejs%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><strong>61</strong> node.js安装与配置</a></li>
+<li><a href="/writings/61Windows%E4%B8%8Bnodejs%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><strong>61</strong> Windows下node.js安装与配置</a></li>
 <li><a href="/writings/60nodeisnotavalidWin32application%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><strong>60</strong> node is not avalid Win32 application报错解决办法</a></li>
 <li><a href="/writings/59VueTs%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><strong>59</strong> Vue+Ts项目结构</a></li>
 <li><a href="/writings/58elementui%E7%9A%84el-input%E6%8C%89%E5%9B%9E%E8%BD%A6%E9%94%AE%E5%90%8E%E6%89%A7%E8%A1%8C%E6%96%B9%E6%B3%95"><strong>58</strong> elementui的el-input按回车键后执行方法</a></li>
@@ -290,24 +290,24 @@ function sidebar_toggle() {
 <img src="https://s1.ax1x.com/2020/09/17/wfdlAH.png" alt=""></p>
 <h2 id="文件结构细分">文件结构细分</h2>
 <h5 id="1、build——【webpack配置】">1、build——【webpack配置】</h5>
-<p>build文件主要是webpack的配置，主要启动文件是dev-server.js，当我们输入npm run dev首先启动的就是dev-server.js，它会去检查node及npm版本，加载配置文件，启动服务。<br>
+<p>build文件主要是webpack的配置，主要启动文件是<code>dev-server.js</code>，当我们输入<code>npm run dev</code>首先启动的就是<code>dev-server.js</code>，它会去检查node及npm版本，加载配置文件，启动服务。<br>
 <img src="https://s1.ax1x.com/2020/09/17/wfdMHe.png" alt=""></p>
 <h5 id="2、config——【vue项目配置】">2、config——【vue项目配置】</h5>
 <p>config文件主要是项目相关配置，我们常用的就是当端口冲突时配置监听端口，打包输出路径及命名等<br>
 <img src="https://s1.ax1x.com/2020/09/17/wfdBNj.png" alt=""></p>
 <h5 id="3、node-modules——【依赖包】">3、node_modules——【依赖包】</h5>
-<p>node_modules里面是项目依赖包，其中包括很多基础依赖，自己也可以根据需要安装其他依赖。安装方法为打开cmd，进入项目目录，输入npm install [依赖包名称],回车。</p>
+<p>node_modules里面是项目依赖包，其中包括很多基础依赖，自己也可以根据需要安装其他依赖。安装方法为打开cmd，进入项目目录，输入<code>npm install [依赖包名称]</code>,回车。</p>
 <p>在两种情况下我们会自己去安装依赖：</p>
 <ul>
 <li>
-<p>项目运行缺少该依赖包：例如项目加载外部css会用到的css-loader，路由跳转vue-loader等（安装方法示例：npm install css-loader）</p>
+<p>项目运行缺少该依赖包：例如项目加载外部css会用到的<code>css-loader</code>，路由跳转<code>vue-loader</code>等（安装方法示例：<code>npm install css-loader</code>）</p>
 </li>
 <li>
-<p>安装插件：如vux（基于WEUI的移动端组件库），vue-swiper（轮播插件）</p>
+<p>安装插件：如<code>vux</code>（基于WEUI的移动端组件库），<code>vue-swiper</code>（轮播插件）</p>
 </li>
 </ul>
 <blockquote>
-<p>注：有时会安装指定依赖版本，需在依赖包名称后加上版本号信息，如安装11.1.4版本的vue-loader，输入npm install vue-loader@11.1.4</p>
+<p>注：有时会安装指定依赖版本，需在依赖包名称后加上版本号信息，如安装11.1.4版本的<code>vue-loader</code>，输入<code>npm install vue-loader@11.1.4</code></p>
 </blockquote>
 <h5 id="4-src——【项目核心文件】">4.src——【项目核心文件】</h5>
 <h6 id="4-1-index-html【主页】">4.1 index.html【主页】</h6>
@@ -319,29 +319,29 @@ function sidebar_toggle() {
 <ul>
 <li>【template】</li>
 </ul>
-<p>其中模板只能包含一个父节点，也就是说顶层的div只能有一个（例如下图，父节点为#app的div，其没有兄弟节点）</p>
-<p><code>&lt;router-view&gt;&lt;/router-view&gt;</code>是子路由视图，后面的路由页面都显示在此处</p>
+<p>其中模板只能包含一个父节点，也就是说顶层的div只能有一个（例如下图，父节点为<code>#app</code>的div，其没有兄弟节点）</p>
+<p><code>&lt;router-view&gt; &lt;/router-view&gt;</code>是子路由视图，后面的路由页面都显示在此处</p>
 <p>打一个比喻吧,<code>&lt;router-view&gt;</code>类似于一个插槽，跳转某个路由时，该路由下的页面就插在这个插槽中渲染显示</p>
 <ul>
 <li>【script】</li>
 </ul>
-<p>vue通常用es6来写，用export default导出，其下面可以包含数据data，生命周期(mounted等)，方法(methods)等，具体语法请看vue.js文档，在后面我也会通过例子来说明。</p>
+<p>vue通常用es6来写，用<code>export default</code>导出，其下面可以包含数据data，生命周期(mounted等)，方法(methods)等，具体语法请看vue.js文档，在后面我也会通过例子来说明。</p>
 <ul>
 <li>【style】</li>
 </ul>
 <p>样式通过style标签<code>&lt;style&gt;&lt;/style&gt;</code>包裹，默认是影响全局的，如需定义作用域只在该组件下起作用，需在标签上加scoped，<code>&lt;style scoped&gt;&lt;/style&gt;</code></p>
-<p>如要引入外部css文件，首先需给项目安装css-loader依赖包，打开cmd，进入项目目录，输入npm install css-loader,回车。安装完成后，就可以在style标签下import所需的css文件，例如：</p>
+<p>如要引入外部css文件，首先需给项目安装<code>css-loader</code>依赖包，打开cmd，进入项目目录，输入<code>npm install css-loader</code>,回车。安装完成后，就可以在style标签下import所需的css文件，例如：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    import './assets/css/public.css'</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这样，我们就可以把style下的样式封装起来，写到css文件夹，再引入到页面使用，整个vue页面也看上去更简洁。</p>
+<p>这样就可以把style下的样式封装起来，写到css文件夹，再引入到页面使用，整个vue页面也看上去更简洁。</p>
 <h6 id="4-3-main-js【js入口文件】">4.3 main.js【js入口文件】</h6>
-<p>main.js主要是引入vue框架，根组件及路由设置，并且定义vue实例，下图中的<br>
-components:{App}就是引入的根组件App.vue<br>
+<p><code>main.js</code>主要是引入vue框架，根组件及路由设置，并且定义vue实例，下图中的<br>
+<code>components:{App}</code>就是引入的根组件<code>App.vue</code><br>
 后期还可以引入插件，当然首先得安装插件。<br>
 <img src="https://s1.ax1x.com/2020/09/17/wfdsCn.png" alt=""></p>
 <h6 id="4-4-router【路由配置】">4.4 router【路由配置】</h6>
 <p>router文件夹下，有一个index.js，即为路由配置文件<br>
 <img src="https://s1.ax1x.com/2020/09/17/wfd0EQ.png" alt=""><br>
-这里定义了路径为’/'的路由，该路由对应的页面是Hello组件，所以当我们在浏览器url访问http://localhost:8080/#/时就渲染的Hello组件</p>
+这里定义了路径为’/'的路由，该路由对应的页面是Hello组件，所以当我们在浏览器url访问<code>http://localhost:8080/#/</code>时就渲染的Hello组件</p>
 <p>类似的，我们可以设置多个路由，‘/index’,’/list’之类的，当然首先得引入该组件，再为该组件设置路由。</p>
 
   <a onclick="go_top()"><div class="to_top">↑</div></a>
