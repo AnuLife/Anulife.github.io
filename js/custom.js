@@ -193,11 +193,11 @@ $("#wrap>ul>li").mouseenter(function () {
 
 //右下角链接互动
 $(".link_l").mouseenter(function () {
-    $(this).stop().animate({ backgroundColor: "white", border: "1px solid #3B3E40" }, 50)
+    $(this).stop().css({ backgroundColor: "white" })
     $(this).find("span").css({ color: "#3B3E40" })
     $(this).find("div").css({ "background-position": "0 -29px" })
 }).stop().mouseleave(function () {
-    $(this).stop().animate({ backgroundColor: "rgba(0, 0, 0, 0.5)", border: "0" }, 50)
+    $(this).stop().css({ backgroundColor: "rgba(0, 0, 0, 0.5)", border: "0" })
     $(this).find("span").css({ color: "white" })
     $(this).find("div").css({ "background-position": "0 0" })
 })
