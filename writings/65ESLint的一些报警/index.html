@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Anuluca的个人网站">
+    <meta name="keywords" content="anuluca,路卡,路卡的自由庭院岛,前端开发,vue,javascript">
 
     
       <link rel="icon" href="/favicon.png" />
@@ -14,6 +16,7 @@
           ESLint的一些报警 - 路卡的自由庭院岛
         
     </title>
+
 
     <!-- Spectre.css framework -->
     <link rel="stylesheet" href="https://unpkg.zhimg.com/spectre.css/dist/spectre.min.css">
@@ -28,7 +31,7 @@
 <!--    (弃用)夜间模式-->
     <link rel="stylesheet" href="" rel="stylesheet" type="text/css" id="darktheme"  />
         <script>
-            function night() {
+            function night() {<title>XHTML Tag Reference</title>
                 if (document.getElementsByName("nightmode").checked = true) {
                     alert("on")
                     var oLink = document.getElementById('darktheme');
@@ -108,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </ul>
 <h2 id="笔记-Phase-2">笔记 ( Phase 2 )</h2>
 <ul>
-<li><a href="/writings/89Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0github%E6%97%B6%E6%8F%90%E7%A4%BAtypeError"><strong>89</strong> Hexo博客部署到github时提示typeError [ERR_INVALID_ARG_TYPE]: The “mode” argument must be integer. Recei…</a></li>
+<li><a href="/writings/90ClipboardJs%E5%AE%9E%E7%8E%B0%E5%A4%8D%E5%88%B6%E5%8A%9F%E8%83%BD"><strong>90</strong> clipboard.js实现复制功能</a></li>
 <li><a href="/writings/88Mac%E5%B8%B8%E8%A7%84%E5%AE%89%E8%A3%85nvm%E5%B9%B6%E4%B8%8B%E8%BD%BD%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%ACnode"><strong>88</strong> Mac常规安装nvm并下载指定版本node</a></li>
 <li><a href="/writings/87Homebrew%E5%A4%A7%E9%99%86%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC"><strong>87</strong> Homebrew大陆安装脚本</a></li>
 <li><a href="/writings/86React%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><strong>86</strong> React项目结构</a></li>
@@ -454,7 +457,7 @@ function sidebar_toggle() {
 
 <script>    
   //clipboard初始化  
-  var clipboard = new ClipboardJS('.btn');    
+  let clipboard = new ClipboardJS('.btn');    
   clipboard.on('success', function(e) {    
     $(".clipboard_success").css({display:"block"}) 
     setTimeout(() => {

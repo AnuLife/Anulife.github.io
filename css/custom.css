@@ -226,7 +226,11 @@
   width: 20px;
   height: 20px;
   position: fixed;
-  bottom: 20px; }
+  bottom: 20px;
+  z-index: -1; }
+
+.accordion-body, .uncollapsible, .accordion {
+  background-color: #f7f8f9; }
 
 /*游戏页面*/
 .textnintendoswitch {
