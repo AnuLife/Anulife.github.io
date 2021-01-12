@@ -210,6 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </ul>
 <h2 id="工具">工具</h2>
 <ul>
+<li><a href="/tools/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E5%B8%B8%E7%94%A8%E8%89%B2%E5%BD%A9">网页设计常用色彩</a></li>
 <li><a href="/tools/%E8%90%A5%E9%94%80%E5%8F%B7%E7%94%9F%E6%88%90%E5%99%A8">营销号生成器</a></li>
 <li><a href="/tools/%E4%BB%8A%E5%B9%B4%E6%98%AF%E9%97%B0%E5%B9%B4%E8%BF%98%E6%98%AF%E5%B9%B3%E5%B9%B4%EF%BC%9F">今年是闰年还是平年？</a></li>
 <li><a href="/daily_update/%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E4%B8%9C%E8%A5%BF">归档</a></li>
@@ -223,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </ul>
 <!--more-->
 <ul>
-<li><a href="/daily_update/%E6%89%93%E8%B5%8F">🎁 打赏</a></li>
+<li><a href="/404">🎁 给点</a></li>
 <li><a href="/daily_update/%E6%A0%B7%E5%BC%8Fdemo">🎓 Demo</a></li>
 </ul>
 <h1 id="div-class-backlogo-div"><em><a href="/oldsite"><div class="backlogo"></div></a></em></h1>
@@ -437,7 +438,7 @@ function sidebar_toggle() {
   <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
 </div>
 <div class="bottomline"></div>
-
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script src="/js/jquery.color.js"></script>
 <script type="text/javascript" src="/js/TweenMax.min.js"></script>
 <!--<script>-->
@@ -445,6 +446,21 @@ function sidebar_toggle() {
 <!--</script>-->
 <script src="/js/custom.js"></script>
 <script src="/js/onload.js"></script>
+
+<script>    
+  //clipboard初始化  
+  var clipboard = new ClipboardJS('.btn');    
+  clipboard.on('success', function(e) {    
+    $(".clipboard_success").css({display:"block"}) 
+    setTimeout(() => {
+      $(".clipboard_success").stop().animate({ opacity: 1 }, 5)
+      $(".clipboard_success").delay(600).animate({ opacity: 0 }, 150 )
+    }, 0);
+  });    
+  clipboard.on('error', function(e) {        
+  });  
+</script>
+<div class="clipboard_success">&nbsp;&nbsp;复制成功！</div>
 </body>
 </html>
 
