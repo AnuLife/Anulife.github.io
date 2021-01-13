@@ -13,7 +13,7 @@
 
     <title>
         
-          随拍2017~2016 - 路卡的自由庭院岛
+          原型与原型链 - 路卡的自由庭院岛
         
     </title>
 
@@ -254,29 +254,53 @@ function sidebar_toggle() {
         </div>
         <div class="book-content">
           <div class="book-post">
-  <style>
-  img{
-    height: 40%;
-    width: 40%;
-  }
-</style>
-<h1 id="随拍-2017-2016"><a href="/album/%E9%9A%8F%E6%8B%8D/%E9%9A%8F%E6%8B%8D">随拍</a> / 2017~2016</h1>
-<h3 id="2017-01-27">2017/01/27</h3>
-<h2 id=""><img src="https://s1.ax1x.com/2020/05/17/YRXes0.jpg" alt=""></h2>
-<h3 id="2017-01-21">2017/01/21</h3>
-<h2 id="-v2"><img src="https://s1.ax1x.com/2020/05/17/YRXZMq.jpg" alt=""></h2>
-<h3 id="2017-01-15">2017/01/15</h3>
-<h2 id="-v3"><img src="https://s1.ax1x.com/2020/05/17/YRXEzn.jpg" alt=""></h2>
-<h3 id="2016-09-24">2016/09/24</h3>
-<h2 id="-v4"><img src="https://s1.ax1x.com/2020/05/17/YRXFiQ.jpg" alt=""></h2>
-<h3 id="2016-07-29">2016/07/29</h3>
-<h2 id="-v5"><img src="https://s1.ax1x.com/2020/05/17/YRXkGj.jpg" alt=""></h2>
-<h3 id="2016-06-05">2016/06/05</h3>
-<h2 id="-v6"><img src="https://s1.ax1x.com/2020/05/17/YRXKdU.jpg" alt=""></h2>
-<h3 id="2016-06-01">2016/06/01</h3>
-<h2 id="-v7"><img src="https://s1.ax1x.com/2020/05/17/YRXARs.jpg" alt=""></h2>
-<h3 id="2016-05-14">2016/05/14</h3>
-<h2 id="-v8"><img src="https://s1.ax1x.com/2020/05/17/YRXli4.jpg" alt=""></h2>
+  <h1 id="￼9">原型与原型链</h1>
+<p><strong>Anuluca</strong>     <strong>Date :</strong> 2021-01-12   <strong>Tags :</strong> 2</p>
+<div class = "articlehead" style="background-image:url('图片链接')"></div>
+<h2 id="1-引入：构造函数创建实例对象">1.引入：构造函数创建实例对象</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line"></span><br><span class="line">&#125;<span class="comment">// Person为构造函数</span></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();<span class="comment">// person为实例对象</span></span><br><span class="line">person.name = <span class="string">'张三'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(person.name) <span class="comment">// 张三</span></span><br></pre></td></tr></table></figure>
+<h2 id="prototype">prototype</h2>
+<p><strong>每个函数都有一个 prototype 属性</strong>，比如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.name = <span class="string">'张三'</span>;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(person1.name) <span class="comment">// 张三</span></span><br><span class="line"><span class="built_in">console</span>.log(person2.name) <span class="comment">// 张三</span></span><br></pre></td></tr></table></figure>
+<p>此时，函数的 prototype 属性指向了一个对象，这个对象就是当前实例对象的原型，也就是<code>person1</code>和<code>person2</code>的原型。<br>
+<strong>每一个js对象（函数也是对象）创建的时候都会关联一个“原型对象”，且继承它的原型属性</strong><br>
+<img src="https://s3.ax1x.com/2021/01/12/sYp7PU.png" alt=""><br>
+prototype是<strong>构造函数</strong>指向<strong>原型</strong>的属性，那么该如何表示<strong>实例对象</strong>和<strong>原型</strong>之间的关系呢，这时候就要讲到第二个属性：</p>
+<h2 id="proto">__ proto __</h2>
+<p><strong>__proto__是每个js对象都有的属性，它会指向对象的原型。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(person.__proto_ === Person.prototype);  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>将__proto__更新至关系图：<br>
+<img src="https://s3.ax1x.com/2021/01/13/stVyhn.png" alt=""></p>
+<p>既然构造函数和实例对象都有指向原型的属性，那么原型是否有属性指向构造函数和实例？</p>
+<h2 id="constructor">constructor</h2>
+<p>原型没有指向实例的属性，但有指向构造函数但属性，因为一个构造函数可以产生多个实例，所以不能直接指向实例。<strong>每个原型都有一个constructor属性指向构造函数</strong>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.constructor == Person); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>将constructor更新至关系图：<br>
+<img src="https://s3.ax1x.com/2021/01/13/stZn4s.png" alt=""></p>
+<p>**补充：**person 中并没有 constructor 属性，原型才有，这里读取到的是person原型的consturctor属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">person.constructor === Person.prototype.constructor</span><br></pre></td></tr></table></figure>
+<h2 id="初步总结">初步总结</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> Person()</span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype == person.__proto__ == <span class="built_in">Object</span>.getPrototypeOf(person)) <span class="comment">//true【展示方便，实际不可以连等。】【Object.getPrototypeOf(实例对象)是ES5的方法】</span></span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.constructor == Person)  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>这里我们展示了构造函数、实例原型和实例之间但关系，接下来学习实例和原型之间的关系：</p>
+<h2 id="实例与原型">实例与原型</h2>
+<p>在读取实例的属性的时候，如果找不到该属性，则会查找关联对象的原型，原型相当于给该对象的实例提供了一组默认值。再找不到就去找原型的原型，直到找到为止。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Pokemon</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">Pokemon.prototype.name = <span class="string">'百变怪'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> pokemon = <span class="keyword">new</span> Pokemon();</span><br><span class="line"></span><br><span class="line">pokemon.name = <span class="string">'沼王'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(pokemon.name) <span class="comment">// 沼王</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> pokemon.name;</span><br><span class="line"><span class="built_in">console</span>.log(pokemon.name) <span class="comment">// 百变怪</span></span><br></pre></td></tr></table></figure>
+<p>以上例子展示了原型的这个功能，但如果删除了pokemon.name后，在原型里也没找到name属性，那么就得去原型的原型里去找了。</p>
+<h2 id="原型的原型">原型的原型</h2>
+<p>在前面讲到，原型也是个对象，毕竟原型也有属性可以指向构造函数，那么原型自然也可以有自己的原型。原型对象的创建方式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.name = <span class="string">'Kevin'</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.name) <span class="comment">// Kevin</span></span><br></pre></td></tr></table></figure>
+<p>原型对象通过Object函数生成，结合上面的知识点，实例的__proto__指向构造函数的prototype，此时再更新关系图：<br>
+<img src="https://s3.ax1x.com/2021/01/13/ste7y6.png" alt=""><br>
+那么Object.prototype的原型呢：</p>
+<h2 id="原型链">原型链</h2>
+<p>此时我们尝试打印出来Object.prototype的原型：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.__proto__) <span class="comment">// null</span></span><br></pre></td></tr></table></figure>
+<p>结果为null，null代表没有对象，说明此处不该有值。<br>
+所以这里说明，<strong>Object.prototype 没有原型</strong>。<br>
+所以前面说的查找属性的时候查到 Object.prototype 就可以停止查找了。<br>
+更新关系图：<br>
+<img src="https://s3.ax1x.com/2021/01/13/stuPIg.png" alt=""><br>
+<strong>图中相互关联的原型组成的链状结构就是原型链，也就是蓝色的这条线。</strong></p>
 
   <a onclick="go_top()"><div class="to_top">↑</div></a>
 </div>
@@ -378,10 +402,19 @@ function sidebar_toggle() {
     <!-- Author title -->
     <div class="author-title">
       <div>Anuluca</div>
-      <div style="font-family: 等线">Update:2020-04-28</div>
+      <div style="font-family: 等线">Update:2021-01-12</div>
     </div>
   </div>
 
+  
+    <div class="divider"></div>
+
+    <div class="link">
+      
+
+      <a class="tag-link" href="/tags/javascript/" rel="tag">#javascript</a> <a class="tag-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">#web前端</a>
+    </div>
+    
   
 
   <div class="divider"></div>
