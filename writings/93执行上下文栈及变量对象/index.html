@@ -13,7 +13,7 @@
 
     <title>
         
-          路卡的自由庭院岛
+          执行上下文栈及变量对象 - 路卡的自由庭院岛
         
     </title>
 
@@ -254,42 +254,103 @@ function sidebar_toggle() {
 
         </div>
         <div class="book-content">
-          <div class='book-archive'>
-  <!-- Title -->
-  
-    <h1>Tags</h1>
-  
+          <div class="book-post">
+  <h1 id="￼4">执行上下文栈及变量对象</h1>
+<p><strong>Anuluca</strong>     <strong>Date :</strong> 2021-01-14   <strong>Tags :</strong> 2</p>
+<div class = "articlehead" style="background-image:url('图片链接')"></div>
+<h2 id="执行上下文栈-Execution-context-stack，ECS">执行上下文栈(Execution context stack，ECS)</h2>
+<p>当函数执行的时候遇到一个函数需要执行时的时候，就会进行准备工作，这里的“准备工作”就是<strong>执行上下文(execution context)</strong>。<br>
+所以js引擎创建了执行上下文栈(Execution context stack，ECS)来管理执行上下文</p>
+<p>如果这里用一个数组模拟执行上下文的行为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ECStack = [];</span><br></pre></td></tr></table></figure>
+<p>当js开始执行代码的时候，最先遇到的是全局代码，所以初始化的时候首先会向<strong>执行上下文栈</strong>压入一个<strong>执行上下文</strong>，这里用globalContext表示它，直到这个应用程序结束，ECS才会被清空，所以程序结束之前ECS底部永远有一个globalContext。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ECStack = [</span><br><span class="line">    globalContext</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<p>现在往文件中添加以下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun3</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'fun3执行了'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    fun3();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    fun2();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun1();</span><br></pre></td></tr></table></figure>
+<p>执行其中一个函数时，就会创建一个<strong>执行上下文</strong>，并且被压入<strong>执行上下文栈</strong>，函数执行完毕的时候，就会将执行上下文从栈中弹出：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fun1()</span></span><br><span class="line">ECStack.push(<span class="xml"><span class="tag">&lt;<span class="name">fun1</span>&gt;</span> functionContext);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">// fun1中调用了fun2，创建fun2的执行上下文</span></span><br><span class="line">ECStack.push(&lt;fun2&gt; functionContext);</span><br><span class="line"></span><br><span class="line">// fun2中调用了fun3！</span><br><span class="line">ECStack.push(&lt;fun3&gt; functionContext);</span><br><span class="line"></span><br><span class="line">// fun3执行完毕</span><br><span class="line">ECStack.pop();</span><br><span class="line"></span><br><span class="line">// fun2执行完毕</span><br><span class="line">ECStack.pop();</span><br><span class="line"></span><br><span class="line">// fun1执行完毕</span><br><span class="line">ECStack.pop();</span><br><span class="line"></span><br><span class="line">// javascript接着执行下面的代码，但是ECStack底层永远有个globalContext</span><br></pre></td></tr></table></figure>
+<h2 id="变量对象">变量对象</h2>
+<p>To be continued…</p>
 
-  
-    <!-- Split post by year -->
-    
-  
-
-  
-      <div class="years">
-          <h2>2020</h2>
-          <ul class="archive-list-item">
-          
-              <li>
-                <span>2020-05-18</span>
-                <a href="/writings/03DB2存储过程遍历循环/">
-                  DB2存储过程遍历循环
-                </a>
-              </li>
-          
-              <li>
-                <span>2020-04-26</span>
-                <a href="/writings/01工作中遇到的关于DB2的一些问题及解决办法/">
-                  工作中遇到的关于DB2的一些问题及解决办法
-                </a>
-              </li>
-          
-          </ul>
-      </div>
-  
-
-  
+  <a onclick="go_top()"><div class="to_top">↑</div></a>
 </div>
+
+  <div class="articleBottom"><b>&nbsp;&nbsp;&nbsp;THE END&nbsp;&nbsp;&nbsp;</b></div>
+  <div class="combtn">
+  <div class="valine_btn"><b>游客评论</b></div>
+  <div class="gitalk_btn"><b>使用Github账号评论</b></div>
+  <div class="moving"></div>
+  </div>
+    <div>&nbsp;</div>
+  <div class="book-comments">
+    
+<script src="https://utteranc.es/client.js"
+        repo="anuluca/anuluca"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+
+
+    <link rel="stylesheet" href="https://unpkg.zhimg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.zhimg.com/gitalk/dist/gitalk.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '9ffd086e729163760a2a',
+          clientSecret: '3dc719eec9759df35f5aa9ecb3bcdefd3f5bf9c6',
+          repo: 'Anuluca.github.io',
+          owner: 'anuluca',
+          admin: ['Anuluca'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+    </script>
+
+
+
+<!--    <link rel="stylesheet" href="https://unpkg.com/valine/dist/Valine.min.js">-->
+    <script src="//unpkg.zhimg.com/valine/dist/Valine.min.js"></script>
+    <div id="vcomments" style="margin-top: 100px;"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'rqHuR8lh2h3Fp2s9v2M8nDYJ-gzGzoHsz',
+            appKey: '9o4oYzzaYVFGG34Vd8ipLztu',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            placeholder: '说点什么'
+        });
+    </script>
+
+  </div>
+  <a style="font-size: 10px;
+                    color: #999CA8;
+                    width: 55%;
+                    text-align: center;
+                    padding-top: 100px;">
+    © 2018-2021 Anuluca.
+  </a>
+  <span style="font-size: 10px;
+                    color: #999CA8;
+                    width: 55%;
+                    text-align: right;float: right;">
+    ▌友情链接 
+    <a href="https://cutekibry.github.io/" target="_blank" rel="noopener" class="friendUrl" style="margin-left: 5px;">Tsuki's blog</a>&nbsp;|
+    <a href="https://austinxt.com/" target="_blank" rel="noopener" class="friendUrl" >夜航星</a>&nbsp;|
+    <a href="http://www.zoomlgd.com/" target="_blank" rel="noopener" class="friendUrl" >州力科技</a>&nbsp;
+</span>
+
+
+
+
+<script src="/js/book-post.js"></script>
         </div>
       </div>
       <div class="column col-2 hide-lg">
@@ -311,10 +372,19 @@ function sidebar_toggle() {
     <!-- Author title -->
     <div class="author-title">
       <div>Anuluca</div>
-      <div style="font-family: 等线">Update:</div>
+      <div style="font-family: 等线">Update:2021-01-14</div>
     </div>
   </div>
 
+  
+    <div class="divider"></div>
+
+    <div class="link">
+      
+
+      <a class="tag-link" href="/tags/javascript/" rel="tag">#javascript</a> <a class="tag-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">#web前端</a>
+    </div>
+    
   
 
   <div class="divider"></div>

@@ -13,7 +13,7 @@
 
     <title>
         
-          路卡的自由庭院岛
+          94类数组对象和arguments - 路卡的自由庭院岛
         
     </title>
 
@@ -254,42 +254,116 @@ function sidebar_toggle() {
 
         </div>
         <div class="book-content">
-          <div class='book-archive'>
-  <!-- Title -->
-  
-    <h1>Tags</h1>
-  
+          <div class="book-post">
+  <h1 id="￼8">94类数组对象和arguments</h1>
+<p><strong>Anuluca</strong>     <strong>Date :</strong> 2021-01-14   <strong>Tags :</strong> 2</p>
+<div class = "articlehead" style="background-image:url('图片链接')"></div>
+<h2 id="类数组对象">类数组对象</h2>
+<p>拥有一个length属性和其他若干键值对的对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> exeggutor = [<span class="string">'tamako1'</span>, <span class="string">'tamako2'</span>, <span class="string">'tamako3'</span>];  <span class="comment">//数组</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> exeggutor_alolan = &#123;</span><br><span class="line">    <span class="number">0</span>: <span class="string">'tamako1'</span>,</span><br><span class="line">    <span class="number">1</span>: <span class="string">'tamako2'</span>,</span><br><span class="line">    <span class="number">2</span>: <span class="string">'tamako3'</span>,</span><br><span class="line">    length: <span class="number">3</span></span><br><span class="line">&#125; <span class="comment">//类数组对象</span></span><br></pre></td></tr></table></figure>
+<h3 id="类数组对象和数组的相似之处">类数组对象和数组的相似之处</h3>
+<p>读写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(exeggutor[<span class="number">0</span>]); <span class="comment">// tamako1</span></span><br><span class="line"><span class="built_in">console</span>.log(exeggutor_alolan[<span class="number">0</span>]); <span class="comment">// tamako2</span></span><br><span class="line"></span><br><span class="line">exeggutor[<span class="number">0</span>] = <span class="string">'ditto'</span>;</span><br><span class="line">exeggutor_alolan[<span class="number">0</span>] = <span class="string">'ditto'</span>;</span><br></pre></td></tr></table></figure>
+<p>长度：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(exeggutor.length); <span class="comment">// 3</span></span><br><span class="line"><span class="built_in">console</span>.log(exeggutor_alolan.length); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<p>遍历：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = exeggutor.length; i &lt; len; i++) &#123;</span><br><span class="line">  ……</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = exeggutor_alolan.length; i &lt; len; i++) &#123;</span><br><span class="line">  ……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，在读写、获取长度、遍历，数组的使用方法和类数组对象的使用方法完全一样。<br>
+但数组可以使用的其他方法，类数组对象不能使用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exeggutor.push(<span class="string">'4'</span>);  </span><br><span class="line">exeggutor_alolan.push(<span class="string">'4'</span>);  <span class="comment">//错误代码</span></span><br></pre></td></tr></table></figure>
+<h3 id="类数组调用数组方法">类数组调用数组方法</h3>
+<p>如果类数组一定要用数组方法，可以使用Function.call()间接调用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> exeggutor_alolan = &#123;<span class="number">0</span>: <span class="string">'tamako1'</span>, <span class="number">1</span>: <span class="string">'tamako2'</span>, <span class="number">2</span>: <span class="string">'tamako3'</span>, <span class="attr">length</span>: <span class="number">3</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.join.call(exeggutor_alolan, <span class="string">'&amp;'</span>); <span class="comment">// tamako1&amp;tamako2&amp;tamako3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.slice.call(exeggutor_alolan, <span class="number">0</span>); <span class="comment">// ["tamako1", "tamako2", "tamako3"] </span></span><br><span class="line"><span class="comment">// slice可以做到类数组转数组</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.map.call(exeggutor_alolan, <span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> item.toUpperCase();</span><br><span class="line">&#125;); </span><br><span class="line"><span class="comment">// ["TAMAKO1", "TAMAKO2", "TAMAKO3"]</span></span><br></pre></td></tr></table></figure>
+<h3 id="类数组转数组">类数组转数组</h3>
+<p>在上面的例子中已经提到了一种类数组转数组的方法，这里再补充三个：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> exeggutor_alolan = &#123;<span class="number">0</span>: <span class="string">'tamako1'</span>, <span class="number">1</span>: <span class="string">'tamako2'</span>, <span class="number">2</span>: <span class="string">'tamako3'</span>, <span class="attr">length</span>: <span class="number">3</span> &#125;</span><br><span class="line"><span class="comment">// 1. slice</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.slice.call(exeggutor_alolan); <span class="comment">// ["tamako1", "tamako2", "tamako3"] </span></span><br><span class="line"><span class="comment">// 2. splice</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.splice.call(exeggutor_alolan, <span class="number">0</span>); <span class="comment">// ["tamako1", "tamako2", "tamako3"] </span></span><br><span class="line"><span class="comment">// 3. ES6 Array.from</span></span><br><span class="line"><span class="built_in">Array</span>.from(exeggutor_alolan); <span class="comment">// ["tamako1", "tamako2", "tamako3"] </span></span><br><span class="line"><span class="comment">// 4. apply</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.concat.apply([], exeggutor_alolan)</span><br></pre></td></tr></table></figure>
+<h2 id="Arguments对象">Arguments对象</h2>
+<p>Arguments对象定义在函数体中，包括函数的参数和其他属性，在函数体本身，arguments指代Arguments对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">trigger</span>(<span class="params">gger1, gger2, gger3</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br><span class="line">trigger(<span class="string">'gger1'</span>, <span class="string">'gger2'</span>, <span class="string">'gger3'</span>)</span><br></pre></td></tr></table></figure>
+<p>控制台输出：<br>
+<img src="https://s3.ax1x.com/2021/01/14/sajggg.png" alt=""><br>
+可以看到除了类数组的索引属性和length属性之外，还有一个callee属性</p>
+<h3 id="length属性">length属性</h3>
 
-  
-    <!-- Split post by year -->
-    
-  
-
-  
-      <div class="years">
-          <h2>2020</h2>
-          <ul class="archive-list-item">
-          
-              <li>
-                <span>2020-05-18</span>
-                <a href="/writings/03DB2存储过程遍历循环/">
-                  DB2存储过程遍历循环
-                </a>
-              </li>
-          
-              <li>
-                <span>2020-04-26</span>
-                <a href="/writings/01工作中遇到的关于DB2的一些问题及解决办法/">
-                  工作中遇到的关于DB2的一些问题及解决办法
-                </a>
-              </li>
-          
-          </ul>
-      </div>
-  
-
-  
+  <a onclick="go_top()"><div class="to_top">↑</div></a>
 </div>
+
+  <div class="articleBottom"><b>&nbsp;&nbsp;&nbsp;THE END&nbsp;&nbsp;&nbsp;</b></div>
+  <div class="combtn">
+  <div class="valine_btn"><b>游客评论</b></div>
+  <div class="gitalk_btn"><b>使用Github账号评论</b></div>
+  <div class="moving"></div>
+  </div>
+    <div>&nbsp;</div>
+  <div class="book-comments">
+    
+<script src="https://utteranc.es/client.js"
+        repo="anuluca/anuluca"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+
+
+    <link rel="stylesheet" href="https://unpkg.zhimg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.zhimg.com/gitalk/dist/gitalk.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '9ffd086e729163760a2a',
+          clientSecret: '3dc719eec9759df35f5aa9ecb3bcdefd3f5bf9c6',
+          repo: 'Anuluca.github.io',
+          owner: 'anuluca',
+          admin: ['Anuluca'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+    </script>
+
+
+
+<!--    <link rel="stylesheet" href="https://unpkg.com/valine/dist/Valine.min.js">-->
+    <script src="//unpkg.zhimg.com/valine/dist/Valine.min.js"></script>
+    <div id="vcomments" style="margin-top: 100px;"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'rqHuR8lh2h3Fp2s9v2M8nDYJ-gzGzoHsz',
+            appKey: '9o4oYzzaYVFGG34Vd8ipLztu',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            placeholder: '说点什么'
+        });
+    </script>
+
+  </div>
+  <a style="font-size: 10px;
+                    color: #999CA8;
+                    width: 55%;
+                    text-align: center;
+                    padding-top: 100px;">
+    © 2018-2021 Anuluca.
+  </a>
+  <span style="font-size: 10px;
+                    color: #999CA8;
+                    width: 55%;
+                    text-align: right;float: right;">
+    ▌友情链接 
+    <a href="https://cutekibry.github.io/" target="_blank" rel="noopener" class="friendUrl" style="margin-left: 5px;">Tsuki's blog</a>&nbsp;|
+    <a href="https://austinxt.com/" target="_blank" rel="noopener" class="friendUrl" >夜航星</a>&nbsp;|
+    <a href="http://www.zoomlgd.com/" target="_blank" rel="noopener" class="friendUrl" >州力科技</a>&nbsp;
+</span>
+
+
+
+
+<script src="/js/book-post.js"></script>
         </div>
       </div>
       <div class="column col-2 hide-lg">
@@ -311,10 +385,19 @@ function sidebar_toggle() {
     <!-- Author title -->
     <div class="author-title">
       <div>Anuluca</div>
-      <div style="font-family: 等线">Update:</div>
+      <div style="font-family: 等线">Update:2021-01-14</div>
     </div>
   </div>
 
+  
+    <div class="divider"></div>
+
+    <div class="link">
+      
+
+      <a class="tag-link" href="/tags/javascript/" rel="tag">#javascript</a> <a class="tag-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">#web前端</a>
+    </div>
+    
   
 
   <div class="divider"></div>
