@@ -4,6 +4,17 @@
   letter-spacing: 0.6px;
   font-size: 14px; }
 
+.book-menu h1 {
+  font-weight: 800;
+  font-size: 15px;
+  text-shadow: 0 1px 0px #ffffff; }
+
+.accordion label {
+  margin-left: 11px; }
+
+.book-sidebar .book-menu .uncollapsible {
+  padding-top: 6px; }
+
 /* 标签页设置 */
 .tag-list {
   margin: 0; }
