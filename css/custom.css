@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* 博文字体设置 */
 * {
+  scroll-behavior: smooth;
   letter-spacing: 0.6px;
   font-size: 14px; }
 
@@ -395,6 +396,17 @@
   line-height: 38px;
   font-size: 20px; }
 
+.book-sidebar, .book-sidebar .book-menu {
+  width: 13rem !important; }
+
+.book-sidebar .book-brand {
+  left: 2rem !important; }
+
+.book-sidebar .book-menu ul {
+  padding-left: 24px !important;
+  margin-left: 0 !important;
+  padding-top: 4px !important; }
+
 /*回到顶部*/
 .book-post {
   position: relative; }
@@ -411,7 +423,8 @@
   /*box-shadow: 0px 2px 10px -6px black;*/
   position: fixed;
   display: none;
-  font-size: 40px;
+  cursor: pointer;
+  font-size: 30px;
   font-family: "Calibri"; }
 
 .articleBottom {
