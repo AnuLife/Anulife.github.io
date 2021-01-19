@@ -520,7 +520,7 @@ img {
 .sidebar-toggle {
   position: fixed;
   bottom: 0.6rem;
-  left: 12.7rem;
+  left: 13.7rem;
   transition: left 200ms;
   display: flex;
   justify-content: center;
