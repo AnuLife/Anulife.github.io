@@ -407,6 +407,9 @@
   margin-left: 0 !important;
   padding-top: 4px !important; }
 
+.sidebar-toggle {
+  left: 13.7rem !important; }
+
 /*回到顶部*/
 .book-post {
   position: relative; }
