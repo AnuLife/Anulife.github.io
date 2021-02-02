@@ -8,7 +8,7 @@
       <link href="writings/106axios%E5%AE%8C%E6%95%B4%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E9%A1%BA%E5%BA%8F/"/>
       <url>writings/106axios%E5%AE%8C%E6%95%B4%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E9%A1%BA%E5%BA%8F/</url>
       
-        <content type="html"><![CDATA[<h1 id="￼1-font-color-gray-106-font">axios完整接口调用顺序<font color="gray">#106</font></h1><p><strong>Anuluca</strong>     <strong>Date :</strong> 2021-01-25   <strong>Tags :</strong> 3</p><div class = "articlehead" style="background-image:url('图片链接')"></div><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入axios</span></span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//创建axios实例</span></span><br><span class="line"><span class="keyword">const</span> instance = axios.create(&#123;</span><br><span class="line">  baseURL: <span class="string">'http//quest-sit.paic.com.cn'</span>,</span><br><span class="line">  headers: &#123;</span><br><span class="line">    <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span>,</span><br><span class="line">    <span class="string">'Cache-COntrol'</span>: <span class="string">'no-cache'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  responseType: <span class="string">'json'</span>,</span><br><span class="line">  <span class="comment">//配置状态码错误范围</span></span><br><span class="line">  validateStatus( status )&#123;</span><br><span class="line">    <span class="keyword">return</span> status &gt;= <span class="number">200</span> &amp;&amp; status &lt;= <span class="number">500</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//接口调用方法</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> recieveOpinion = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params"> url ,projectCode, processInstanceId </span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> data = &#123; projectCode, processInstanceId, feedback &#125;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">//使用Promise.resolve包裹axios请求，方便回调</span></span><br><span class="line">    <span class="keyword">let</span> res = <span class="built_in">Promise</span>.resolve(instance.post( urlConfig.workUrl + url ,data ? data : &#123;&#125;))</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'----接受审核----'</span>, url, data, res)</span><br><span class="line">    <span class="keyword">return</span> res </span><br><span class="line">  &#125;<span class="keyword">catch</span>(error)&#123;</span><br><span class="line">    <span class="built_in">console</span>.error(error, url + <span class="string">'接口获取数据失败'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="￼1-font-color-gray-106-font">axios完整接口调用顺序<font color="gray">#106</font></h1><p><strong>Anuluca</strong>     <strong>Date :</strong> 2021-01-25   <strong>Tags :</strong> 3</p><div class = "articlehead" style="background-image:url('图片链接')"></div><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入axios</span></span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//创建axios实例</span></span><br><span class="line"><span class="keyword">const</span> instance = axios.create(&#123;</span><br><span class="line">  baseURL: <span class="string">'http//quest-sit.paic.com.cn'</span>,</span><br><span class="line">  headers: &#123;</span><br><span class="line">    <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span>,</span><br><span class="line">    <span class="string">'Cache-Control'</span>: <span class="string">'no-cache'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  responseType: <span class="string">'json'</span>,</span><br><span class="line">  <span class="comment">//配置状态码错误范围</span></span><br><span class="line">  validateStatus( status )&#123;</span><br><span class="line">    <span class="keyword">return</span> status &gt;= <span class="number">200</span> &amp;&amp; status &lt;= <span class="number">500</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//后端返回data报错提示</span></span><br><span class="line">instance.interceptors,response.use(<span class="function">(<span class="params">response:any</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> data = response.data</span><br><span class="line">  <span class="comment">//response.status返回401代表回到首页，需要重新登陆</span></span><br><span class="line">  <span class="keyword">if</span>(response &amp;&amp; response.status == <span class="string">'401'</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.location.origin)&#123;</span><br><span class="line">      <span class="built_in">window</span>.location.href = <span class="string">`<span class="subst">$&#123;<span class="built_in">window</span>.location.origin&#125;</span>/#/login`</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="built_in">window</span>.location.href = </span><br><span class="line">        <span class="built_in">window</span>.location.protocal + <span class="string">'//'</span> + <span class="built_in">window</span>.location.hostname + (<span class="built_in">window</span>.location.port ? <span class="string">':'</span> + <span class="built_in">window</span>.location.port : <span class="string">''</span>) + <span class="string">'/#/login'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//code返回602或者401也代表回到首页，需要重新登陆</span></span><br><span class="line">  <span class="keyword">if</span>(data &amp;&amp; (data.code == <span class="string">'602'</span> || data.code == <span class="string">'401'</span>))&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.location.origin)&#123;</span><br><span class="line">      <span class="built_in">window</span>.location.href = <span class="string">`<span class="subst">$&#123;<span class="built_in">window</span>.location.origin&#125;</span>/#/login`</span></span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">window</span>.location.href = </span><br><span class="line">        <span class="built_in">window</span>.location.protocal + <span class="string">'//'</span> + <span class="built_in">window</span>.location.hostname + (<span class="built_in">window</span>.location.port ? <span class="string">':'</span> + <span class="built_in">window</span>.location.port : <span class="string">''</span>) + <span class="string">'/#/login'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//code返回50x且含有msg字段时，弹出错误提示</span></span><br><span class="line">  <span class="keyword">if</span>(data &amp;&amp; (data.code == <span class="string">'500'</span> || data.code = <span class="string">'50x'</span>))&#123;</span><br><span class="line">    Message(&#123;</span><br><span class="line">      message:data.msg,</span><br><span class="line">      type:<span class="string">'warning'</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//接口调用方法</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> recieveOpinion = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params"> url, projectCode, processInstanceId </span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> data = &#123; projectCode, processInstanceId, feedback &#125;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">//使用Promise.resolve包裹axios请求，方便回调</span></span><br><span class="line">    <span class="keyword">let</span> res = <span class="built_in">Promise</span>.resolve(instance.post( urlConfig.workUrl + url ,data ? data : &#123;&#125;))</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'----接受审核----'</span>, url, data, res)</span><br><span class="line">    <span class="keyword">return</span> res </span><br><span class="line">  &#125;<span class="keyword">catch</span>(error)&#123;</span><br><span class="line">    <span class="built_in">console</span>.error(error, url + <span class="string">'接口获取数据失败'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -102,9 +102,9 @@
             
             <tag> web前端 </tag>
             
-            <tag> elementui </tag>
-            
             <tag> vue </tag>
+            
+            <tag> elementui </tag>
             
         </tags>
       
@@ -884,9 +884,9 @@
             
             <tag> web前端 </tag>
             
-            <tag> elementui </tag>
-            
             <tag> vue </tag>
+            
+            <tag> elementui </tag>
             
         </tags>
       
@@ -907,9 +907,9 @@
             
             <tag> web前端 </tag>
             
-            <tag> elementui </tag>
-            
             <tag> vue </tag>
+            
+            <tag> elementui </tag>
             
         </tags>
       
@@ -930,9 +930,9 @@
             
             <tag> web前端 </tag>
             
-            <tag> elementui </tag>
-            
             <tag> vue </tag>
+            
+            <tag> elementui </tag>
             
         </tags>
       
@@ -1182,9 +1182,9 @@
             
             <tag> web前端 </tag>
             
-            <tag> elementui </tag>
-            
             <tag> vue </tag>
+            
+            <tag> elementui </tag>
             
         </tags>
       
@@ -1205,9 +1205,9 @@
             
             <tag> web前端 </tag>
             
-            <tag> elementui </tag>
-            
             <tag> vue </tag>
+            
+            <tag> elementui </tag>
             
         </tags>
       
@@ -1228,9 +1228,9 @@
             
             <tag> web前端 </tag>
             
-            <tag> elementui </tag>
-            
             <tag> vue </tag>
+            
+            <tag> elementui </tag>
             
         </tags>
       
@@ -1251,9 +1251,9 @@
             
             <tag> web前端 </tag>
             
-            <tag> elementui </tag>
-            
             <tag> vue </tag>
+            
+            <tag> elementui </tag>
             
         </tags>
       
@@ -1274,9 +1274,9 @@
             
             <tag> web前端 </tag>
             
-            <tag> elementui </tag>
-            
             <tag> vue </tag>
+            
+            <tag> elementui </tag>
             
         </tags>
       
@@ -1444,9 +1444,9 @@
             
             <tag> css </tag>
             
-            <tag> elementui </tag>
-            
             <tag> vue </tag>
+            
+            <tag> elementui </tag>
             
         </tags>
       
@@ -2226,15 +2226,17 @@
     
     
     <entry>
-      <title>江西中烟微信客户拜访</title>
-      <link href="projects/%E6%B1%9F%E8%A5%BF%E4%B8%AD%E7%83%9F%E5%BE%AE%E4%BF%A1/"/>
-      <url>projects/%E6%B1%9F%E8%A5%BF%E4%B8%AD%E7%83%9F%E5%BE%AE%E4%BF%A1/</url>
+      <title>江西中烟订单管理系统</title>
+      <link href="projects/%E6%B1%9F%E8%A5%BF%E4%B8%AD%E7%83%9F%E8%AE%A2%E5%8D%95/"/>
+      <url>projects/%E6%B1%9F%E8%A5%BF%E4%B8%AD%E7%83%9F%E8%AE%A2%E5%8D%95/</url>
       
-        <content type="html"><![CDATA[<h1 id="江西中烟微信客户拜访">江西中烟微信客户拜访</h1><blockquote><p>参与开发开始时间： 2018年9月<br>主要使用技术： DB2<br>主要使用工具： DBeaver、Quest Central<br>由于是公司内部使用项目，链接不予公开。</p></blockquote><p>主要负责数据维护，由于已经没有权限访问所以没有截图了</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="江西中烟订单管理系统">江西中烟订单管理系统</h1><blockquote><p>参与开发开始时间： 2018年9月<br>主要使用技术： HTML+js+jQ+Bootstrap、Java、DB2、svn<br>主要使用工具： IntelliJ IDEA、Eclipse、Sublime、DBeaver、Quest Central<br>由于是公司内部使用项目，链接不予公开。</p></blockquote><p><strong>部分项目截图：</strong><br><img src="https://s1.ax1x.com/2020/08/21/dtK8gA.png" alt=""><br><img src="https://s1.ax1x.com/2020/08/21/dtKtDP.png" alt=""></p>]]></content>
       
       
       
         <tags>
+            
+            <tag> web前端 </tag>
             
             <tag> java </tag>
             
@@ -2247,17 +2249,15 @@
     
     
     <entry>
-      <title>江西中烟订单管理系统</title>
-      <link href="projects/%E6%B1%9F%E8%A5%BF%E4%B8%AD%E7%83%9F%E8%AE%A2%E5%8D%95/"/>
-      <url>projects/%E6%B1%9F%E8%A5%BF%E4%B8%AD%E7%83%9F%E8%AE%A2%E5%8D%95/</url>
+      <title>江西中烟微信客户拜访</title>
+      <link href="projects/%E6%B1%9F%E8%A5%BF%E4%B8%AD%E7%83%9F%E5%BE%AE%E4%BF%A1/"/>
+      <url>projects/%E6%B1%9F%E8%A5%BF%E4%B8%AD%E7%83%9F%E5%BE%AE%E4%BF%A1/</url>
       
-        <content type="html"><![CDATA[<h1 id="江西中烟订单管理系统">江西中烟订单管理系统</h1><blockquote><p>参与开发开始时间： 2018年9月<br>主要使用技术： HTML+js+jQ+Bootstrap、Java、DB2、svn<br>主要使用工具： IntelliJ IDEA、Eclipse、Sublime、DBeaver、Quest Central<br>由于是公司内部使用项目，链接不予公开。</p></blockquote><p><strong>部分项目截图：</strong><br><img src="https://s1.ax1x.com/2020/08/21/dtK8gA.png" alt=""><br><img src="https://s1.ax1x.com/2020/08/21/dtKtDP.png" alt=""></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="江西中烟微信客户拜访">江西中烟微信客户拜访</h1><blockquote><p>参与开发开始时间： 2018年9月<br>主要使用技术： DB2<br>主要使用工具： DBeaver、Quest Central<br>由于是公司内部使用项目，链接不予公开。</p></blockquote><p>主要负责数据维护，由于已经没有权限访问所以没有截图了</p>]]></content>
       
       
       
         <tags>
-            
-            <tag> web前端 </tag>
             
             <tag> java </tag>
             
@@ -2295,7 +2295,7 @@
       <link href="writings/12Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
       <url>writings/12Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</url>
       
-        <content type="html"><![CDATA[<h1 id="Vue生命周期-font-color-gray-12-font">Vue生命周期 <font color="gray">#12</font></h1><p><strong>Anuluca</strong>     <strong>Date :</strong> 2020-08-02   <strong>Tags :</strong> 2</p><div class = "articlehead" style="background-image:url('https://s1.ax1x.com/2020/08/17/devITf.jpg')"></div><p><strong>//页面加载开始</strong></p><p><strong><code>beforeCreate()</code></strong>:（创建前）el和data未初始化<br><strong><code>created()</code></strong>:（创建后）el未初始化，data初始化完成</p><p><strong><code>beforeMount()</code></strong>:（挂载前）el和data完成初始化，但还未挂载到页面上<br><strong><code>mounted()</code></strong>:（挂载后）完成挂载</p><p><strong>//页面加载结束，Dom渲染完成</strong></p><p><strong><code>beforeUpdate()</code></strong>:（更新前）数据更新前<br><strong><code>updated()</code></strong>:（更新后）数据更新后</p><p><strong><code>beforeDestory()</code></strong>:（销毁前）实例被销毁前，实例还可以使用<br><strong><code>destoryed()</code></strong>:（销毁后）实例被销毁后，实例里的所有东西都解除绑定。不可再使用</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Vue生命周期-font-color-gray-12-font">Vue生命周期 <font color="gray">#12</font></h1><p><strong>Anuluca</strong>     <strong>Date :</strong> 2020-08-02   <strong>Tags :</strong> 2</p><div class = "articlehead" style="background-image:url('https://s1.ax1x.com/2020/08/17/devITf.jpg')"></div><p><strong>//页面加载开始</strong></p><p><strong><code>beforeCreate()</code></strong>:（创建前）el和data未初始化<br><strong><code>created()</code></strong>:（创建后）el未初始化，data初始化完成</p><p><strong><code>beforeMount()</code></strong>:（挂载前）el和data完成初始化，但还未挂载到页面上<br><strong><code>mounted()</code></strong>:（挂载后）完成挂载</p><p><strong>//页面加载结束，Dom渲染完成</strong></p><p><strong><code>beforeUpdate()</code></strong>:（更新前）数据更新前<br><strong><code>updated()</code></strong>:（更新后）数据更新后</p><p><strong><code>beforeDestory()</code></strong>:（销毁前）实例被销毁前，实例还可以使用<br><strong><code>destoryed()</code></strong>:（销毁后）实例被销毁后，实例里的所有东西都解除绑定。不可再使用</p><h2 id="2021-02-02更新-Vue3-0生命周期函数">2021.02.02更新 Vue3.0生命周期函数</h2><p><strong>//页面加载开始</strong></p><p><strong><code>setup()</code></strong>:（创建前）代替beforeCreate和created</p><p><strong><code>onBeforeMount()</code></strong>:（挂载前）el和data完成初始化，但还未挂载到页面上<br><strong><code>onMounted()</code></strong>:（挂载后）完成挂载</p><p><strong>//页面加载结束，Dom渲染完成</strong></p><p><strong><code>onBeforeUpdate()</code></strong>:（更新前）数据更新前<br><strong><code>onUpdated()</code></strong>:（更新后）数据更新后</p><p><strong><code>onBeforeDestory()</code></strong>:（销毁前）实例被销毁前，实例还可以使用<br><strong><code>onDestoryed()</code></strong>:（销毁后）实例被销毁后，实例里的所有东西都解除绑定。不可再使用</p>]]></content>
       
       
       
@@ -2373,19 +2373,6 @@
     
     
     <entry>
-      <title>ポッ拳 DX</title>
-      <link href="album/%E6%B8%B8%E6%88%8F/03%E5%AE%9D%E5%8F%AF%E6%8B%B3DX/"/>
-      <url>album/%E6%B8%B8%E6%88%8F/03%E5%AE%9D%E5%8F%AF%E6%8B%B3DX/</url>
-      
-        <content type="html"><![CDATA[<style>  img{    height: 40%;    width: 40%;  }</style><h1 id="游戏截图-ポッ拳-DX"><a href="/album/%E9%9A%8F%E6%8B%8D/%E9%9A%8F%E6%8B%8D">游戏截图</a> / ポッ拳 DX</h1><p>（11张）</p><p><img src="https://s1.ax1x.com/2020/05/25/t9lPpt.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9lSkd.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9lptA.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9QxTH.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9QjmD.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9l9fI.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9li1P.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9lF6f.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9lkX8.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9lEnS.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9lV0g.jpg" alt=""></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>宝可梦：剑</title>
       <link href="album/%E6%B8%B8%E6%88%8F/02%E5%AE%9D%E5%8F%AF%E6%A2%A6%E5%89%91/"/>
       <url>album/%E6%B8%B8%E6%88%8F/02%E5%AE%9D%E5%8F%AF%E6%A2%A6%E5%89%91/</url>
@@ -2425,11 +2412,37 @@
     
     
     <entry>
+      <title>ポッ拳 DX</title>
+      <link href="album/%E6%B8%B8%E6%88%8F/03%E5%AE%9D%E5%8F%AF%E6%8B%B3DX/"/>
+      <url>album/%E6%B8%B8%E6%88%8F/03%E5%AE%9D%E5%8F%AF%E6%8B%B3DX/</url>
+      
+        <content type="html"><![CDATA[<style>  img{    height: 40%;    width: 40%;  }</style><h1 id="游戏截图-ポッ拳-DX"><a href="/album/%E9%9A%8F%E6%8B%8D/%E9%9A%8F%E6%8B%8D">游戏截图</a> / ポッ拳 DX</h1><p>（11张）</p><p><img src="https://s1.ax1x.com/2020/05/25/t9lPpt.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9lSkd.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9lptA.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9QxTH.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9QjmD.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9l9fI.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9li1P.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9lF6f.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9lkX8.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9lEnS.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/25/t9lV0g.jpg" alt=""></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>掌动 | 马奥菲以诺</title>
       <link href="album/%E7%8E%A9%E5%85%B7/01%E9%A9%AC%E5%A5%A5%E8%8F%B2%E4%BB%A5%E8%AF%BA/"/>
       <url>album/%E7%8E%A9%E5%85%B7/01%E9%A9%AC%E5%A5%A5%E8%8F%B2%E4%BB%A5%E8%AF%BA/</url>
       
         <content type="html"><![CDATA[<style>  img{    height: 40%;    width: 40%;  }</style><h1 id="玩具-掌动-马奥菲以诺"><a href="/album/%E7%8E%A9%E5%85%B7/%E7%8E%A9%E5%85%B7">玩具</a> / 掌动 | 马奥菲以诺</h1><p>（3张）</p><p><img src="https://s1.ax1x.com/2020/08/16/dVD6c6.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/08/16/dVDDhR.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/08/16/dVD0AJ.jpg" alt=""></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>GSC粘土人 | 高坂穗乃果(舞台服 ver.)</title>
+      <link href="album/%E7%8E%A9%E5%85%B7/04%E9%AB%98%E5%9D%82%E7%A9%97%E4%B9%83%E6%9E%9C/"/>
+      <url>album/%E7%8E%A9%E5%85%B7/04%E9%AB%98%E5%9D%82%E7%A9%97%E4%B9%83%E6%9E%9C/</url>
+      
+        <content type="html"><![CDATA[<style>  img{    height: 40%;    width: 40%;  }</style><h1 id="玩具-GSC粘土人-高坂穗乃果-舞台服-ver"><a href="/album/%E7%8E%A9%E5%85%B7/%E7%8E%A9%E5%85%B7">玩具</a> / GSC粘土人 | 高坂穗乃果(舞台服 ver.)</h1><p>（5张）</p><p><img src="https://s1.ax1x.com/2020/08/16/dVDZ1P.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/08/16/dVD1ts.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/08/16/dVDVpt.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/08/16/dVDM7Q.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/08/16/dVDAfI.jpg" alt=""></p>]]></content>
       
       
       
@@ -2451,11 +2464,11 @@
     
     
     <entry>
-      <title>GSC粘土人 | 高坂穗乃果(舞台服 ver.)</title>
-      <link href="album/%E7%8E%A9%E5%85%B7/04%E9%AB%98%E5%9D%82%E7%A9%97%E4%B9%83%E6%9E%9C/"/>
-      <url>album/%E7%8E%A9%E5%85%B7/04%E9%AB%98%E5%9D%82%E7%A9%97%E4%B9%83%E6%9E%9C/</url>
+      <title>HG | 白兵</title>
+      <link href="album/%E7%8E%A9%E5%85%B7/03HG%E9%A3%8E%E6%9A%B4%E5%85%B5/"/>
+      <url>album/%E7%8E%A9%E5%85%B7/03HG%E9%A3%8E%E6%9A%B4%E5%85%B5/</url>
       
-        <content type="html"><![CDATA[<style>  img{    height: 40%;    width: 40%;  }</style><h1 id="玩具-GSC粘土人-高坂穗乃果-舞台服-ver"><a href="/album/%E7%8E%A9%E5%85%B7/%E7%8E%A9%E5%85%B7">玩具</a> / GSC粘土人 | 高坂穗乃果(舞台服 ver.)</h1><p>（5张）</p><p><img src="https://s1.ax1x.com/2020/08/16/dVDZ1P.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/08/16/dVD1ts.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/08/16/dVDVpt.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/08/16/dVDM7Q.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/08/16/dVDAfI.jpg" alt=""></p>]]></content>
+        <content type="html"><![CDATA[<style>  img{    height: 40%;    width: 40%;  }</style><h1 id="玩具-HG-风暴兵"><a href="/album/%E7%8E%A9%E5%85%B7/%E7%8E%A9%E5%85%B7">玩具</a> / HG | 风暴兵</h1><p>（1张）</p><p><img src="https://s1.ax1x.com/2020/09/01/djXW28.jpg" alt=""></p>]]></content>
       
       
       
@@ -2503,19 +2516,6 @@
     
     
     <entry>
-      <title>HG | 白兵</title>
-      <link href="album/%E7%8E%A9%E5%85%B7/03HG%E9%A3%8E%E6%9A%B4%E5%85%B5/"/>
-      <url>album/%E7%8E%A9%E5%85%B7/03HG%E9%A3%8E%E6%9A%B4%E5%85%B5/</url>
-      
-        <content type="html"><![CDATA[<style>  img{    height: 40%;    width: 40%;  }</style><h1 id="玩具-HG-风暴兵"><a href="/album/%E7%8E%A9%E5%85%B7/%E7%8E%A9%E5%85%B7">玩具</a> / HG | 风暴兵</h1><p>（1张）</p><p><img src="https://s1.ax1x.com/2020/09/01/djXW28.jpg" alt=""></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>SHF | 蜘蛛侠(PS4)</title>
       <link href="album/%E7%8E%A9%E5%85%B7/08%E8%9C%98%E8%9B%9B%E4%BE%A0ps4/"/>
       <url>album/%E7%8E%A9%E5%85%B7/08%E8%9C%98%E8%9B%9B%E4%BE%A0ps4/</url>
@@ -2529,11 +2529,11 @@
     
     
     <entry>
-      <title>钢铁侠 反浩克装甲</title>
-      <link href="album/%E7%8E%A9%E5%85%B7/10%E5%8F%8D%E6%B5%A9%E5%85%8B/"/>
-      <url>album/%E7%8E%A9%E5%85%B7/10%E5%8F%8D%E6%B5%A9%E5%85%8B/</url>
+      <title>掌动  |  巨金怪</title>
+      <link href="album/%E7%8E%A9%E5%85%B7/09.%E5%B7%A8%E9%87%91%E6%80%AA/"/>
+      <url>album/%E7%8E%A9%E5%85%B7/09.%E5%B7%A8%E9%87%91%E6%80%AA/</url>
       
-        <content type="html"><![CDATA[<style>  img{    height: 40%;    width: 40%;  }</style><h1 id="玩具-钢铁侠-反浩克装甲"><a href="/album/%E7%8E%A9%E5%85%B7/%E7%8E%A9%E5%85%B7">玩具</a> / 钢铁侠 反浩克装甲</h1><p>（1张）</p><p><img src="https://s1.ax1x.com/2020/08/17/deXe78.jpg" alt=""></p>]]></content>
+        <content type="html"><![CDATA[<style>  img{    height: 40%;    width: 40%;  }</style><h1 id="玩具-掌动-巨金怪"><a href="/album/%E7%8E%A9%E5%85%B7/%E7%8E%A9%E5%85%B7">玩具</a> / 掌动  |  巨金怪</h1><p>（1张）</p><p><img src="https://s1.ax1x.com/2020/08/17/deXAXt.jpg" alt=""></p>]]></content>
       
       
       
@@ -2542,11 +2542,11 @@
     
     
     <entry>
-      <title>掌动  |  巨金怪</title>
-      <link href="album/%E7%8E%A9%E5%85%B7/09.%E5%B7%A8%E9%87%91%E6%80%AA/"/>
-      <url>album/%E7%8E%A9%E5%85%B7/09.%E5%B7%A8%E9%87%91%E6%80%AA/</url>
+      <title>钢铁侠 反浩克装甲</title>
+      <link href="album/%E7%8E%A9%E5%85%B7/10%E5%8F%8D%E6%B5%A9%E5%85%8B/"/>
+      <url>album/%E7%8E%A9%E5%85%B7/10%E5%8F%8D%E6%B5%A9%E5%85%8B/</url>
       
-        <content type="html"><![CDATA[<style>  img{    height: 40%;    width: 40%;  }</style><h1 id="玩具-掌动-巨金怪"><a href="/album/%E7%8E%A9%E5%85%B7/%E7%8E%A9%E5%85%B7">玩具</a> / 掌动  |  巨金怪</h1><p>（1张）</p><p><img src="https://s1.ax1x.com/2020/08/17/deXAXt.jpg" alt=""></p>]]></content>
+        <content type="html"><![CDATA[<style>  img{    height: 40%;    width: 40%;  }</style><h1 id="玩具-钢铁侠-反浩克装甲"><a href="/album/%E7%8E%A9%E5%85%B7/%E7%8E%A9%E5%85%B7">玩具</a> / 钢铁侠 反浩克装甲</h1><p>（1张）</p><p><img src="https://s1.ax1x.com/2020/08/17/deXe78.jpg" alt=""></p>]]></content>
       
       
       
@@ -2779,11 +2779,11 @@
     
     
     <entry>
-      <title>随拍2017~2016</title>
-      <link href="album/%E9%9A%8F%E6%8B%8D/2018~2016/"/>
-      <url>album/%E9%9A%8F%E6%8B%8D/2018~2016/</url>
+      <title>随拍2015~1998</title>
+      <link href="album/%E9%9A%8F%E6%8B%8D/2015~1998/"/>
+      <url>album/%E9%9A%8F%E6%8B%8D/2015~1998/</url>
       
-        <content type="html"><![CDATA[<style>  img{    height: 40%;    width: 40%;  }</style><h1 id="随拍-2017-2016"><a href="/album/%E9%9A%8F%E6%8B%8D/%E9%9A%8F%E6%8B%8D">随拍</a> / 2017~2016</h1><h3 id="2017-01-27">2017/01/27</h3><h2 id=""><img src="https://s1.ax1x.com/2020/05/17/YRXes0.jpg" alt=""></h2><h3 id="2017-01-21">2017/01/21</h3><h2 id="-v2"><img src="https://s1.ax1x.com/2020/05/17/YRXZMq.jpg" alt=""></h2><h3 id="2017-01-15">2017/01/15</h3><h2 id="-v3"><img src="https://s1.ax1x.com/2020/05/17/YRXEzn.jpg" alt=""></h2><h3 id="2016-09-24">2016/09/24</h3><h2 id="-v4"><img src="https://s1.ax1x.com/2020/05/17/YRXFiQ.jpg" alt=""></h2><h3 id="2016-07-29">2016/07/29</h3><h2 id="-v5"><img src="https://s1.ax1x.com/2020/05/17/YRXkGj.jpg" alt=""></h2><h3 id="2016-06-05">2016/06/05</h3><h2 id="-v6"><img src="https://s1.ax1x.com/2020/05/17/YRXKdU.jpg" alt=""></h2><h3 id="2016-06-01">2016/06/01</h3><h2 id="-v7"><img src="https://s1.ax1x.com/2020/05/17/YRXARs.jpg" alt=""></h2><h3 id="2016-05-14">2016/05/14</h3><h2 id="-v8"><img src="https://s1.ax1x.com/2020/05/17/YRXli4.jpg" alt=""></h2>]]></content>
+        <content type="html"><![CDATA[<style>  img{    height: 40%;    width: 40%;  }</style><h1 id="随拍-2015-1998"><a href="/album/%E9%9A%8F%E6%8B%8D/%E9%9A%8F%E6%8B%8D">随拍</a> / 2015~1998</h1><h3 id="照片">照片</h3><h2 id=""><img src="https://s1.ax1x.com/2020/05/18/YWU54I.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWUoCt.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWUT8P.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWU7gf.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWULDg.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWUvUs.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaFrF.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaiKU.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaCvT.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaEVJ.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWakb4.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaZ5R.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaVa9.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWamP1.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWau26.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWan8x.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWa1qe.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaQKO.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaKxK.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWalrD.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWa8VH.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaGad.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaJIA.jpg" alt=""></h2><h3 id="旧照片">旧照片</h3><h2 id="-v2"><img src="https://s1.ax1x.com/2020/05/18/YWUWHH.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWUhEd.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWU4UA.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWUqKS.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWUObQ.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWUx5n.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWap80.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaSCq.jpg" alt=""></h2>]]></content>
       
       
       
@@ -2792,11 +2792,11 @@
     
     
     <entry>
-      <title>随拍2015~1998</title>
-      <link href="album/%E9%9A%8F%E6%8B%8D/2015~1998/"/>
-      <url>album/%E9%9A%8F%E6%8B%8D/2015~1998/</url>
+      <title>随拍2017~2016</title>
+      <link href="album/%E9%9A%8F%E6%8B%8D/2018~2016/"/>
+      <url>album/%E9%9A%8F%E6%8B%8D/2018~2016/</url>
       
-        <content type="html"><![CDATA[<style>  img{    height: 40%;    width: 40%;  }</style><h1 id="随拍-2015-1998"><a href="/album/%E9%9A%8F%E6%8B%8D/%E9%9A%8F%E6%8B%8D">随拍</a> / 2015~1998</h1><h3 id="照片">照片</h3><h2 id=""><img src="https://s1.ax1x.com/2020/05/18/YWU54I.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWUoCt.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWUT8P.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWU7gf.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWULDg.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWUvUs.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaFrF.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaiKU.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaCvT.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaEVJ.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWakb4.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaZ5R.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaVa9.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWamP1.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWau26.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWan8x.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWa1qe.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaQKO.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaKxK.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWalrD.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWa8VH.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaGad.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaJIA.jpg" alt=""></h2><h3 id="旧照片">旧照片</h3><h2 id="-v2"><img src="https://s1.ax1x.com/2020/05/18/YWUWHH.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWUhEd.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWU4UA.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWUqKS.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWUObQ.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWUx5n.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWap80.jpg" alt=""><br><img src="https://s1.ax1x.com/2020/05/18/YWaSCq.jpg" alt=""></h2>]]></content>
+        <content type="html"><![CDATA[<style>  img{    height: 40%;    width: 40%;  }</style><h1 id="随拍-2017-2016"><a href="/album/%E9%9A%8F%E6%8B%8D/%E9%9A%8F%E6%8B%8D">随拍</a> / 2017~2016</h1><h3 id="2017-01-27">2017/01/27</h3><h2 id=""><img src="https://s1.ax1x.com/2020/05/17/YRXes0.jpg" alt=""></h2><h3 id="2017-01-21">2017/01/21</h3><h2 id="-v2"><img src="https://s1.ax1x.com/2020/05/17/YRXZMq.jpg" alt=""></h2><h3 id="2017-01-15">2017/01/15</h3><h2 id="-v3"><img src="https://s1.ax1x.com/2020/05/17/YRXEzn.jpg" alt=""></h2><h3 id="2016-09-24">2016/09/24</h3><h2 id="-v4"><img src="https://s1.ax1x.com/2020/05/17/YRXFiQ.jpg" alt=""></h2><h3 id="2016-07-29">2016/07/29</h3><h2 id="-v5"><img src="https://s1.ax1x.com/2020/05/17/YRXkGj.jpg" alt=""></h2><h3 id="2016-06-05">2016/06/05</h3><h2 id="-v6"><img src="https://s1.ax1x.com/2020/05/17/YRXKdU.jpg" alt=""></h2><h3 id="2016-06-01">2016/06/01</h3><h2 id="-v7"><img src="https://s1.ax1x.com/2020/05/17/YRXARs.jpg" alt=""></h2><h3 id="2016-05-14">2016/05/14</h3><h2 id="-v8"><img src="https://s1.ax1x.com/2020/05/17/YRXli4.jpg" alt=""></h2>]]></content>
       
       
       
@@ -2910,11 +2910,11 @@
     
     
     <entry>
-      <title>demo</title>
-      <link href="demo/"/>
-      <url>demo/</url>
+      <title>Tags</title>
+      <link href="tags/"/>
+      <url>tags/</url>
       
-        <content type="html"><![CDATA[<p>这里记录一些常用的语法</p><p>①②③④⑤⑥⑦⑧⑨⑩<br>⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳<br>㉑㉒㉓㉔㉕㉖㉗㉘㉙㉚<br>㉛㉜㉝㉞㉟㊱㊲㊳㊴㊵<br>㊶㊷㊸㊹㊺㊻㊼㊽㊾㊿</p><p><strong>滕王阁序</strong><br><code>【作者】王勃 【朝代】唐译文对照</code><br>豫章故郡，洪都新府。星分翼轸，地接衡庐。襟三江而带五湖，控蛮荆而引瓯越。物华天宝，龙光射牛斗之墟；人杰地灵，徐孺下陈蕃之榻。雄州雾列，俊采星驰。台隍枕夷夏之交，宾主尽东南之美。都督阎公之雅望，棨戟遥临；宇文新州之懿范，襜帷暂驻。十旬休假，胜友如云；千里逢迎，高朋满座。腾蛟起凤，孟学士之词宗；紫电青霜，王将军之武库。家君作宰，路出名区；童子何知，躬逢胜饯。</p><p>时维九月，序属三秋。潦水尽而寒潭清，烟光凝而暮山紫。俨骖騑于上路，访风景于崇阿；临帝子之长洲，得天人之旧馆。层峦耸翠，上出重霄；飞阁流丹，下临无地。鹤汀凫渚，穷岛屿之萦回；桂殿兰宫，即冈峦之体势。</p><p>披绣闼，俯雕甍，山原旷其盈视，川泽纡其骇瞩。闾阎扑地，钟鸣鼎食之家；舸舰弥津，青雀黄龙之舳。云销雨霁，彩彻区明。落霞与孤鹜齐飞，秋水共长天一色。渔舟唱晚，响穷彭蠡之滨；雁阵惊寒，声断衡阳之浦。</p><p>遥襟甫畅，逸兴遄飞。爽籁发而清风生，纤歌凝而白云遏。睢园绿竹，气凌彭泽之樽；邺水朱华，光照临川之笔。四美具，二难并。穷睇眄于中天，极娱游于暇日。天高地迥，觉宇宙之无穷；兴尽悲来，识盈虚之有数。望长安于日下，目吴会于云间。地势极而南溟深，天柱高而北辰远。关山难越，谁悲失路之人？萍水相逢，尽是他乡之客。怀帝阍而不见，奉宣室以何年？</p><p>嗟乎！时运不齐，命途多舛。冯唐易老，李广难封。屈贾谊于长沙，非无圣主；窜梁鸿于海曲，岂乏明时？所赖君子见机，达人知命。老当益壮，宁移白首之心？穷且益坚，不坠青云之志。酌贪泉而觉爽，处涸辙以犹欢。北海虽赊，扶摇可接；东隅已逝，桑榆非晚。孟尝高洁，空余报国之情；阮籍猖狂，岂效穷途之哭！</p><p>勃，三尺微命，一介书生。无路请缨，等终军之弱冠；有怀投笔，慕宗悫之长风。舍簪笏于百龄，奉晨昏于万里。非谢家之宝树，接孟氏之芳邻。他日趋庭，叨陪鲤对；今兹捧袂，喜托龙门。杨意不逢，抚凌云而自惜；钟期既遇，奏流水以何惭？</p><p>呜乎！胜地不常，盛筵难再；兰亭已矣，梓泽丘墟。临别赠言，幸承恩于伟饯；登高作赋，是所望于群公。敢竭鄙怀，恭疏短引；一言均赋，四韵俱成。请洒潘江，各倾陆海云尔：</p><p>滕王高阁临江渚，佩玉鸣鸾罢歌舞。</p><p>画栋朝飞南浦云，珠帘暮卷西山雨。</p><p>闲云潭影日悠悠，物换星移几度秋。</p><p>阁中帝子今何在？槛外长江空自流。</p><h1 id="我">我</h1><h2 id="看">看</h2><h3 id="见">见</h3><h4 id="你">你</h4><h5 id="们">们</h5><h6 id="惹">惹</h6><h1 id="Tag">Tag</h1><p>这个页面包含三个tags，在右侧应该会显示</p><h1 id="分割线">分割线</h1><hr><hr><hr><h1 id="特殊符号">特殊符号</h1><p>© © ® ® ™ ™ § § ±</p><p>test… test… test… test?.. test!..</p><p>!!! ??? ,  – —</p><h1 id="文本">文本</h1><p>普通正文, <a href="">链接</a> ，<strong>粗体</strong>，<code>红色背景文字</code>，<s>删除线</s>，<ins>下划线</ins>，<mark>底色高亮</mark>，<em>斜体</em>。</p><blockquote><p>可以加竖列</p><blockquote><p>或者在里面再加一条</p><blockquote><p>。。想加还能加</p></blockquote></blockquote></blockquote><h2 id="右对齐">右对齐</h2><blockquote class="pullquote right"><p>我在右边</p></blockquote><h1 id="美观的注释">美观的注释</h1><p>“我所佩服诸公的只有一点，就是这种东西居然会有发表的勇气”<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p><p>“来点色图！”<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p><p>我向佛祖许愿，祝群友们<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> 天天健康快乐.</p><p>佛说不行，我所有的群友都哭了。<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2:1]</a></sup>.</p><h1 id="彩色note">彩色note</h1><div class="note"><p><em>note</em></p></div><div class="tip"><p><em>tip</em></p></div><div class="attention"><p><em>attention</em></p></div><h1 id="列表类型">列表类型</h1><h1 id="数字">数字</h1><ol><li>第一列</li><li>第二列</li><li>第三列</li></ol><h3 id="点">点</h3><ul><li><p>第一列</p><ul><li>小列</li><li>小列</li></ul></li><li><p>第二列</p></li><li><p>第三列</p></li></ul><h3 id="待办">待办</h3><ul><li><input type="checkbox" id="checkbox0"><label for="checkbox0">第一列</label></li><li><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1">第二列</label></li><li><input type="checkbox" id="checkbox2" checked="true"><label for="checkbox2">第三列</label></li></ul><h1 id="表格">表格</h1><h3 id="普通表格">普通表格</h3><table><thead><tr><th>标题1</th><th>标题2</th><th>标题3</th></tr></thead><tbody><tr><td>字段1</td><td>字段2</td><td>字段3</td></tr><tr><td>字段1</td><td>字段2</td><td>字段3</td></tr><tr><td>字段1</td><td>字段2</td><td>字段3</td></tr></tbody></table><h3 id="文本右对齐表格">文本右对齐表格</h3><table><thead><tr><th style="text-align:right">标题1</th><th style="text-align:right">标题2</th></tr></thead><tbody><tr><td style="text-align:right">data</td><td style="text-align:right">path to data files to supply the data that will be passed into templates.</td></tr><tr><td style="text-align:right">engine</td><td style="text-align:right">engine to be used for processing templates. Handlebars is the default.</td></tr><tr><td style="text-align:right">ext</td><td style="text-align:right">extension to be used for dest files.</td></tr></tbody></table><h1 id="其他样式">其他样式</h1><p>2 <sup>上标</sup>    <sub>下标</sub> ， <em>123</em>321<cite>斜体</cite>，<acronym title="我是标注我是标注我是标注我是标注我是标注">显示标注</acronym> ， <abbr title="我是标注我是标注我是标注我是标注我是标注">显示标注（问号箭头）</abbr></p><pre><code>小编是营销号是怎么回事呢？小编相信大家都很熟悉，但是小编是营销号是怎么回事呢，下面就让小编带大家一起了解吧。小编是营销号，其实就是小编是傻逼，大家可能会很惊讶小编怎么会是营销号呢？但事实就是这样，小编也感到非常惊讶。这就是关于小编是营销号的事情了，大家有什么想法呢，欢迎在评论区告诉小编一起讨论哦！</code></pre><h1 id="代码块">代码块</h1><h3 id="普通-代码块">普通 代码块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(&apos;Hello World!&apos;);</span><br></pre></td></tr></table></figure><h3 id="解析语言-代码块">解析语言 代码块</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params">bar</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> bar++;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(foo(<span class="number">5</span>));</span><br></pre></td></tr></table></figure><h3 id="带标题-代码块">带标题 代码块</h3><figure class="highlight plain"><figcaption><span>Array.map</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.map(callback[, thisArg])</span><br></pre></td></tr></table></figure><h3 id="带标题和URL的代码块">带标题和URL的代码块</h3><figure class="highlight plain"><figcaption><span>.compact</span><a href="http://underscorejs.org/#compact" target="_blank" rel="noopener">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.compact([0, 1, false, 2, ‘’, 3]);</span><br><span class="line">=&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure><h3 id="带自定义高亮的代码块">带自定义高亮的代码块</h3><p>Line 1,7-8,10 should be marked with different color.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line marked"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> hostname = <span class="string">'127.0.0.1'</span>;</span><br><span class="line"><span class="keyword">const</span> port = <span class="number">1337</span>;</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line marked">  res.writeHead(<span class="number">200</span>, &#123; <span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span> &#125;);</span><br><span class="line marked">  res.end(<span class="string">'Hello World\n'</span>);</span><br><span class="line">&#125;).listen(port, hostname, () =&gt; &#123;</span><br><span class="line marked">  <span class="built_in">console</span>.log(<span class="string">`Server running at http://<span class="subst">$&#123;hostname&#125;</span>:<span class="subst">$&#123;port&#125;</span>/`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h1 id="右对齐文本">右对齐文本</h1><blockquote class="pullquote right"><p>文本</p></blockquote><h1 id="图片">图片</h1><p><img src="../../images/test_1.jpg" alt=""></p><p><img src="../../images/test_2.jpg" alt="项目图片"></p><p><img src="https://media.52poke.com/wiki/d/d0/SS020.png" alt="网络图片"></p><p><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2251706539,2133284970&amp;fm=173&amp;app=49&amp;f=JPEG?w=240&amp;h=240&amp;s=70A8FF5950139BCC3C303C030100E0C1" alt="我图片链接写在下面了"></p><p>可以在代码底部写上图片链接↑</p><h1 id="视频链接">视频链接</h1><p><strong>Youtube</strong></p><p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="150" height="20"    codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab"><br><param name="movie" value="/songs/singlemp3player.swf?showDownload=true" /><br><param name="wmode" value="transparent" /><br><embed wmode="transparent" width="150" height="20" src="/songs/singlemp3player.swf?showDownload=true"    type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /><br></object></p><p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="300" height="20"    codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab"><br><param name="movie" value="/songs/singlemp3player.swf?file=/songs/test.mp3&autoStart=false&backColor=000000&frontColor=ffffff&songVolume=90" /><br><param name="wmode" value="transparent" /><br><embed wmode="transparent" width="300" height="20" src="/songs/singlemp3player.swf?file=/songs/test.mp3&autoStart=false&backColor=000000&frontColor=ffffff&songVolume=90"    type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /><br></object></p><p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="25" height="20"    codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab"><br><param name="movie" value="/songs/singlemp3player.swf?file=/songs/test.mp3&backColor=990000&frontColor=ddddff&repeatPlay=true&songVolume=30" /><br><param name="wmode" value="transparent" /><br><embed wmode="transparent" width="25" height="20" src="/songs/singlemp3player.swf?file=/songs/test.mp3&backColor=2B2B2B&frontColor=ddddff&repeatPlay=true&songVolume=30"    type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /><br></object></p><div class="video-container"><iframe src="//www.youtube.com/embed/TIbZDRXM-Tg" frameborder="0" allowfullscreen></iframe></div><hr class="footnotes-sep"><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p>这句话是鲁迅说的 <a href="#fnref1" class="footnote-backref">↩︎</a></p></li><li id="fn2" class="footnote-item"><p>鲁迅：我没说过 <a href="#fnref2" class="footnote-backref">↩︎</a> <a href="#fnref2:1" class="footnote-backref">↩︎</a></p></li><li id="fn3" class="footnote-item"><p>也称鸽子 <a href="#fnref3" class="footnote-backref">↩︎</a></p></li></ol></section>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
       
       
@@ -2923,11 +2923,11 @@
     
     
     <entry>
-      <title>Tags</title>
-      <link href="tags/"/>
-      <url>tags/</url>
+      <title>demo</title>
+      <link href="demo/"/>
+      <url>demo/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>这里记录一些常用的语法</p><p>①②③④⑤⑥⑦⑧⑨⑩<br>⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳<br>㉑㉒㉓㉔㉕㉖㉗㉘㉙㉚<br>㉛㉜㉝㉞㉟㊱㊲㊳㊴㊵<br>㊶㊷㊸㊹㊺㊻㊼㊽㊾㊿</p><p><strong>滕王阁序</strong><br><code>【作者】王勃 【朝代】唐译文对照</code><br>豫章故郡，洪都新府。星分翼轸，地接衡庐。襟三江而带五湖，控蛮荆而引瓯越。物华天宝，龙光射牛斗之墟；人杰地灵，徐孺下陈蕃之榻。雄州雾列，俊采星驰。台隍枕夷夏之交，宾主尽东南之美。都督阎公之雅望，棨戟遥临；宇文新州之懿范，襜帷暂驻。十旬休假，胜友如云；千里逢迎，高朋满座。腾蛟起凤，孟学士之词宗；紫电青霜，王将军之武库。家君作宰，路出名区；童子何知，躬逢胜饯。</p><p>时维九月，序属三秋。潦水尽而寒潭清，烟光凝而暮山紫。俨骖騑于上路，访风景于崇阿；临帝子之长洲，得天人之旧馆。层峦耸翠，上出重霄；飞阁流丹，下临无地。鹤汀凫渚，穷岛屿之萦回；桂殿兰宫，即冈峦之体势。</p><p>披绣闼，俯雕甍，山原旷其盈视，川泽纡其骇瞩。闾阎扑地，钟鸣鼎食之家；舸舰弥津，青雀黄龙之舳。云销雨霁，彩彻区明。落霞与孤鹜齐飞，秋水共长天一色。渔舟唱晚，响穷彭蠡之滨；雁阵惊寒，声断衡阳之浦。</p><p>遥襟甫畅，逸兴遄飞。爽籁发而清风生，纤歌凝而白云遏。睢园绿竹，气凌彭泽之樽；邺水朱华，光照临川之笔。四美具，二难并。穷睇眄于中天，极娱游于暇日。天高地迥，觉宇宙之无穷；兴尽悲来，识盈虚之有数。望长安于日下，目吴会于云间。地势极而南溟深，天柱高而北辰远。关山难越，谁悲失路之人？萍水相逢，尽是他乡之客。怀帝阍而不见，奉宣室以何年？</p><p>嗟乎！时运不齐，命途多舛。冯唐易老，李广难封。屈贾谊于长沙，非无圣主；窜梁鸿于海曲，岂乏明时？所赖君子见机，达人知命。老当益壮，宁移白首之心？穷且益坚，不坠青云之志。酌贪泉而觉爽，处涸辙以犹欢。北海虽赊，扶摇可接；东隅已逝，桑榆非晚。孟尝高洁，空余报国之情；阮籍猖狂，岂效穷途之哭！</p><p>勃，三尺微命，一介书生。无路请缨，等终军之弱冠；有怀投笔，慕宗悫之长风。舍簪笏于百龄，奉晨昏于万里。非谢家之宝树，接孟氏之芳邻。他日趋庭，叨陪鲤对；今兹捧袂，喜托龙门。杨意不逢，抚凌云而自惜；钟期既遇，奏流水以何惭？</p><p>呜乎！胜地不常，盛筵难再；兰亭已矣，梓泽丘墟。临别赠言，幸承恩于伟饯；登高作赋，是所望于群公。敢竭鄙怀，恭疏短引；一言均赋，四韵俱成。请洒潘江，各倾陆海云尔：</p><p>滕王高阁临江渚，佩玉鸣鸾罢歌舞。</p><p>画栋朝飞南浦云，珠帘暮卷西山雨。</p><p>闲云潭影日悠悠，物换星移几度秋。</p><p>阁中帝子今何在？槛外长江空自流。</p><h1 id="我">我</h1><h2 id="看">看</h2><h3 id="见">见</h3><h4 id="你">你</h4><h5 id="们">们</h5><h6 id="惹">惹</h6><h1 id="Tag">Tag</h1><p>这个页面包含三个tags，在右侧应该会显示</p><h1 id="分割线">分割线</h1><hr><hr><hr><h1 id="特殊符号">特殊符号</h1><p>© © ® ® ™ ™ § § ±</p><p>test… test… test… test?.. test!..</p><p>!!! ??? ,  – —</p><h1 id="文本">文本</h1><p>普通正文, <a href="">链接</a> ，<strong>粗体</strong>，<code>红色背景文字</code>，<s>删除线</s>，<ins>下划线</ins>，<mark>底色高亮</mark>，<em>斜体</em>。</p><blockquote><p>可以加竖列</p><blockquote><p>或者在里面再加一条</p><blockquote><p>。。想加还能加</p></blockquote></blockquote></blockquote><h2 id="右对齐">右对齐</h2><blockquote class="pullquote right"><p>我在右边</p></blockquote><h1 id="美观的注释">美观的注释</h1><p>“我所佩服诸公的只有一点，就是这种东西居然会有发表的勇气”<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p><p>“来点色图！”<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p><p>我向佛祖许愿，祝群友们<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> 天天健康快乐.</p><p>佛说不行，我所有的群友都哭了。<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2:1]</a></sup>.</p><h1 id="彩色note">彩色note</h1><div class="note"><p><em>note</em></p></div><div class="tip"><p><em>tip</em></p></div><div class="attention"><p><em>attention</em></p></div><h1 id="列表类型">列表类型</h1><h1 id="数字">数字</h1><ol><li>第一列</li><li>第二列</li><li>第三列</li></ol><h3 id="点">点</h3><ul><li><p>第一列</p><ul><li>小列</li><li>小列</li></ul></li><li><p>第二列</p></li><li><p>第三列</p></li></ul><h3 id="待办">待办</h3><ul><li><input type="checkbox" id="checkbox0"><label for="checkbox0">第一列</label></li><li><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1">第二列</label></li><li><input type="checkbox" id="checkbox2" checked="true"><label for="checkbox2">第三列</label></li></ul><h1 id="表格">表格</h1><h3 id="普通表格">普通表格</h3><table><thead><tr><th>标题1</th><th>标题2</th><th>标题3</th></tr></thead><tbody><tr><td>字段1</td><td>字段2</td><td>字段3</td></tr><tr><td>字段1</td><td>字段2</td><td>字段3</td></tr><tr><td>字段1</td><td>字段2</td><td>字段3</td></tr></tbody></table><h3 id="文本右对齐表格">文本右对齐表格</h3><table><thead><tr><th style="text-align:right">标题1</th><th style="text-align:right">标题2</th></tr></thead><tbody><tr><td style="text-align:right">data</td><td style="text-align:right">path to data files to supply the data that will be passed into templates.</td></tr><tr><td style="text-align:right">engine</td><td style="text-align:right">engine to be used for processing templates. Handlebars is the default.</td></tr><tr><td style="text-align:right">ext</td><td style="text-align:right">extension to be used for dest files.</td></tr></tbody></table><h1 id="其他样式">其他样式</h1><p>2 <sup>上标</sup>    <sub>下标</sub> ， <em>123</em>321<cite>斜体</cite>，<acronym title="我是标注我是标注我是标注我是标注我是标注">显示标注</acronym> ， <abbr title="我是标注我是标注我是标注我是标注我是标注">显示标注（问号箭头）</abbr></p><pre><code>小编是营销号是怎么回事呢？小编相信大家都很熟悉，但是小编是营销号是怎么回事呢，下面就让小编带大家一起了解吧。小编是营销号，其实就是小编是傻逼，大家可能会很惊讶小编怎么会是营销号呢？但事实就是这样，小编也感到非常惊讶。这就是关于小编是营销号的事情了，大家有什么想法呢，欢迎在评论区告诉小编一起讨论哦！</code></pre><h1 id="代码块">代码块</h1><h3 id="普通-代码块">普通 代码块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(&apos;Hello World!&apos;);</span><br></pre></td></tr></table></figure><h3 id="解析语言-代码块">解析语言 代码块</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params">bar</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> bar++;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(foo(<span class="number">5</span>));</span><br></pre></td></tr></table></figure><h3 id="带标题-代码块">带标题 代码块</h3><figure class="highlight plain"><figcaption><span>Array.map</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.map(callback[, thisArg])</span><br></pre></td></tr></table></figure><h3 id="带标题和URL的代码块">带标题和URL的代码块</h3><figure class="highlight plain"><figcaption><span>.compact</span><a href="http://underscorejs.org/#compact" target="_blank" rel="noopener">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.compact([0, 1, false, 2, ‘’, 3]);</span><br><span class="line">=&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure><h3 id="带自定义高亮的代码块">带自定义高亮的代码块</h3><p>Line 1,7-8,10 should be marked with different color.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line marked"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> hostname = <span class="string">'127.0.0.1'</span>;</span><br><span class="line"><span class="keyword">const</span> port = <span class="number">1337</span>;</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line marked">  res.writeHead(<span class="number">200</span>, &#123; <span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span> &#125;);</span><br><span class="line marked">  res.end(<span class="string">'Hello World\n'</span>);</span><br><span class="line">&#125;).listen(port, hostname, () =&gt; &#123;</span><br><span class="line marked">  <span class="built_in">console</span>.log(<span class="string">`Server running at http://<span class="subst">$&#123;hostname&#125;</span>:<span class="subst">$&#123;port&#125;</span>/`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h1 id="右对齐文本">右对齐文本</h1><blockquote class="pullquote right"><p>文本</p></blockquote><h1 id="图片">图片</h1><p><img src="../../images/test_1.jpg" alt=""></p><p><img src="../../images/test_2.jpg" alt="项目图片"></p><p><img src="https://media.52poke.com/wiki/d/d0/SS020.png" alt="网络图片"></p><p><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2251706539,2133284970&amp;fm=173&amp;app=49&amp;f=JPEG?w=240&amp;h=240&amp;s=70A8FF5950139BCC3C303C030100E0C1" alt="我图片链接写在下面了"></p><p>可以在代码底部写上图片链接↑</p><h1 id="视频链接">视频链接</h1><p><strong>Youtube</strong></p><p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="150" height="20"    codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab"><br><param name="movie" value="/songs/singlemp3player.swf?showDownload=true" /><br><param name="wmode" value="transparent" /><br><embed wmode="transparent" width="150" height="20" src="/songs/singlemp3player.swf?showDownload=true"    type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /><br></object></p><p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="300" height="20"    codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab"><br><param name="movie" value="/songs/singlemp3player.swf?file=/songs/test.mp3&autoStart=false&backColor=000000&frontColor=ffffff&songVolume=90" /><br><param name="wmode" value="transparent" /><br><embed wmode="transparent" width="300" height="20" src="/songs/singlemp3player.swf?file=/songs/test.mp3&autoStart=false&backColor=000000&frontColor=ffffff&songVolume=90"    type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /><br></object></p><p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="25" height="20"    codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab"><br><param name="movie" value="/songs/singlemp3player.swf?file=/songs/test.mp3&backColor=990000&frontColor=ddddff&repeatPlay=true&songVolume=30" /><br><param name="wmode" value="transparent" /><br><embed wmode="transparent" width="25" height="20" src="/songs/singlemp3player.swf?file=/songs/test.mp3&backColor=2B2B2B&frontColor=ddddff&repeatPlay=true&songVolume=30"    type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /><br></object></p><div class="video-container"><iframe src="//www.youtube.com/embed/TIbZDRXM-Tg" frameborder="0" allowfullscreen></iframe></div><hr class="footnotes-sep"><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p>这句话是鲁迅说的 <a href="#fnref1" class="footnote-backref">↩︎</a></p></li><li id="fn2" class="footnote-item"><p>鲁迅：我没说过 <a href="#fnref2" class="footnote-backref">↩︎</a> <a href="#fnref2:1" class="footnote-backref">↩︎</a></p></li><li id="fn3" class="footnote-item"><p>也称鸽子 <a href="#fnref3" class="footnote-backref">↩︎</a></p></li></ol></section>]]></content>
       
       
       

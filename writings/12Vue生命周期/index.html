@@ -290,6 +290,16 @@ function sidebar_toggle() {
 <strong><code>updated()</code></strong>:（更新后）数据更新后</p>
 <p><strong><code>beforeDestory()</code></strong>:（销毁前）实例被销毁前，实例还可以使用<br>
 <strong><code>destoryed()</code></strong>:（销毁后）实例被销毁后，实例里的所有东西都解除绑定。不可再使用</p>
+<h2 id="2021-02-02更新-Vue3-0生命周期函数">2021.02.02更新 Vue3.0生命周期函数</h2>
+<p><strong>//页面加载开始</strong></p>
+<p><strong><code>setup()</code></strong>:（创建前）代替beforeCreate和created</p>
+<p><strong><code>onBeforeMount()</code></strong>:（挂载前）el和data完成初始化，但还未挂载到页面上<br>
+<strong><code>onMounted()</code></strong>:（挂载后）完成挂载</p>
+<p><strong>//页面加载结束，Dom渲染完成</strong></p>
+<p><strong><code>onBeforeUpdate()</code></strong>:（更新前）数据更新前<br>
+<strong><code>onUpdated()</code></strong>:（更新后）数据更新后</p>
+<p><strong><code>onBeforeDestory()</code></strong>:（销毁前）实例被销毁前，实例还可以使用<br>
+<strong><code>onDestoryed()</code></strong>:（销毁后）实例被销毁后，实例里的所有东西都解除绑定。不可再使用</p>
 
   <a onclick="go_top()"><div class="to_top">↑</div></a>
 </div>
