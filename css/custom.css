@@ -505,7 +505,7 @@
 /* 网页常用颜色 */
 .colorBoard {
   padding: 10px;
-  width: 210;
+  width: 230px;
   height: 90px;
   float: left; }
   .colorBoard .btn {
@@ -522,7 +522,8 @@
     border: 0;
     color: #fff;
     position: relative;
-    transition: 0.2s all; }
+    transition: 0.2s all;
+    box-shadow: 0 1px 3px 0px #00000052; }
   .colorBoard .btn:first-of-type {
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px; }
@@ -551,3 +552,12 @@
   transition: 1s all;
   cursor: default;
   opacity: 0; }
+
+.machine {
+  overflow: hidden; }
+  .machine > div {
+    width: 450px;
+    height: 150px;
+    background-color: black;
+    float: left;
+    margin: 10px; }

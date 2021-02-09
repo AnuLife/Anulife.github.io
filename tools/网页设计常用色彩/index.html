@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <li><a href="/writings/37ES6%E8%A7%A3%E6%9E%84"><strong>12</strong> ES6解构</a></li>
 <li><a href="/writings/35ES6%E6%95%B0%E7%BB%84%E5%86%85%E5%AF%B9%E8%B1%A1%E5%8E%BB%E9%87%8D"><strong>11</strong> ES6数组内对象去重</a></li>
 <li><a href="/writings/32ES6%E4%B8%AD%E7%9A%84class%E5%92%8Cextends"><strong>10</strong> ES6中的class和extends</a></li>
-<li><a href="/writings/28ES6Symbol%E6%A0%87%E7%AD%BE"><strong>9</strong> ES6 Symbol标签</a></li>
+<li><a href="/writings/28ES6Symbol%E5%92%8CSet%E5%92%8CMap"><strong>9</strong> ES6 Symbol、Set和Map</a></li>
 <li><a href="/writings/27ES6%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><strong>8</strong> ES6箭头函数</a></li>
 <li><a href="/writings/22%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96"><strong>7</strong> 函数柯里化</a></li>
 <li><a href="/writings/21%E4%BD%BF%E7%94%A8viewport%E5%AF%B9%E9%A1%B5%E9%9D%A2%E5%81%9A%E5%93%8D%E5%BA%94%E5%BC%8F%E5%A4%84%E7%90%86"><strong>6</strong> 使用viewport对页面做响应式处理</a></li>
@@ -544,312 +544,172 @@ function sidebar_toggle() {
 <!-- Target -->
 <div style="overflow:hidden">
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#009966" style="background-color:#009966">#009966</button>
+        <button class="btn" data-clipboard-text="#FFFFFF" style="background-color:#FFFFFF">#FFFFFF</button>
+        <button class="btn" data-clipboard-text="#FFFF00" style="background-color:#FFFF00">#FFFF00</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#339933" style="background-color:#339933">#339933</button>
+        <button class="btn" data-clipboard-text="#9933CC" style="background-color:#9933CC">#9933CC</button>
+        <button class="btn" data-clipboard-text="#000000" style="background-color:#000000">#000000</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#99CC00" style="background-color:#99CC00">#99CC00</button>
+        <button class="btn" data-clipboard-text="#FFFFCC" style="background-color:#FFFFCC">#FFFFCC</button>
+        <button class="btn" data-clipboard-text="#CCCC66" style="background-color:#CCCC66">#CCCC66</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#336666" style="background-color:#336666">#336666</button>
+        <button class="btn" data-clipboard-text="#99CC33" style="background-color:#99CC33">#99CC33</button>
+        <button class="btn" data-clipboard-text="#FFFF66" style="background-color:#FFFF66">#FFFF66</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#336600" style="background-color:#336600">#336600</button>
+        <button class="btn" data-clipboard-text="#CC9900" style="background-color:#CC9900">#CC9900</button>
+        <button class="btn" data-clipboard-text="#666666" style="background-color:#666666">#666666</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#339966" style="background-color:#339966">#339966</button>
+        <button class="btn" data-clipboard-text="#CCCCCC" style="background-color:#CCCCCC">#CCCCCC</button>
+        <button class="btn" data-clipboard-text="#003366" style="background-color:#003366">#003366</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#669933" style="background-color:#669933">#669933</button>
+        <button class="btn" data-clipboard-text="#6699CC" style="background-color:#6699CC">#6699CC</button>
+        <button class="btn" data-clipboard-text="#006633" style="background-color:#006633">#006633</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#CCCC33" style="background-color:#CCCC33">#CCCC33</button>
+        <button class="btn" data-clipboard-text="#CC9933" style="background-color:#CC9933">#CC9933</button>
+        <button class="btn" data-clipboard-text="#666633" style="background-color:#666633">#666633</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#FFCC33" style="background-color:#FFCC33">#FFCC33</button>
+        <button class="btn" data-clipboard-text="#336699" style="background-color:#336699">#336699</button>
+        <button class="btn" data-clipboard-text="#99CC99" style="background-color:#99CC99">#99CC99</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#996633" style="background-color:#996633">#996633</button>
+        <button class="btn" data-clipboard-text="#003300" style="background-color:#003300">#003300</button>
+        <button class="btn" data-clipboard-text="#CCCC99" style="background-color:#CCCC99">#CCCC99</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#990033" style="background-color:#990033">#990033</button>
+        <button class="btn" data-clipboard-text="#FF9900" style="background-color:#FF9900">#FF9900</button>
+        <button class="btn" data-clipboard-text="#333300" style="background-color:#333300">#333300</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#663300" style="background-color:#663300">#663300</button>
+        <button class="btn" data-clipboard-text="#993333" style="background-color:#993333">#993333</button>
+        <button class="btn" data-clipboard-text="#CC9966" style="background-color:#CC9966">#CC9966</button>
     </div>
 </div>
 <h4 id="青绿色">青绿色</h4>
 <!-- Target -->
 <div style="overflow:hidden">
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#CCFF99" style="background-color:#CCFF99">#CCFF99</button>
+        <button class="btn" data-clipboard-text="#FFFFFF" style="background-color:#FFFFFF">#FFFFFF</button>
+        <button class="btn" data-clipboard-text="#66CCCC" style="background-color:#66CCCC">#66CCCC</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#339999" style="background-color:#339999">#339999</button>
+        <button class="btn" data-clipboard-text="#99CCFF" style="background-color:#99CCFF">#99CCFF</button>
+        <button class="btn" data-clipboard-text="#66CC99" style="background-color:#66CC99">#66CC99</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#666699" style="background-color:#666699">#666699</button>
+        <button class="btn" data-clipboard-text="#009999" style="background-color:#009999">#009999</button>
+        <button class="btn" data-clipboard-text="#CCFFFF" style="background-color:#CCFFFF">#CCFFFF</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#CCFF66" style="background-color:#CCFF66">#CCFF66</button>
+        <button class="btn" data-clipboard-text="#FF99CC" style="background-color:#FF99CC">#FF99CC</button>
+        <button class="btn" data-clipboard-text="#FFFF00" style="background-color:#FFFF00">#FFFF00</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#336699" style="background-color:#336699">#336699</button>
+        <button class="btn" data-clipboard-text="#CC9933" style="background-color:#CC9933">#CC9933</button>
+        <button class="btn" data-clipboard-text="#FFCC33" style="background-color:#FFCC33">#FFCC33</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#FFCC00" style="background-color:#FFCC00">#FFCC00</button>
+        <button class="btn" data-clipboard-text="#CC3333" style="background-color:#CC3333">#CC3333</button>
+        <button class="btn" data-clipboard-text="#669999" style="background-color:#669999">#669999</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#CCCCCC" style="background-color:#CCCCCC">#CCCCCC</button>
+        <button class="btn" data-clipboard-text="#CC99CC" style="background-color:#CC99CC">#CC99CC</button>
+        <button class="btn" data-clipboard-text="#000000" style="background-color:#000000">#000000</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#003333" style="background-color:#003333">#003333</button>
+        <button class="btn" data-clipboard-text="#99CC99" style="background-color:#99CC99">#99CC99</button>
+        <button class="btn" data-clipboard-text="#FFFFCC" style="background-color:#FFFFCC">#FFFFCC</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#CCFFCC" style="background-color:#CCFFCC">#CCFFCC</button>
+        <button class="btn" data-clipboard-text="#996699" style="background-color:#996699">#996699</button>
+        <button class="btn" data-clipboard-text="#CCCC99" style="background-color:#CCCC99">#CCCC99</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#999966" style="background-color:#999966">#999966</button>
+        <button class="btn" data-clipboard-text="#336666" style="background-color:#336666">#336666</button>
+        <button class="btn" data-clipboard-text="#999999" style="background-color:#999999">#999999</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#003366" style="background-color:#003366">#003366</button>
+        <button class="btn" data-clipboard-text="#663333" style="background-color:#663333">#663333</button>
+        <button class="btn" data-clipboard-text="#CCCC66" style="background-color:#CCCC66">#CCCC66</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#333333" style="background-color:#333333">#333333</button>
+        <button class="btn" data-clipboard-text="#3399CC" style="background-color:#3399CC">#3399CC</button>
+        <button class="btn" data-clipboard-text="#666666" style="background-color:#666666">#666666</button>
     </div>
 </div>
 <h4 id="蓝色">蓝色</h4>
 <!-- Target -->
 <div style="overflow:hidden">
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#FFFFCC" style="background-color:#FFFFCC">#FFFFCC</button>
+        <button class="btn" data-clipboard-text="#CCFFFF" style="background-color:#CCFFFF">#CCFFFF</button>
+        <button class="btn" data-clipboard-text="#FFCCCC" style="background-color:#FFCCCC">#FFCCCC</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#99CCCC" style="background-color:#99CCCC">#99CCCC</button>
+        <button class="btn" data-clipboard-text="#FFFFFF" style="background-color:#FFFFFF">#FFFFFF</button>
+        <button class="btn" data-clipboard-text="#3399CC" style="background-color:#3399CC">#3399CC</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#CCFFCC" style="background-color:#CCFFCC">#CCFFCC</button>
+        <button class="btn" data-clipboard-text="#CCCCFF" style="background-color:#CCCCFF">#CCCCFF</button>
+        <button class="btn" data-clipboard-text="#99CCFF" style="background-color:#99CCFF">#99CCFF</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#FFCC99" style="background-color:#FFCC99">#FFCC99</button>
+        <button class="btn" data-clipboard-text="#336699" style="background-color:#336699">#336699</button>
+        <button class="btn" data-clipboard-text="#CCFF99" style="background-color:#CCFF99">#CCFF99</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#6699CC" style="background-color:#6699CC">#6699CC</button>
+        <button class="btn" data-clipboard-text="#99CC33" style="background-color:#99CC33">#99CC33</button>
+        <button class="btn" data-clipboard-text="#0099CC" style="background-color:#0099CC">#0099CC</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#666699" style="background-color:#666699">#666699</button>
+        <button class="btn" data-clipboard-text="#CCCCCC" style="background-color:#CCCCCC">#CCCCCC</button>
+        <button class="btn" data-clipboard-text="#003366" style="background-color:#003366">#003366</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#666666" style="background-color:#666666">#666666</button>
+        <button class="btn" data-clipboard-text="#CCCC99" style="background-color:#CCCC99">#CCCC99</button>
+        <button class="btn" data-clipboard-text="#006699" style="background-color:#006699">#006699</button>
     </div>
     <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-    </div>
-    <div class="colorBoard">
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
-        <button class="btn" data-clipboard-text="black" style="background-color:black">black</button>
+        <button class="btn" data-clipboard-text="#000000" style="background-color:#000000">#000000</button>
+        <button class="btn" data-clipboard-text="#999933" style="background-color:#999933">#999933</button>
+        <button class="btn" data-clipboard-text="#333333" style="background-color:#333333">#333333</button>
     </div>
 </div>
 <h4 id="蓝紫色">蓝紫色</h4>
