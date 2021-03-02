@@ -44,7 +44,7 @@
   margin-bottom: 5px; }
 
 .book-tocbot {
-  height: 250px;
+  max-height: calc(100% - 600px);
   padding: 0; }
 
 .book-post-info {
@@ -241,9 +241,6 @@
   bottom: 30px;
   z-index: -1; }
 
-.accordion-body, .uncollapsible, .accordion {
-  background-color: #f7f8f9; }
-
 /*游戏页面*/
 .textnintendoswitch {
   width: 30px;
@@ -396,19 +393,51 @@
   line-height: 38px;
   font-size: 20px; }
 
-.book-sidebar, .book-sidebar .book-menu {
-  width: 13rem !important; }
-
 .book-sidebar .book-brand {
-  left: 1.7rem !important; }
+  display: block !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100%;
+  position: fixed;
+  line-height: calc(3.25rem + 8px);
+  border-bottom: 0.5px solid #e7e7e7;
+  height: calc(3.25rem + 4px) !important;
+  background-color: white; }
+  .book-sidebar .book-brand a {
+    text-align: center;
+    margin-left: 3rem; }
+
+.sidebar-toggle {
+  left: 16.7rem !important; }
+
+.author-title {
+  margin-left: 12px; }
+
+.off-canvas-content .book-post-info .book-post-meta .link {
+  margin-left: 5px !important;
+  line-height: 25px; }
+  .off-canvas-content .book-post-info .book-post-meta .link a {
+    color: white !important;
+    background-color: #686a6b;
+    padding: 0 5px;
+    border-radius: 4px; }
+
+.book-sidebar,
+.book-sidebar .book-menu {
+  width: 16rem !important; }
 
 .book-sidebar .book-menu ul {
   padding-left: 24px !important;
   margin-left: 0 !important;
   padding-top: 4px !important; }
+  .book-sidebar .book-menu ul * {
+    line-height: 1.8 !important; }
 
-.book-sidebar .book-menu * {
-  background-color: #f7f8f9; }
+.book-content {
+  padding: 0 2em !important; }
+
+.off-canvas-content {
+  margin-left: 16rem !important; }
 
 .book-post-meta link {
   padding-left: 6px; }
@@ -431,20 +460,23 @@
   position: relative; }
 
 .to_top {
-  width: 60px;
-  height: 60px;
-  bottom: 0;
-  right: 310px;
-  color: lightgray;
-  background-color: rgba(36, 39, 41, 0.49);
-  text-align: center;
-  line-height: 60px;
-  /*box-shadow: 0px 2px 10px -6px black;*/
+  width: 49px;
+  height: 49px;
+  bottom: 4px;
+  right: 297px;
+  background-color: #686a6b;
   position: fixed;
   display: none;
   cursor: pointer;
-  font-size: 30px;
-  font-family: "Calibri"; }
+  border-radius: 5px; }
+  .to_top .to-top-triangle {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 21px solid white;
+    margin-left: 10px;
+    margin-top: 13px; }
 
 .articleBottom {
   width: 100%;
@@ -488,7 +520,7 @@
   height: 200px;
   margin-left: 20px;
   padding-left: 15px;
-  border-left: 2px solid #DADEE4; }
+  border-left: 2px solid #dadee4; }
 
 .little_img {
   width: 84px;
@@ -539,8 +571,8 @@
   width: 300px;
   height: 90px;
   position: fixed;
-  top: calc( 50vh - 50px);
-  left: calc( 50vw - 150px);
+  top: calc(50vh - 50px);
+  left: calc(50vw - 150px);
   border-radius: 20px;
   font-size: 50px;
   line-height: 90px;
