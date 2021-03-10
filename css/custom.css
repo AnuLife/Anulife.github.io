@@ -39,7 +39,6 @@
   font-size: 17px; }
 
 .book-post img {
-  box-shadow: 0px 0px 8px -5px black;
   margin-top: 15px;
   margin-bottom: 5px; }
 
@@ -56,16 +55,33 @@
 .hide-lg {
   margin-top: -44px;
   padding-top: 40px;
-  box-shadow: 0px -40px 18px -15px black;
-  background-image: url("https://s1.ax1x.com/2020/08/21/dNXh1H.png");
   background-position: bottom;
   background-repeat: no-repeat; }
+
+.off-canvas-content .book-post-info .book-post-meta .author {
+  display: flex;
+  padding: 10px 10px; }
+
+.off-canvas-content .book-post-info .book-post-meta .author .author-img {
+  display: flex;
+  align-items: center;
+  border: 1px solid #0000008a;
+  border-radius: 50%; }
+
+.avatar img {
+  border-radius: 50%;
+  height: 96%;
+  position: relative;
+  width: 96%;
+  z-index: 1;
+  margin: 2%;
+  margin-left: 3%; }
 
 .bottom {
   width: 266px;
   height: 315px;
   position: absolute;
-  border-top: 3px solid #2da4e1;
+  border-top: 6px solid #2da4e1;
   left: -23px;
   bottom: -20px;
   background-color: rgba(36, 39, 41, 0.69); }
@@ -477,6 +493,9 @@
     border-bottom: 21px solid white;
     margin-left: 10px;
     margin-top: 13px; }
+
+.to_top:hover {
+  background-color: #686a6b9e; }
 
 .articleBottom {
   width: 100%;
