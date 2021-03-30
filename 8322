@@ -1,0 +1,555 @@
+<!doctype HTML>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Anuluca的个人网站">
+    <meta name="keywords" content="anuluca,路卡,路卡的自由庭院岛,前端开发,vue,javascript">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          vue-property-decorator用法 - 路卡的自由庭院岛
+        
+    </title>
+
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="/css/spectre-exp.min.css">
+    <link rel="stylesheet" href="/css/spectre-icons.min.css">
+    <link rel="stylesheet" href="/css/spectre.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+
+    <!-- theme css & js -->
+    <link rel="stylesheet" href="/css/book.css">
+    <script src="/js/book.js"></script>
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- jq -->
+    <script src='https://libs.baidu.com/jquery/1.10.2/jquery.min.js'></script>
+    <!-- katex -->
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+</head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>路卡的自由庭院岛</span>
+  </a>
+</div>
+    <div class="book-menu">
+  <ul>
+<li><a href="/">🏠 主页</a></li>
+<li><a href="17101/">💼 Projects</a></li>
+</ul>
+<h1 id="笔记">笔记</h1>
+<h2 id="Javascript">Javascript</h2>
+<ul>
+<li><a href="/3671"><strong>35</strong> 鸭式辩型</a></li>
+<li><a href="/41455.html"><strong>34</strong> js实现中文数组拼音排序</a></li>
+<li><a href="/46572.html"><strong>33</strong> ES6新特性总结</a></li>
+<li><a href="/33808.html"><strong>32</strong> js原生实现bind</a></li>
+<li><a href="/44292.html"><strong>31</strong> json数据在JSON.stringify()处理后会输出什么</a></li>
+<li><a href="/22854.html"><strong>30</strong> 如何删除一个cookie</a></li>
+<li><a href="/64820.html"><strong>29</strong> 如何判断当前环境是移动端还是PC端</a></li>
+<li><a href="/25199.html"><strong>28</strong> Promise.race的使用</a></li>
+<li><a href="/46573.html"><strong>27</strong> css动画和js动画的区别</a></li>
+<li><a href="/36370.html"><strong>26</strong> 如何将json数据转化为data.json并下载</a></li>
+<li><a href="/53556.html"><strong>25</strong> 如何发现不安全的正则表达式</a></li>
+<li><a href="/48737.html"><strong>24</strong> 实现一个函数将json数据转换为queryString编码</a></li>
+<li><a href="/4293.html"><strong>23</strong> js数组处理相关</a></li>
+<li><a href="/12665.html"><strong>22</strong> setTimeout和Promise执行顺序</a></li>
+<li><a href="/1079.html"><strong>21</strong> 原生代码实现文本不可复制及复制监听</a></li>
+<li><a href="/3951.html"><strong>20</strong> js函数判断是否为纯对象</a></li>
+<li><a href="/59940.html"><strong>20</strong> js原生实现防抖&amp;节流</a></li>
+<li><a href="/48125.html"><strong>19</strong> js运算符与隐式类型转换</a></li>
+<li><a href="/9956.html"><strong>18</strong> js类型转换</a></li>
+<li><a href="/63377.html"><strong>17</strong> 继承的多种方式及优缺点</a></li>
+<li><a href="/58919.html"><strong>16</strong> 类数组对象和arguments</a></li>
+<li><a href="/13542.html"><strong>15</strong> 执行上下文栈及变量对象</a></li>
+<li><a href="/36481.html"><strong>14</strong> null和undefined的区别</a></li>
+<li><a href="/25967.html"><strong>13</strong> 原型与原型链</a></li>
+<li><a href="/22053.html"><strong>12</strong> 对象转数组</a></li>
+<li><a href="/65473.html"><strong>11</strong> base64和Blob互转</a></li>
+<li><a href="/34161.html"><strong>10</strong> JS浅拷贝和深拷贝</a></li>
+<li><a href="/17315.html"><strong>9</strong> 对象数组处理</a></li>
+<li><a href="/63659.html"><strong>8</strong> ES6部分特性浅解</a></li>
+<li><a href="/62439.html"><strong>7</strong> 函数柯里化</a></li>
+<li><a href="/23627.html"><strong>6</strong> 使用viewport对页面做响应式处理</a></li>
+<li><a href="/53717.html"><strong>5</strong> 解决网页加载后没有清除css和js缓存的问题</a></li>
+<li><a href="/28714.html"><strong>4</strong> JSONP浅解</a></li>
+<li><a href="/22406.html"><strong>3</strong> 原生页面的一种图片懒加载思路</a></li>
+<li><a href="/16400.html"><strong>2</strong> 解决页面移动端点击延迟的问题</a></li>
+<li><a href="/55792.html"><strong>1</strong> 创建对象的多种方式及优缺点</a></li>
+</ul>
+<h2 id="CSS">CSS</h2>
+<ul>
+<li><a href="/17809.html"><strong>10</strong> 伪类和伪元素的区别</a></li>
+<li><a href="/12144.html"><strong>9</strong> HTML5深色模式自适应</a></li>
+<li><a href="/28283.html"><strong>8</strong> CSS三角形</a></li>
+<li><a href="/29473.html"><strong>7</strong> 样式处理器选型</a></li>
+<li><a href="/57469.html"><strong>6</strong> Html5文字设置渐变色</a></li>
+<li><a href="/8190.html"><strong>5</strong> Scoped</a></li>
+<li><a href="/60642.html"><strong>4</strong> css文本超出隐藏显示省略号</a></li>
+<li><a href="/6329.html"><strong>3</strong> Flex布局属性浅解</a></li>
+<li><a href="/36608.html"><strong>2</strong> 浏览器兼容性问题整理</a></li>
+<li><a href="/16282.html"><strong>1</strong> BFC浅解</a></li>
+</ul>
+<h2 id="框架">框架</h2>
+<ul>
+<li><a href="/48172.html"><strong>30</strong> v-if和v-show的区别</a></li>
+<li><a href="/14022.html"><strong>29</strong> webpack打包项目时会打包已经import但没用到的模块吗</a></li>
+<li><a href="/56565.html"><strong>28</strong> npmi和npmci的区别</a></li>
+<li><a href="/15120.html"><strong>27</strong> 如何删除项目中没有用到的package</a></li>
+<li><a href="/52873.html"><strong>26</strong> React/Vue中的路由(router)基于什么实现原理</a></li>
+<li><a href="/26616.html"><strong>25</strong> Vue时间戳转换函数</a></li>
+<li><a href="/20181.html"><strong>24</strong> axios完整接口调用顺序</a></li>
+<li><a href="/15023.html"><strong>23</strong> 图表插件选型</a></li>
+<li><a href="/56535.html"><strong>22</strong> AntDesign+Vue3.0项目搭建记录</a></li>
+<li><a href="/44983.html"><strong>21</strong> React-create-app项目结构</a></li>
+<li><a href="/12366.html"><strong>20</strong> React生命周期</a></li>
+<li><a href="/16053.html"><strong>19</strong> React入门 : 井字棋</a></li>
+<li><a href="/44250.html"><strong>18</strong> webpack配置文件说明及使用</a></li>
+<li><a href="/15181.html"><strong>17</strong> Vue+Ts项目打包</a></li>
+<li><a href="/35751.html"><strong>16</strong> 配置webpack使项目能在本地打开</a></li>
+<li><a href="/34517.html"><strong>15</strong> Vue删除对象中的某个属性</a></li>
+<li><a href="/60966.html"><strong>14</strong> ESLint的一些报警</a></li>
+<li><a href="/35933.html"><strong>13</strong> 使用ref实现父组件调用子组件方法</a></li>
+<li><a href="/31560.html"><strong>12</strong> Vue动态修改元素样式</a></li>
+<li><a href="/46922.html"><strong>11</strong> Typescript中的Watch与Get、Set</a></li>
+<li><a href="/31754.html"><strong>10</strong> Vue+Ts父子组件传值</a></li>
+<li><a href="/37025.html"><strong>9</strong> Vue-CLI项目结构</a></li>
+<li><a href="/45310.html"><strong>8</strong> 使用Vue-CLI新建Vue+js/Ts项目</a></li>
+<li><a href="/8322.html"><strong>7</strong> vue-property-decorator用法</a></li>
+<li><a href="/57808.html"><strong>6</strong> vue-class-component对TS的支持</a></li>
+<li><a href="/36100.html"><strong>5</strong> Vue插槽浅解</a></li>
+<li><a href="/36398.html"><strong>4</strong> webpack打包+创建本地服务器</a></li>
+<li><a href="/9537.html"><strong>3</strong> Vue生命周期</a></li>
+<li><a href="/61857.html"><strong>2</strong> 个人对于MVVM模型的理解</a></li>
+<li><a href="/57928.html"><strong>1</strong> Grid/treeview控件简要介绍</a></li>
+</ul>
+<h2 id="UI-Components">UI Components</h2>
+<ul>
+<li><a href="/51249.html"><strong>10</strong> 去除elementUI打开drawer自带的蓝色框</a></li>
+<li><a href="/527.html"><strong>9</strong> 监听ElementUItable滚动事件</a></li>
+<li><a href="/33638.html"><strong>8</strong> ElementUI中Cascader级联选择器动态加载时允许选择任意一级任意一项</a></li>
+<li><a href="/29628.html"><strong>7</strong> 解决ElementUI中打开Drawer内的dialog黑色遮罩层优先级过高问题</a></li>
+<li><a href="/37033.html"><strong>6</strong> elementui的el-input按回车键后执行方法</a></li>
+<li><a href="/40759.html"><strong>5</strong> 基于ElementUI的模糊查询</a></li>
+<li><a href="/3264.html"><strong>4</strong> 设置elementUI的table组件滚动条位置</a></li>
+<li><a href="/24161.html"><strong>3</strong> ElementUI获取table选中的行</a></li>
+<li><a href="/21173.html"><strong>2</strong> ElementUI的Table组件判断当前是勾选状态还是取消勾选状态</a></li>
+<li><a href="/51077.html"><strong>1</strong> ElementUI清除el-table的hover样式</a></li>
+</ul>
+<h2 id="Git">Git</h2>
+<ul>
+<li><a href="/10399.html"><strong>6</strong> 列出所有已合并到master的分支并且删除</a></li>
+<li><a href="/46961.html"><strong>5</strong> Git常用操作记录</a></li>
+<li><a href="/60761.html"><strong>4</strong> Gitalk评论插件安装记录</a></li>
+<li><a href="/3681.html"><strong>3</strong> git修改用户名和提交用邮箱</a></li>
+<li><a href="/28110.html"><strong>2</strong> fatal:HttpRequestException encountered解决方法</a></li>
+<li><a href="/43663.html"><strong>1</strong> git更新后出现&quot;Fatal:TaskCanceled Exceptionencountered.&quot;解决方法</a></li>
+</ul>
+<h2 id="Database">Database</h2>
+<ul>
+<li><a href="/47030.html"><strong>5</strong> 数据库死锁产生的原因</a></li>
+<li><a href="/36865.html"><strong>4</strong> 初步认识ETL设计</a></li>
+<li><a href="/59321.html"><strong>3</strong> 初步认识数据仓库</a></li>
+<li><a href="/31076.html"><strong>2</strong> DB2存储过程遍历循环</a></li>
+<li><a href="/58914.html"><strong>1</strong> 工作中遇到的关于DB2/mysql的一些问题及解决办法</a></li>
+</ul>
+<h2 id="其他">其他</h2>
+<ul>
+<li><a href="/9999999999.html">[Tags]</a></li>
+<li><a href="/9239.html"><strong>36</strong> http状态码相关</a></li>
+<li><a href="/44290.html"><strong>35</strong> 在npm发布package</a></li>
+<li><a href="/7354.html"><strong>34</strong> 不同端口的localhost的cookie是否共享</a></li>
+<li><a href="/27682.html"><strong>33</strong> http向https做重定向一般使用哪个状态码</a></li>
+<li><a href="/14581.html"><strong>32</strong> nocache和nostore的区别</a></li>
+<li><a href="/63373.html"><strong>31</strong> linux下查看某一文件夹大小</a></li>
+<li><a href="/53719.html"><strong>30</strong> 算法合辑</a></li>
+<li><a href="/34114.html"><strong>29</strong> 使用lighthouse分析前端页面性能</a></li>
+<li><a href="/24381.html"><strong>28</strong> 浏览器关键渲染路径浅解</a></li>
+<li><a href="/13220.html"><strong>27</strong> localhost和127.0.0.1的区别</a></li>
+<li><a href="/40971.html"><strong>26</strong> 什么情况下会发送options请求</a></li>
+<li><a href="/22665.html"><strong>25</strong> 同一进程的线程共享哪些资源</a></li>
+<li><a href="/47682.html"><strong>24</strong> Chrome开发者工具中Performance的使用</a></li>
+<li><a href="/writings/32529.html"><strong>23</strong> zsh和bash的切换</a></li>
+<li><a href="/21790.html"><strong>22</strong> clipboard.js实现复制功能</a></li>
+<li><a href="/41922.html"><strong>21</strong> Mac常规安装nvm并下载指定版本node</a></li>
+<li><a href="/52608.html"><strong>20</strong> Homebrew大陆安装脚本</a></li>
+<li><a href="/26344.html"><strong>19</strong> Vscode自定义代码片段</a></li>
+<li><a href="/39572.html"><strong>18</strong> 不同文件类型转base64后的前缀</a></li>
+<li><a href="/208.html"><strong>17</strong> VSCode报错<code>Parameter 'xxx' implicitly has an 'any' type</code>解决方法</a></li>
+<li><a href="/9061.html"><strong>16</strong> 解决win10不插电下显示屏忽亮忽暗的问题</a></li>
+<li><a href="/26426.html"><strong>15</strong> IDEA与vscode的标签标题换行显示</a></li>
+<li><a href="/8299.html"><strong>14</strong> Chrome跨域配置</a></li>
+<li><a href="/39020.html"><strong>13</strong> windows关闭被占用的端口</a></li>
+<li><a href="/9328.html"><strong>12</strong> Windows下node.js安装与配置</a></li>
+<li><a href="/48737.html"><strong>11</strong> node is not avalid Win32 application报错解决办法</a></li>
+<li><a href="/27266.html"><strong>10</strong> VSCode快捷键大全</a></li>
+<li><a href="/35468.html"><strong>9</strong> 浏览器MixedContent报错</a></li>
+<li><a href="/57510.html"><strong>8</strong> VSCode个人初始设置</a></li>
+<li><a href="/39968.html"><strong>7</strong> VSCode初使用</a></li>
+<li><a href="/62449.html"><strong>6</strong> 面试问题总结</a></li>
+<li><a href="/53675.html"><strong>5</strong> 跳转到腾讯公益404页面</a></li>
+<li><a href="/1420.html"><strong>4</strong> 前端常用命令行</a></li>
+<li><a href="/13573.html"><strong>3</strong> 修改Mac鼠标滚轮逻辑</a></li>
+<li><a href="/30445.html"><strong>2</strong> HTTP协议详解</a></li>
+<li><a href="/41802.html"><strong>1</strong> AIX开启及关闭Telnet服务</a></li>
+</ul>
+<a id="more"></a>
+<h1 id="分类">分类</h1>
+<h2 id="文章">文章</h2>
+<ul>
+<li><a href="/48446.html">- 2020不正确记忆</a></li>
+<li><a href="/4008.html">- 博客纪录</a></li>
+<li><a href="/34223.html">📄 更新日志</a></li>
+</ul>
+<h2 id="工具">工具</h2>
+<ul>
+<li><a href="/45597.html"><strong>网页设计常用色彩</strong></a></li>
+<li><a href="/60329.html"><strong>HTML转义字符表</strong></a></li>
+<li><a href="/49833.html"><strong>营销号生成器</strong></a></li>
+<li><a href="/61602.html"><strong>今年是闰年还是平年？</strong></a></li>
+<li><a href="https://tinypng.com" target="_blank" rel="noopener"><strong>在线图片压缩</strong> by voormedia</a></li>
+<li><a href="http://test-ipv6.com" target="_blank" rel="noopener"><strong>IPv6连接测试</strong> by Jason Fesler</a></li>
+<li><a href="https://lab.magiconch.com/vaporwave" target="_blank" rel="noopener"><strong>蒸 気 機</strong></a></li>
+<li><a href="https://www.gaoding.com/koutu" target="_blank" rel="noopener"><strong>稿定抠图</strong> by 稿定科技有限公司</a></li>
+</ul>
+<h2 id="图册">图册</h2>
+<ul>
+<li><a href="/21283.html"><strong>随拍</strong></a></li>
+<li><a href="/17773.html"><strong>玩具</strong></a></li>
+<li><a href="/61012.html"><strong>游戏</strong></a></li>
+</ul>
+<!--more-->
+<ul>
+<li><a href="/61412.html">🎁 给点</a></li>
+<li><a href="/41678.html">🎓 Demo</a></li>
+</ul>
+<h1 id="div-class-backlogo-div"><em><a href="/oldsite"><div class="backlogo"></div></a></em></h1>
+
+</div>
+
+<script src="/js/book-menu.js"></script>
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="vue-property-decorator用法-font-color-gray-31-font">vue-property-decorator用法 <font color="gray">#31</font></h1>
+<p><strong>Anuluca</strong>     <strong>Date :</strong> 2020-09-08   <strong>Tags :</strong> 3</p>
+<div class = "articlehead" style="background-image:url('https://s1.ax1x.com/2020/08/25/d2enJJ.jpg')"></div>
+<h3 id="vue-property-decorator是什么？">vue-property-decorator是什么？</h3>
+<p>vue-property-decorator是一个装饰器，完全依赖于<code>vue-class-component</code>，她利用装饰器简化代码书写。<br>
+Vue Property Decorator提供了7个装饰器(<code>@Emit</code>、<code>@Inject</code>、<code>@Model</code>、<code>@Prop</code>、<code>@Provide</code>、<code>@Watch</code>、<code>@Component</code>)，实现像原生 JavaScript class一样声明组件。</p>
+<h3 id="使用">使用</h3>
+<h6 id="当我们在Vue单文件中使用TypeScript时-引入vue-property-decorator之后-script中的标签就变为这样">当我们在<code>Vue</code>单文件中使用<code>TypeScript</code>时,引入<code>vue-property-decorator</code>之后,script中的标签就变为这样:</h6>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> &#123;Vue, Component&#125; <span class="keyword">from</span> <span class="string">'vue-property-decorator'</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    @Component(&#123;&#125;)</span></span><br><span class="line"><span class="actionscript">    export <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> "组件名" <span class="keyword">extends</span> <span class="title">Vue</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">        ValA: string = <span class="string">"hello world"</span>;</span></span><br><span class="line"><span class="undefined">        ValB: number = 1;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>等同于</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"es6"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">        data()&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">                ValA: <span class="string">'hello world'</span>,</span></span><br><span class="line"><span class="undefined">                ValB: 1</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>总结: 对于data里的变量类型,我们可以直接按ts定义类变量的写法写就可以</strong></p>
+<h6 id="计算属性则需要用到getter：">计算属性则需要用到<code>getter</code>：</h6>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> &#123;Vue, Component&#125; <span class="keyword">from</span> <span class="string">'vue-property-decorator'</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    @Component(&#123;&#125;)</span></span><br><span class="line"><span class="actionscript">    export <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> "组件名" <span class="keyword">extends</span> <span class="title">Vue</span></span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">get</span> ValA()&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">return</span> <span class="number">1</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>等同于</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"es6"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">        computed: &#123;</span></span><br><span class="line"><span class="actionscript">            ValA: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">return</span> <span class="number">1</span>;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>总结: 对于Vue中的计算属性,我们只需要将该计算属性名定义为一个函数,并在函数前加上get关键字即可</strong><br>
+原本Vue中的<code>computed</code>里的每个计算属性都变成了在前缀添加<code>get</code>的函数.</p>
+<h3 id="Emit">@Emit</h3>
+<p>关于<code>Vue</code>中的事件的<code>监听与触发</code>,Vue提供了两个函数<code>$emit</code>和<code>$on</code>.那么在<code>vue-property-decorator</code>中如何使用呢?<br>
+这就需要用到<code>vue-property-decorator</code>提供的<code>@Emit</code>属性.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> &#123;Vue, Component, Emit&#125; <span class="keyword">from</span> <span class="string">'vue-property-decorator'</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    @Component(&#123;&#125;)</span></span><br><span class="line"><span class="actionscript">    export <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> "组件名" <span class="keyword">extends</span> <span class="title">Vue</span></span>&#123;</span></span><br><span class="line"><span class="undefined">        mounted()&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">this</span>.$on(<span class="string">'emit-todo'</span>, <span class="function"><span class="keyword">function</span><span class="params">(n)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(n)</span></span><br><span class="line"><span class="undefined">            &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">            <span class="keyword">this</span>.emitTodo(<span class="string">'world'</span>);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            @Emit()</span></span><br><span class="line"><span class="undefined">        emitTodo(n: string)&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">'hello'</span>);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>运行上面的代码会打印 <code>'hello' 'world'</code>, 为什么呢? 让我们来看看它等同于什么</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"es6"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">        mounted()&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">this</span>.$on(<span class="string">'emit-todo'</span>, <span class="function"><span class="keyword">function</span><span class="params">(n)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(n)</span></span><br><span class="line"><span class="undefined">            &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">            <span class="keyword">this</span>.emitTodo(<span class="string">'world'</span>);</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        methods: &#123;</span></span><br><span class="line"><span class="undefined">            emitTodo(n)&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">'hello'</span>);</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.$emit(<span class="string">'emit-todo'</span>, n);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>可以看到,在<code>@Emit</code>装饰器的函数会在运行之后触发等同于其函数名(驼峰式会转为横杠式写法)的事件, 并将其函数传递给<code>$emit</code>.<br>
+如果我们想触发特定的事件呢,比如在<code>emitTodo</code>下触发<code>reset</code>事件:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> &#123;Vue, Component, Emit&#125; <span class="keyword">from</span> <span class="string">'vue-property-decorator'</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    @Component(&#123;&#125;)</span></span><br><span class="line"><span class="actionscript">    export <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> "组件名" <span class="keyword">extends</span> <span class="title">Vue</span></span>&#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">        @Emit(<span class="string">'reset'</span>)</span></span><br><span class="line"><span class="undefined">        emitTodo(n: string)&#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>我们只需要给装饰器<code>@Emit</code>传递一个事件名参数<code>reset</code>,这样函数<code>emitTodo</code>运行之后就会触发<code>reset</code>事件.</p>
+<p>总结:在<code>Vue</code>中我们是使用<code>$emit</code>触发事件,使用<code>vue-property-decorator</code>时,可以借助<code>@Emit</code>装饰器来实现.<code>@Emit</code>修饰的函数所接受的参数会在运行之后触发事件的时候传递过去.</p>
+<ul>
+<li><code>@Emit</code>触发事件有两种写法</li>
+<li><code>@Emit()</code>不传参数,那么它触发的事件名就是它所修饰的函数名.</li>
+<li><code>@Emit(name: string)</code>,里面传递一个字符串,该字符串为要触发的事件名.</li>
+</ul>
+<h3 id="Watch">@Watch</h3>
+<p>可以利用<code>vue-property-decorator</code>提供的<code>@watch</code>装饰器来替换<code>Vue</code>中的<code>watch</code>属性,以此来监听值的变化.<br>
+在<code>Vue</code>中监听器的使用如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">export default&#123;</span><br><span class="line">    watch: &#123;</span><br><span class="line">        'child': this.onChangeValue</span><br><span class="line">            // 这种写法默认 `immediate`和`deep`为`false`</span><br><span class="line">        ,</span><br><span class="line">        'person': &#123;</span><br><span class="line">            handler: 'onChangeValue',</span><br><span class="line">            immediate: true,</span><br><span class="line">            deep: true</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        onChangeValue(newVal, oldVal)&#123;</span><br><span class="line">            // todo...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么我们如何使用<code>@Watch</code>装饰器来改造它呢?</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;Vue, Component, Watch&#125; <span class="keyword">from</span> <span class="string">'vue-property-decorator'</span>;</span><br><span class="line"></span><br><span class="line">@Watch(<span class="string">'child'</span>)</span><br><span class="line">onChangeValue(newVal: string, <span class="attr">oldVal</span>: string)&#123;</span><br><span class="line">    <span class="comment">// todo...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Watch(<span class="string">'person'</span>, &#123;<span class="attr">immediate</span>: <span class="literal">true</span>, <span class="attr">deep</span>: <span class="literal">true</span>&#125;)</span><br><span class="line">onChangeValue(newVal: Person, <span class="attr">oldVal</span>: Person)&#123;</span><br><span class="line">    <span class="comment">// todo...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>总结: <code>@Watch</code>使用非常简单,接受第一个参数为要监听的属性名 第二个属性为可选对象.<code>@Watch</code>所装饰的函数即监听到属性变化之后的操作.</p>
+<h3 id="Prop">@Prop</h3>
+<p>我们在使用<code>Vue</code>时有时会遇到子组件接收父组件传递来的参数.我们需要定义<code>Prop</code>属性.</p>
+<p>比如子组件从父组件接收三个属性<code>propA</code>,<code>propB</code>,<code>propC</code>.</p>
+<ul>
+<li><code>propA</code>类型为<code>Number</code></li>
+<li><code>propB</code>默认值为<code>default value</code></li>
+<li><code>propC</code>类型为<code>String</code>或者<code>Boolean</code></li>
+</ul>
+<p>我们使用vue-property-decorator提供的@Prop可以将上面的代码改造为如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> &#123;Vue, Component, Prop&#125; <span class="keyword">from</span> <span class="string">'vue-property-decorator'</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    @Component(&#123;&#125;)</span></span><br><span class="line"><span class="actionscript">    export <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> "组件名" <span class="keyword">extends</span> <span class="title">Vue</span></span>&#123;</span></span><br><span class="line"><span class="javascript">        @Prop(<span class="built_in">Number</span>) propA!: number;</span></span><br><span class="line"><span class="actionscript">        @Prop(&#123;<span class="keyword">default</span>: <span class="string">'default value'</span>&#125;) propB!: string;</span></span><br><span class="line"><span class="javascript">        @propC([<span class="built_in">String</span>, <span class="built_in">Boolean</span>]) propC: string | boolean;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里 <code>!</code>和可选参数<code>?</code>是相反的, <code>!</code>告诉<code>TypeScript</code>我这里一定有值.</p>
+</blockquote>
+<ul>
+<li>总结: <code>@Prop</code>接受一个参数可以是类型变量或者对象或者数组.<code>@Prop</code>接受的类型比如<code>Number</code>是<code>JavaScript</code>的类型,之后定义的属性类型则是<code>TypeScript</code>的类型.</li>
+</ul>
+<h3 id="Mixins">Mixins</h3>
+<p>在使用<code>Vue</code>进行开发时我们经常要用到混合,结合<code>TypeScript</code>之后我们有两种<code>mixins</code>的方法.<br>
+一种是<code>vue-class-component</code>提供的.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义要混合的类 mixins.ts</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span><br><span class="line"><span class="keyword">import</span>  Component  <span class="keyword">from</span> <span class="string">'vue-class-component'</span>;</span><br><span class="line"></span><br><span class="line">@Component  <span class="comment">// 一定要用Component修饰</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">myMixins</span> <span class="keyword">extends</span> <span class="title">Vue</span> </span>&#123;</span><br><span class="line">    value: string = <span class="string">"Hello"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入</span></span><br><span class="line"><span class="keyword">import</span>  Component  &#123;mixins&#125;  <span class="keyword">from</span> <span class="string">'vue-class-component'</span>;</span><br><span class="line"><span class="keyword">import</span> myMixins <span class="keyword">from</span> <span class="string">'mixins.ts'</span>;</span><br><span class="line"></span><br><span class="line">@Component</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">myComponent</span> <span class="keyword">extends</span> <span class="title">mixins</span>(<span class="title">myMixins</span>) </span>&#123;</span><br><span class="line">                          <span class="comment">// 直接extends myMinxins 也可以正常运行</span></span><br><span class="line">      created()&#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="keyword">this</span>.value) <span class="comment">// =&gt; Hello</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第二种方式是在<code>@Component</code>中混入.</p>
+<p>我们改造一下<code>mixins.ts</code>,定义<code>vue/type/vue</code>模块,实现<code>Vue</code>接口</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// mixins.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Vue, Component &#125; <span class="keyword">from</span> <span class="string">'vue-property-decorator'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">declare <span class="built_in">module</span> <span class="string">'vue/types/vue'</span> &#123;</span><br><span class="line">    interface Vue &#123;</span><br><span class="line">        value: string;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Component</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">myMixins</span> <span class="keyword">extends</span> <span class="title">Vue</span> </span>&#123;</span><br><span class="line">    value: string = <span class="string">'Hello'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>混入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Vue, Component, Prop &#125; <span class="keyword">from</span> <span class="string">'vue-property-decorator'</span>;</span><br><span class="line"><span class="keyword">import</span> myMixins <span class="keyword">from</span> <span class="string">'@static/js/mixins'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">    mixins: [myMixins]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">myComponent</span> <span class="keyword">extends</span> <span class="title">Vue</span></span>&#123;</span><br><span class="line">    created()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.value) <span class="comment">// =&gt; Hello</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>总结: 两种方式不同的是在定义<code>mixins</code>时如果没有定义<code>vue/type/vue</code>模块, 那么在混入的时候就要继承该<code>mixins</code>; 如果定义<code>vue/type/vue</code>模块,在混入时可以在<code>@Component</code>中<code>mixins</code>直接混入.</p>
+<h3 id="Model">@Model</h3>
+<p><code>Vue</code>组件提供<code>model: {prop?: string, event?: string}</code>让我们可以定制<code>prop</code>和<code>event</code>.<br>
+默认情况下，一个组件上的<code>v-model</code> 会把 <code>value</code>用作 <code>prop</code>且把 <code>input</code>用作 <code>event</code>，但是一些输入类型比如单选框和复选框按钮可能想使用 <code>value prop</code>来达到不同的目的。使用<code>model</code>选项可以回避这些情况产生的冲突。</p>
+<p><strong>下面是<code>Vue</code>官网的例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'my-checkbox'</span>, &#123;</span><br><span class="line">  model: &#123;</span><br><span class="line">    prop: <span class="string">'checked'</span>,</span><br><span class="line">    event: <span class="string">'change'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    <span class="comment">// this allows using the `value` prop for a different purpose</span></span><br><span class="line">    value: <span class="built_in">String</span>,</span><br><span class="line">    <span class="comment">// use `checked` as the prop which take the place of `value`</span></span><br><span class="line">    checked: &#123;</span><br><span class="line">      type: <span class="built_in">Number</span>,</span><br><span class="line">      <span class="keyword">default</span>: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-checkbox</span> <span class="attr">v-model</span>=<span class="string">"foo"</span> <span class="attr">value</span>=<span class="string">"some value"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-checkbox</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码相当于：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-checkbox</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:checked</span>=<span class="string">"foo"</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">change</span>=<span class="string">"val =&gt; &#123; foo = val &#125;"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">value</span>=<span class="string">"some value"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">my-checkbox</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>即<code>foo</code>双向绑定的是组件的<code>checke</code>, 触发双向绑定数值的事件是<code>change</code><br>
+使用<code>vue-property-decorator</code>提供的<code>@Model</code>改造上面的例子.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Vue, Component, Model&#125; <span class="keyword">from</span> <span class="string">'vue-property-decorator'</span>;</span><br><span class="line"></span><br><span class="line">@Component</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">myCheck</span> <span class="keyword">extends</span> <span class="title">Vue</span></span>&#123;</span><br><span class="line">   @Model (<span class="string">'change'</span>, &#123;<span class="attr">type</span>: <span class="built_in">Boolean</span>&#125;)  checked!: boolean;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>总结, <code>@Model()</code>接收两个参数, 第一个是<code>event</code>值, 第二个是<code>prop</code>的类型说明, 与<code>@Prop</code>类似, 这里的类型要用<code>JS</code>的. 后面在接着是<code>prop</code>和在<code>TS</code>下的类型说明.<br>
+暂时常用的就这几个,还有<code>@Provice</code>和<code>@Inject</code>等用到了再写.</p>
+</blockquote>
+
+  <a onclick="go_top()"
+    ><div class="to_top"><div class="to-top-triangle"></div></div
+  ></a>
+</div>
+
+<div class="articleBottom">
+  <b>&nbsp;&nbsp;&nbsp;THE END&nbsp;&nbsp;&nbsp;</b>
+</div>
+<div class="combtn">
+  <div class="valine_btn"><b>游客评论</b></div>
+  <div class="gitalk_btn"><b>使用Github账号评论</b></div>
+  <div class="moving"></div>
+</div>
+<div>&nbsp;</div>
+<div class="book-comments">
+
+    <link rel="stylesheet" href="/css/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '9ffd086e729163760a2a',
+          clientSecret: '3dc719eec9759df35f5aa9ecb3bcdefd3f5bf9c6',
+          repo: 'Anuluca.github.io',
+          owner: 'anuluca',
+          admin: ['Anuluca'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+    </script>
+
+
+
+<!--    <link rel="stylesheet" href="https://unpkg.com/valine/dist/Valine.min.js">-->
+    <script src="//unpkg.zhimg.com/valine/dist/Valine.min.js"></script>
+    <div id="vcomments" style="margin-top: 100px;"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'rqHuR8lh2h3Fp2s9v2M8nDYJ-gzGzoHsz',
+            appKey: '9o4oYzzaYVFGG34Vd8ipLztu',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            placeholder: '说点什么'
+        });
+    </script>
+</div>
+<a
+  style="
+    font-size: 10px;
+    color: #999ca8;
+    width: 55%;
+    text-align: center;
+    padding-top: 100px;
+  "
+>
+  © 2018-2021 Anuluca.
+</a>
+<span
+  style="
+    font-size: 10px;
+    color: #999ca8;
+    width: 55%;
+    text-align: right;
+    float: right;
+  "
+>
+  ▌友情链接
+  <a
+    href="https://cutekibry.github.io/"
+    class="friendUrl"
+    style="margin-left: 5px"
+    >Tsuki's blog</a
+  >&nbsp;|
+  <a href="http://www.pokeamice.com/" target="_blank" rel="noopener" class="friendUrl">银河队漫游指南</a
+  >&nbsp;| <a href="https://austinxt.com/" target="_blank" rel="noopener" class="friendUrl">夜航星</a>&nbsp;|
+  <a href="http://www.zoomlgd.com/" target="_blank" rel="noopener" class="friendUrl">州力科技</a>&nbsp;
+</span>
+<div class="town">[小镇建设中]</div>
+
+ <script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure class="avatar avatar-lg">
+          <img src="/me.jpg" alt="...">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Anuluca</div>
+      <div style="font-family: 等线">Update:2020-09-08</div>
+    </div>
+  </div>
+
+  
+    <div class="divider"></div>
+
+    <div class="link">
+      
+
+      <a class="tag-link" href="/tags/typescript/" rel="tag">typescript</a> <a class="tag-link" href="/tags/vue/" rel="tag">vue</a> <a class="tag-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a>
+    </div>
+    
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+
+<div class="book-tocbot-menu" style="position:fixed;bottom:0px;">
+    <div class="bottom">
+        <span>- -</span>
+        <div class="links">
+            <a href="https://twitter.com/TILucario" target="_blank" rel="noopener" class="link_l">
+                <div style="background-image: url('https://s1.ax1x.com/2020/08/22/dabyWQ.png')"></div>
+                <span>推特</span></a>
+            <a href="https://weibo.com/anugamine" target="_blank" rel="noopener" class="link_l">
+                <div style="background-image: url('https://s1.ax1x.com/2020/08/22/dabrFS.png')"></div>
+                <span>微博</span></a>
+            <a href="https://www.instagram.com/anuluca" target="_blank" rel="noopener" class="link_l">
+                <div style="background-image: url('https://s1.ax1x.com/2020/08/22/dabsJg.png')"></div>
+                <span>Instagram</span></a>
+            <a href="https://github.com/Anuluca" target="_blank" rel="noopener" class="link_l">
+                <div style="background-image: url('https://s1.ax1x.com/2020/08/22/dabBo8.png')"></div>
+                <span>Github</span></a>
+        </div>
+        <div class="languages">中文 &nbsp;&nbsp;|&nbsp;&nbsp; <a href="http://Anuluca.github.io" class="english">English</a></div>
+    </div>
+
+</div><script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+<div class="bottomline"></div>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/TweenMax.min.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/onload.js"></script>
+<div class="clipboard_success">&nbsp;&nbsp;复制成功！</div>
+</body>
+</html>
+
+<script src="/js/book.js"></script>

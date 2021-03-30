@@ -1,0 +1,559 @@
+<!doctype HTML>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Anuluca的个人网站">
+    <meta name="keywords" content="anuluca,路卡,路卡的自由庭院岛,前端开发,vue,javascript">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          HTTP协议详解 - 路卡的自由庭院岛
+        
+    </title>
+
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="/css/spectre-exp.min.css">
+    <link rel="stylesheet" href="/css/spectre-icons.min.css">
+    <link rel="stylesheet" href="/css/spectre.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+
+    <!-- theme css & js -->
+    <link rel="stylesheet" href="/css/book.css">
+    <script src="/js/book.js"></script>
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- jq -->
+    <script src='https://libs.baidu.com/jquery/1.10.2/jquery.min.js'></script>
+    <!-- katex -->
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+</head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>路卡的自由庭院岛</span>
+  </a>
+</div>
+    <div class="book-menu">
+  <ul>
+<li><a href="/">🏠 主页</a></li>
+<li><a href="17101/">💼 Projects</a></li>
+</ul>
+<h1 id="笔记">笔记</h1>
+<h2 id="Javascript">Javascript</h2>
+<ul>
+<li><a href="/3671"><strong>35</strong> 鸭式辩型</a></li>
+<li><a href="/41455.html"><strong>34</strong> js实现中文数组拼音排序</a></li>
+<li><a href="/46572.html"><strong>33</strong> ES6新特性总结</a></li>
+<li><a href="/33808.html"><strong>32</strong> js原生实现bind</a></li>
+<li><a href="/44292.html"><strong>31</strong> json数据在JSON.stringify()处理后会输出什么</a></li>
+<li><a href="/22854.html"><strong>30</strong> 如何删除一个cookie</a></li>
+<li><a href="/64820.html"><strong>29</strong> 如何判断当前环境是移动端还是PC端</a></li>
+<li><a href="/25199.html"><strong>28</strong> Promise.race的使用</a></li>
+<li><a href="/46573.html"><strong>27</strong> css动画和js动画的区别</a></li>
+<li><a href="/36370.html"><strong>26</strong> 如何将json数据转化为data.json并下载</a></li>
+<li><a href="/53556.html"><strong>25</strong> 如何发现不安全的正则表达式</a></li>
+<li><a href="/48737.html"><strong>24</strong> 实现一个函数将json数据转换为queryString编码</a></li>
+<li><a href="/4293.html"><strong>23</strong> js数组处理相关</a></li>
+<li><a href="/12665.html"><strong>22</strong> setTimeout和Promise执行顺序</a></li>
+<li><a href="/1079.html"><strong>21</strong> 原生代码实现文本不可复制及复制监听</a></li>
+<li><a href="/3951.html"><strong>20</strong> js函数判断是否为纯对象</a></li>
+<li><a href="/59940.html"><strong>20</strong> js原生实现防抖&amp;节流</a></li>
+<li><a href="/48125.html"><strong>19</strong> js运算符与隐式类型转换</a></li>
+<li><a href="/9956.html"><strong>18</strong> js类型转换</a></li>
+<li><a href="/63377.html"><strong>17</strong> 继承的多种方式及优缺点</a></li>
+<li><a href="/58919.html"><strong>16</strong> 类数组对象和arguments</a></li>
+<li><a href="/13542.html"><strong>15</strong> 执行上下文栈及变量对象</a></li>
+<li><a href="/36481.html"><strong>14</strong> null和undefined的区别</a></li>
+<li><a href="/25967.html"><strong>13</strong> 原型与原型链</a></li>
+<li><a href="/22053.html"><strong>12</strong> 对象转数组</a></li>
+<li><a href="/65473.html"><strong>11</strong> base64和Blob互转</a></li>
+<li><a href="/34161.html"><strong>10</strong> JS浅拷贝和深拷贝</a></li>
+<li><a href="/17315.html"><strong>9</strong> 对象数组处理</a></li>
+<li><a href="/63659.html"><strong>8</strong> ES6部分特性浅解</a></li>
+<li><a href="/62439.html"><strong>7</strong> 函数柯里化</a></li>
+<li><a href="/23627.html"><strong>6</strong> 使用viewport对页面做响应式处理</a></li>
+<li><a href="/53717.html"><strong>5</strong> 解决网页加载后没有清除css和js缓存的问题</a></li>
+<li><a href="/28714.html"><strong>4</strong> JSONP浅解</a></li>
+<li><a href="/22406.html"><strong>3</strong> 原生页面的一种图片懒加载思路</a></li>
+<li><a href="/16400.html"><strong>2</strong> 解决页面移动端点击延迟的问题</a></li>
+<li><a href="/55792.html"><strong>1</strong> 创建对象的多种方式及优缺点</a></li>
+</ul>
+<h2 id="CSS">CSS</h2>
+<ul>
+<li><a href="/17809.html"><strong>10</strong> 伪类和伪元素的区别</a></li>
+<li><a href="/12144.html"><strong>9</strong> HTML5深色模式自适应</a></li>
+<li><a href="/28283.html"><strong>8</strong> CSS三角形</a></li>
+<li><a href="/29473.html"><strong>7</strong> 样式处理器选型</a></li>
+<li><a href="/57469.html"><strong>6</strong> Html5文字设置渐变色</a></li>
+<li><a href="/8190.html"><strong>5</strong> Scoped</a></li>
+<li><a href="/60642.html"><strong>4</strong> css文本超出隐藏显示省略号</a></li>
+<li><a href="/6329.html"><strong>3</strong> Flex布局属性浅解</a></li>
+<li><a href="/36608.html"><strong>2</strong> 浏览器兼容性问题整理</a></li>
+<li><a href="/16282.html"><strong>1</strong> BFC浅解</a></li>
+</ul>
+<h2 id="框架">框架</h2>
+<ul>
+<li><a href="/48172.html"><strong>30</strong> v-if和v-show的区别</a></li>
+<li><a href="/14022.html"><strong>29</strong> webpack打包项目时会打包已经import但没用到的模块吗</a></li>
+<li><a href="/56565.html"><strong>28</strong> npmi和npmci的区别</a></li>
+<li><a href="/15120.html"><strong>27</strong> 如何删除项目中没有用到的package</a></li>
+<li><a href="/52873.html"><strong>26</strong> React/Vue中的路由(router)基于什么实现原理</a></li>
+<li><a href="/26616.html"><strong>25</strong> Vue时间戳转换函数</a></li>
+<li><a href="/20181.html"><strong>24</strong> axios完整接口调用顺序</a></li>
+<li><a href="/15023.html"><strong>23</strong> 图表插件选型</a></li>
+<li><a href="/56535.html"><strong>22</strong> AntDesign+Vue3.0项目搭建记录</a></li>
+<li><a href="/44983.html"><strong>21</strong> React-create-app项目结构</a></li>
+<li><a href="/12366.html"><strong>20</strong> React生命周期</a></li>
+<li><a href="/16053.html"><strong>19</strong> React入门 : 井字棋</a></li>
+<li><a href="/44250.html"><strong>18</strong> webpack配置文件说明及使用</a></li>
+<li><a href="/15181.html"><strong>17</strong> Vue+Ts项目打包</a></li>
+<li><a href="/35751.html"><strong>16</strong> 配置webpack使项目能在本地打开</a></li>
+<li><a href="/34517.html"><strong>15</strong> Vue删除对象中的某个属性</a></li>
+<li><a href="/60966.html"><strong>14</strong> ESLint的一些报警</a></li>
+<li><a href="/35933.html"><strong>13</strong> 使用ref实现父组件调用子组件方法</a></li>
+<li><a href="/31560.html"><strong>12</strong> Vue动态修改元素样式</a></li>
+<li><a href="/46922.html"><strong>11</strong> Typescript中的Watch与Get、Set</a></li>
+<li><a href="/31754.html"><strong>10</strong> Vue+Ts父子组件传值</a></li>
+<li><a href="/37025.html"><strong>9</strong> Vue-CLI项目结构</a></li>
+<li><a href="/45310.html"><strong>8</strong> 使用Vue-CLI新建Vue+js/Ts项目</a></li>
+<li><a href="/8322.html"><strong>7</strong> vue-property-decorator用法</a></li>
+<li><a href="/57808.html"><strong>6</strong> vue-class-component对TS的支持</a></li>
+<li><a href="/36100.html"><strong>5</strong> Vue插槽浅解</a></li>
+<li><a href="/36398.html"><strong>4</strong> webpack打包+创建本地服务器</a></li>
+<li><a href="/9537.html"><strong>3</strong> Vue生命周期</a></li>
+<li><a href="/61857.html"><strong>2</strong> 个人对于MVVM模型的理解</a></li>
+<li><a href="/57928.html"><strong>1</strong> Grid/treeview控件简要介绍</a></li>
+</ul>
+<h2 id="UI-Components">UI Components</h2>
+<ul>
+<li><a href="/51249.html"><strong>10</strong> 去除elementUI打开drawer自带的蓝色框</a></li>
+<li><a href="/527.html"><strong>9</strong> 监听ElementUItable滚动事件</a></li>
+<li><a href="/33638.html"><strong>8</strong> ElementUI中Cascader级联选择器动态加载时允许选择任意一级任意一项</a></li>
+<li><a href="/29628.html"><strong>7</strong> 解决ElementUI中打开Drawer内的dialog黑色遮罩层优先级过高问题</a></li>
+<li><a href="/37033.html"><strong>6</strong> elementui的el-input按回车键后执行方法</a></li>
+<li><a href="/40759.html"><strong>5</strong> 基于ElementUI的模糊查询</a></li>
+<li><a href="/3264.html"><strong>4</strong> 设置elementUI的table组件滚动条位置</a></li>
+<li><a href="/24161.html"><strong>3</strong> ElementUI获取table选中的行</a></li>
+<li><a href="/21173.html"><strong>2</strong> ElementUI的Table组件判断当前是勾选状态还是取消勾选状态</a></li>
+<li><a href="/51077.html"><strong>1</strong> ElementUI清除el-table的hover样式</a></li>
+</ul>
+<h2 id="Git">Git</h2>
+<ul>
+<li><a href="/10399.html"><strong>6</strong> 列出所有已合并到master的分支并且删除</a></li>
+<li><a href="/46961.html"><strong>5</strong> Git常用操作记录</a></li>
+<li><a href="/60761.html"><strong>4</strong> Gitalk评论插件安装记录</a></li>
+<li><a href="/3681.html"><strong>3</strong> git修改用户名和提交用邮箱</a></li>
+<li><a href="/28110.html"><strong>2</strong> fatal:HttpRequestException encountered解决方法</a></li>
+<li><a href="/43663.html"><strong>1</strong> git更新后出现&quot;Fatal:TaskCanceled Exceptionencountered.&quot;解决方法</a></li>
+</ul>
+<h2 id="Database">Database</h2>
+<ul>
+<li><a href="/47030.html"><strong>5</strong> 数据库死锁产生的原因</a></li>
+<li><a href="/36865.html"><strong>4</strong> 初步认识ETL设计</a></li>
+<li><a href="/59321.html"><strong>3</strong> 初步认识数据仓库</a></li>
+<li><a href="/31076.html"><strong>2</strong> DB2存储过程遍历循环</a></li>
+<li><a href="/58914.html"><strong>1</strong> 工作中遇到的关于DB2/mysql的一些问题及解决办法</a></li>
+</ul>
+<h2 id="其他">其他</h2>
+<ul>
+<li><a href="/9999999999.html">[Tags]</a></li>
+<li><a href="/9239.html"><strong>36</strong> http状态码相关</a></li>
+<li><a href="/44290.html"><strong>35</strong> 在npm发布package</a></li>
+<li><a href="/7354.html"><strong>34</strong> 不同端口的localhost的cookie是否共享</a></li>
+<li><a href="/27682.html"><strong>33</strong> http向https做重定向一般使用哪个状态码</a></li>
+<li><a href="/14581.html"><strong>32</strong> nocache和nostore的区别</a></li>
+<li><a href="/63373.html"><strong>31</strong> linux下查看某一文件夹大小</a></li>
+<li><a href="/53719.html"><strong>30</strong> 算法合辑</a></li>
+<li><a href="/34114.html"><strong>29</strong> 使用lighthouse分析前端页面性能</a></li>
+<li><a href="/24381.html"><strong>28</strong> 浏览器关键渲染路径浅解</a></li>
+<li><a href="/13220.html"><strong>27</strong> localhost和127.0.0.1的区别</a></li>
+<li><a href="/40971.html"><strong>26</strong> 什么情况下会发送options请求</a></li>
+<li><a href="/22665.html"><strong>25</strong> 同一进程的线程共享哪些资源</a></li>
+<li><a href="/47682.html"><strong>24</strong> Chrome开发者工具中Performance的使用</a></li>
+<li><a href="/writings/32529.html"><strong>23</strong> zsh和bash的切换</a></li>
+<li><a href="/21790.html"><strong>22</strong> clipboard.js实现复制功能</a></li>
+<li><a href="/41922.html"><strong>21</strong> Mac常规安装nvm并下载指定版本node</a></li>
+<li><a href="/52608.html"><strong>20</strong> Homebrew大陆安装脚本</a></li>
+<li><a href="/26344.html"><strong>19</strong> Vscode自定义代码片段</a></li>
+<li><a href="/39572.html"><strong>18</strong> 不同文件类型转base64后的前缀</a></li>
+<li><a href="/208.html"><strong>17</strong> VSCode报错<code>Parameter 'xxx' implicitly has an 'any' type</code>解决方法</a></li>
+<li><a href="/9061.html"><strong>16</strong> 解决win10不插电下显示屏忽亮忽暗的问题</a></li>
+<li><a href="/26426.html"><strong>15</strong> IDEA与vscode的标签标题换行显示</a></li>
+<li><a href="/8299.html"><strong>14</strong> Chrome跨域配置</a></li>
+<li><a href="/39020.html"><strong>13</strong> windows关闭被占用的端口</a></li>
+<li><a href="/9328.html"><strong>12</strong> Windows下node.js安装与配置</a></li>
+<li><a href="/48737.html"><strong>11</strong> node is not avalid Win32 application报错解决办法</a></li>
+<li><a href="/27266.html"><strong>10</strong> VSCode快捷键大全</a></li>
+<li><a href="/35468.html"><strong>9</strong> 浏览器MixedContent报错</a></li>
+<li><a href="/57510.html"><strong>8</strong> VSCode个人初始设置</a></li>
+<li><a href="/39968.html"><strong>7</strong> VSCode初使用</a></li>
+<li><a href="/62449.html"><strong>6</strong> 面试问题总结</a></li>
+<li><a href="/53675.html"><strong>5</strong> 跳转到腾讯公益404页面</a></li>
+<li><a href="/1420.html"><strong>4</strong> 前端常用命令行</a></li>
+<li><a href="/13573.html"><strong>3</strong> 修改Mac鼠标滚轮逻辑</a></li>
+<li><a href="/30445.html"><strong>2</strong> HTTP协议详解</a></li>
+<li><a href="/41802.html"><strong>1</strong> AIX开启及关闭Telnet服务</a></li>
+</ul>
+<a id="more"></a>
+<h1 id="分类">分类</h1>
+<h2 id="文章">文章</h2>
+<ul>
+<li><a href="/48446.html">- 2020不正确记忆</a></li>
+<li><a href="/4008.html">- 博客纪录</a></li>
+<li><a href="/34223.html">📄 更新日志</a></li>
+</ul>
+<h2 id="工具">工具</h2>
+<ul>
+<li><a href="/45597.html"><strong>网页设计常用色彩</strong></a></li>
+<li><a href="/60329.html"><strong>HTML转义字符表</strong></a></li>
+<li><a href="/49833.html"><strong>营销号生成器</strong></a></li>
+<li><a href="/61602.html"><strong>今年是闰年还是平年？</strong></a></li>
+<li><a href="https://tinypng.com" target="_blank" rel="noopener"><strong>在线图片压缩</strong> by voormedia</a></li>
+<li><a href="http://test-ipv6.com" target="_blank" rel="noopener"><strong>IPv6连接测试</strong> by Jason Fesler</a></li>
+<li><a href="https://lab.magiconch.com/vaporwave" target="_blank" rel="noopener"><strong>蒸 気 機</strong></a></li>
+<li><a href="https://www.gaoding.com/koutu" target="_blank" rel="noopener"><strong>稿定抠图</strong> by 稿定科技有限公司</a></li>
+</ul>
+<h2 id="图册">图册</h2>
+<ul>
+<li><a href="/21283.html"><strong>随拍</strong></a></li>
+<li><a href="/17773.html"><strong>玩具</strong></a></li>
+<li><a href="/61012.html"><strong>游戏</strong></a></li>
+</ul>
+<!--more-->
+<ul>
+<li><a href="/61412.html">🎁 给点</a></li>
+<li><a href="/41678.html">🎓 Demo</a></li>
+</ul>
+<h1 id="div-class-backlogo-div"><em><a href="/oldsite"><div class="backlogo"></div></a></em></h1>
+
+</div>
+
+<script src="/js/book-menu.js"></script>
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="浏览器兼容性问题整理-font-color-gray-14-font">浏览器兼容性问题整理 <font color="gray">#14</font></h1>
+<p><strong>Anuluca</strong>     <strong>Date :</strong> 2020-08-13   <strong>Tags :</strong> 1</p>
+<div class = "articlehead" style="background-image:url('https://s1.ax1x.com/2020/08/19/dQ5pZT.jpg')"></div>
+<h3 id="一-HTTP简介">一.HTTP简介</h3>
+<p>1.HTTP协议，即超文本传输协议(Hypertext transfer protocol)。是一种详细规定了浏览器和万维网(WWW = World Wide Web)服务器之间互相通信的规则，通过因特网传送万维网文档的数据传送协议。<br>
+2.HTTP协议作为TCP/IP模型中应用层的协议也不例外。HTTP协议通常承载于TCP协议之上，有时也承载于TLS或SSL协议层之上，这时就成了我们常说的HTTPS。如下图：<br>
+<img src="https://s1.ax1x.com/2020/08/23/dwhVFH.png" alt=""><br>
+3.HTTP是一个应用层协议，由请求和响应构成，是一个标准的客户端服务器模型。HTTP是一个无状态的协议。<br>
+4.HTTP默认的端口号为80，HTTPS的端口号为443。<br>
+5.浏览网页是HTTP的主要应用，但是这并不代表HTTP就只能应用于网页的浏览。HTTP是一种协议，只要通信的双方都遵守这个协议，HTTP就能有用武之地。比如咱们常用的QQ，迅雷这些软件，都会使用HTTP协议(还包括其他的协议)。</p>
+<h3 id="二-HTTP特点">二.HTTP特点</h3>
+<p>1、简单快速：客户向服务器请求服务时，只需传送请求方法和路径。由于HTTP协议简单，使得HTTP服务器的程序规模小，因而通信速度很快。<br>
+2、灵活：HTTP允许传输任意类型的数据对象。正在传输的类型由Content-Type加以标记。<br>
+3、HTTP 0.9和1.0使用非持续连接：限制每次连接只处理一个请求，服务器处理完客户的请求，并收到客户的应答后，即断开连接。HTTP 1.1使用持续连接：不必为每个web对象创建一个新的连接，一个连接可以传送多个对象，采用这种方式可以节省传输时间。<br>
+4、无状态：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。<br>
+5、支持B/S及C/S模式。</p>
+<h3 id="三-HTTP工作流程">三.HTTP工作流程</h3>
+<p>一次HTTP操作称为一个事务，其工作过程可分为四步：<br>
+1.首先客户机与服务器需要建立连接。只要单击某个超级链接，HTTP的工作开始。<br>
+2.建立连接后，客户机发送一个请求给服务器，请求方式的格式为：统一资源标识符（URL）、协议版本号，后边是MIME信息包括请求修饰符、客户机信息和可能的内容。<br>
+3.服务器接到请求后，给予相应的响应信息，其格式为一个状态行，包括信息的协议版本号、一个成功或错误的代码，后边是MIME信息包括服务器信息、实体信息和可能的内容。<br>
+4.客户端接收服务器所返回的信息通过浏览器显示在用户的显示屏上，然后客户机与服务器断开连接。<br>
+如果在以上过程中的某一步出现错误，那么产生错误的信息将返回到客户端，有显示屏输出。对于用户来说，这些过程是由HTTP自己完成的，用户只要用鼠标点击，等待信息显示就可以了。</p>
+<h3 id="四-HTTP之请求消息Request">四.HTTP之请求消息Request</h3>
+<p>客户端发送一个HTTP请求到服务器的请求消息包括以下格式：<br>
+<code>请求行</code>、<code>请求头部</code>、<code>空行</code>和<code>请求数据</code>四个部分组成。</p>
+<h5 id="1-Get请求例子">(1)Get请求例子</h5>
+<p><img src="https://s1.ax1x.com/2020/08/23/dwhult.png" alt=""><br>
+<strong>第一部分：请求行，用来说明请求类型,要访问的资源以及所使用的HTTP版本.</strong><br>
+GET说明请求类型为GET,[/562f25980001b1b106000338.jpg]为要访问的资源，该行的最后一部分说明使用的是HTTP1.1版本。</p>
+<p><strong>第二部分：请求头部，紧接着请求行（即第一行）之后的部分，用来说明服务器要使用的附加信息</strong><br>
+从第二行起为请求头部，HOST将指出请求的目的地.User-Agent,服务器端和客户端脚本都能访问它,它是浏览器类型检测逻辑的重要基础.该信息由你的浏览器来定义,并且在每个请求中自动发送等等</p>
+<p><strong>第三部分：空行，请求头部后面的空行是必须的</strong><br>
+即使第四部分的请求数据为空，也必须有空行。</p>
+<p><strong>第四部分：请求数据也叫主体，可以添加任意的其他数据。</strong><br>
+这个例子的请求数据为空。</p>
+<p><code>POST请求例子</code><br>
+<img src="https://s1.ax1x.com/2020/08/23/dwhMOf.png" alt=""><br>
+<strong>第一部分：请求行，第一行明了是post请求，以及http1.1版本。</strong><br>
+<strong>第二部分：请求头部，第二行至第六行。</strong><br>
+<strong>第三部分：空行，第七行的空行。</strong><br>
+<strong>第四部分：请求数据，第八行。</strong></p>
+<h3 id="五-HTTP之响应消息Response">五.HTTP之响应消息Response</h3>
+<p>一般情况下，服务器接收并处理客户端发过来的请求后会返回一个HTTP的响应消息。<br>
+HTTP响应也由四个部分组成，分别是：<code>状态行</code>、<code>消息报头</code>、<code>空行</code>和<code>响应正文</code>。<br>
+<img src="https://s1.ax1x.com/2020/08/23/dwhGkQ.png" alt=""><br>
+<strong>第一部分：状态行，由HTTP协议版本号， 状态码， 状态消息 三部分组成。</strong><br>
+第一行为状态行，（HTTP/1.1）表明HTTP版本为1.1版本，状态码为200，状态消息为（ok）</p>
+<p><strong>第二部分：消息报头，用来说明客户端要使用的一些附加信息</strong><br>
+第二行和第三行和第四行为消息报头，<br>
+Date:生成响应的日期和时间；Content-Type:指定了MIME类型的HTML(text/html),编码类型是ISO-8859-1</p>
+<p><strong>第三部分：空行，消息报头后面的空行是必须的</strong></p>
+<p><strong>第四部分：响应正文，服务器返回给客户端的文本信息。</strong><br>
+空行后面的html部分为响应正文。</p>
+<h3 id="6-状态码">6.状态码</h3>
+<p>状态代码有三位数字组成，第一个数字定义了响应的类别，共分五种类别:<br>
+1xx：<strong>指示信息–表示请求已接收，继续处理</strong></p>
+<p>2xx：<strong>成功–表示请求已被成功接收、理解、接受</strong></p>
+<p>3xx：<strong>重定向–要完成请求必须进行更进一步的操作</strong></p>
+<p>4xx：<strong>客户端错误–请求有语法错误或请求无法实现</strong></p>
+<p>5xx：<strong>服务器端错误–服务器未能实现合法的请求</strong></p>
+<p>常见状态码：<br>
+<img src="https://s1.ax1x.com/2020/08/23/dwhNpn.png" alt=""></p>
+<h3 id="7-HTTP请求方法">7.HTTP请求方法</h3>
+<p>根据HTTP标准，HTTP请求可以使用多种请求方法。<br>
+<strong>HTTP1.0</strong>定义了三种请求方法： GET, POST 和 HEAD方法。<br>
+<strong>HTTP1.1</strong>新增了五种请求方法： OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方法。<br>
+<img src="https://s1.ax1x.com/2020/08/23/dwh6h9.png" alt=""></p>
+<h3 id="8-HTTP工作原理">8.HTTP工作原理</h3>
+<p>HTTP协议定义Web客户端如何从Web服务器请求Web页面，以及服务器如何把Web页面传送给客户端。HTTP协议采用了请求/响应模型。客户端向服务器发送一个请求报文，请求报文包含请求的方法、URL、协议版本、请求头部和请求数据。服务器以一个状态行作为响应，响应的内容包括协议的版本、成功或者错误代码、服务器信息、响应头部和响应数据。</p>
+<p>以下是 HTTP 请求/响应的步骤：</p>
+<p><strong>1、客户端连接到Web服务器</strong></p>
+<p>一个HTTP客户端，通常是浏览器，与Web服务器的HTTP端口（默认为80）建立一个TCP套接字连接。例如，<a href="http://www.oakcms.cn" target="_blank" rel="noopener">http://www.oakcms.cn</a>。</p>
+<p><strong>2、发送HTTP请求</strong></p>
+<p>通过TCP套接字，客户端向Web服务器发送一个文本的请求报文，一个请求报文由请求行、请求头部、空行和请求数据4部分组成。</p>
+<p><strong>3、服务器接受请求并返回HTTP响应</strong></p>
+<p>Web服务器解析请求，定位请求资源。服务器将资源复本写到TCP套接字，由客户端读取。一个响应由状态行、响应头部、空行和响应数据4部分组成。</p>
+<p><strong>4、释放连接TCP连接</strong></p>
+<p>若connection 模式为close，则服务器主动关闭TCP连接，客户端被动关闭连接，释放TCP连接;若connection 模式为keepalive，则该连接会保持一段时间，在该时间内可以继续接收请求;</p>
+<p><strong>5、客户端浏览器解析HTML内容</strong></p>
+<p>客户端浏览器首先解析状态行，查看表明请求是否成功的状态代码。然后解析每一个响应头，响应头告知以下为若干字节的HTML文档和文档的字符集。客户端浏览器读取响应数据HTML，根据HTML的语法对其进行格式化，并在浏览器窗口中显示。</p>
+<h3 id="9-GET和POST的区别">9.GET和POST的区别</h3>
+<p>1、GET提交的数据会放在URL之后，以?分割URL和传输数据，参数之间以&amp;相连，如EditPosts.aspx?name=test1&amp;id=123456. POST方法是把提交的数据放在HTTP包的Body中.</p>
+<p>2、GET提交的数据大小有限制（因为浏览器对URL的长度有限制），而POST方法提交的数据没有限制。</p>
+<p>3、GET方式需要使用Request.QueryString来取得变量的值，而POST方式通过Request.Form来获取变量的值。</p>
+<p>4、GET方式提交数据，会带来安全问题，比如一个登录页面，通过GET方式提交数据时，用户名和密码将出现在URL上，如果页面可以被缓存或者其他人可以访问这台机器，就可以从历史记录获得该用户的账号和密码。</p>
+<blockquote class="pullquote right"><p><font color = gray>* 本文部分内容摘自<a href="https://www.cnblogs.com/qdhxhz/p/8468913.html" target="_blank" rel="noopener">雨点的名字的博文</a></font></p>
+</blockquote>
+  <a onclick="go_top()"
+    ><div class="to_top"><div class="to-top-triangle"></div></div
+  ></a>
+</div>
+
+<div class="articleBottom">
+  <b>&nbsp;&nbsp;&nbsp;THE END&nbsp;&nbsp;&nbsp;</b>
+</div>
+<div class="combtn">
+  <div class="valine_btn"><b>游客评论</b></div>
+  <div class="gitalk_btn"><b>使用Github账号评论</b></div>
+  <div class="moving"></div>
+</div>
+<div>&nbsp;</div>
+<div class="book-comments">
+
+    <link rel="stylesheet" href="/css/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '9ffd086e729163760a2a',
+          clientSecret: '3dc719eec9759df35f5aa9ecb3bcdefd3f5bf9c6',
+          repo: 'Anuluca.github.io',
+          owner: 'anuluca',
+          admin: ['Anuluca'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+    </script>
+
+
+
+<!--    <link rel="stylesheet" href="https://unpkg.com/valine/dist/Valine.min.js">-->
+    <script src="//unpkg.zhimg.com/valine/dist/Valine.min.js"></script>
+    <div id="vcomments" style="margin-top: 100px;"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'rqHuR8lh2h3Fp2s9v2M8nDYJ-gzGzoHsz',
+            appKey: '9o4oYzzaYVFGG34Vd8ipLztu',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            placeholder: '说点什么'
+        });
+    </script>
+</div>
+<a
+  style="
+    font-size: 10px;
+    color: #999ca8;
+    width: 55%;
+    text-align: center;
+    padding-top: 100px;
+  "
+>
+  © 2018-2021 Anuluca.
+</a>
+<span
+  style="
+    font-size: 10px;
+    color: #999ca8;
+    width: 55%;
+    text-align: right;
+    float: right;
+  "
+>
+  ▌友情链接
+  <a
+    href="https://cutekibry.github.io/"
+    class="friendUrl"
+    style="margin-left: 5px"
+    >Tsuki's blog</a
+  >&nbsp;|
+  <a href="http://www.pokeamice.com/" target="_blank" rel="noopener" class="friendUrl">银河队漫游指南</a
+  >&nbsp;| <a href="https://austinxt.com/" target="_blank" rel="noopener" class="friendUrl">夜航星</a>&nbsp;|
+  <a href="http://www.zoomlgd.com/" target="_blank" rel="noopener" class="friendUrl">州力科技</a>&nbsp;
+</span>
+<div class="town">[小镇建设中]</div>
+
+ <script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure class="avatar avatar-lg">
+          <img src="/me.jpg" alt="...">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Anuluca</div>
+      <div style="font-family: 等线">Update:2020-08-13</div>
+    </div>
+  </div>
+
+  
+    <div class="divider"></div>
+
+    <div class="link">
+      
+
+      <a class="tag-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a>
+    </div>
+    
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+
+<div class="book-tocbot-menu" style="position:fixed;bottom:0px;">
+    <div class="bottom">
+        <span>- -</span>
+        <div class="links">
+            <a href="https://twitter.com/TILucario" target="_blank" rel="noopener" class="link_l">
+                <div style="background-image: url('https://s1.ax1x.com/2020/08/22/dabyWQ.png')"></div>
+                <span>推特</span></a>
+            <a href="https://weibo.com/anugamine" target="_blank" rel="noopener" class="link_l">
+                <div style="background-image: url('https://s1.ax1x.com/2020/08/22/dabrFS.png')"></div>
+                <span>微博</span></a>
+            <a href="https://www.instagram.com/anuluca" target="_blank" rel="noopener" class="link_l">
+                <div style="background-image: url('https://s1.ax1x.com/2020/08/22/dabsJg.png')"></div>
+                <span>Instagram</span></a>
+            <a href="https://github.com/Anuluca" target="_blank" rel="noopener" class="link_l">
+                <div style="background-image: url('https://s1.ax1x.com/2020/08/22/dabBo8.png')"></div>
+                <span>Github</span></a>
+        </div>
+        <div class="languages">中文 &nbsp;&nbsp;|&nbsp;&nbsp; <a href="http://Anuluca.github.io" class="english">English</a></div>
+    </div>
+
+</div><script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+<div class="bottomline"></div>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/TweenMax.min.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/onload.js"></script>
+<div class="clipboard_success">&nbsp;&nbsp;复制成功！</div>
+</body>
+</html>
+
+<script src="/js/book.js"></script>

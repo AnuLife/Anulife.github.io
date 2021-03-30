@@ -1,0 +1,530 @@
+<!doctype HTML>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Anuluca的个人网站">
+    <meta name="keywords" content="anuluca,路卡,路卡的自由庭院岛,前端开发,vue,javascript">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          BFC浅解 - 路卡的自由庭院岛
+        
+    </title>
+
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="/css/spectre-exp.min.css">
+    <link rel="stylesheet" href="/css/spectre-icons.min.css">
+    <link rel="stylesheet" href="/css/spectre.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+
+    <!-- theme css & js -->
+    <link rel="stylesheet" href="/css/book.css">
+    <script src="/js/book.js"></script>
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- jq -->
+    <script src='https://libs.baidu.com/jquery/1.10.2/jquery.min.js'></script>
+    <!-- katex -->
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+</head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>路卡的自由庭院岛</span>
+  </a>
+</div>
+    <div class="book-menu">
+  <ul>
+<li><a href="/">🏠 主页</a></li>
+<li><a href="17101/">💼 Projects</a></li>
+</ul>
+<h1 id="笔记">笔记</h1>
+<h2 id="Javascript">Javascript</h2>
+<ul>
+<li><a href="/3671"><strong>35</strong> 鸭式辩型</a></li>
+<li><a href="/41455.html"><strong>34</strong> js实现中文数组拼音排序</a></li>
+<li><a href="/46572.html"><strong>33</strong> ES6新特性总结</a></li>
+<li><a href="/33808.html"><strong>32</strong> js原生实现bind</a></li>
+<li><a href="/44292.html"><strong>31</strong> json数据在JSON.stringify()处理后会输出什么</a></li>
+<li><a href="/22854.html"><strong>30</strong> 如何删除一个cookie</a></li>
+<li><a href="/64820.html"><strong>29</strong> 如何判断当前环境是移动端还是PC端</a></li>
+<li><a href="/25199.html"><strong>28</strong> Promise.race的使用</a></li>
+<li><a href="/46573.html"><strong>27</strong> css动画和js动画的区别</a></li>
+<li><a href="/36370.html"><strong>26</strong> 如何将json数据转化为data.json并下载</a></li>
+<li><a href="/53556.html"><strong>25</strong> 如何发现不安全的正则表达式</a></li>
+<li><a href="/48737.html"><strong>24</strong> 实现一个函数将json数据转换为queryString编码</a></li>
+<li><a href="/4293.html"><strong>23</strong> js数组处理相关</a></li>
+<li><a href="/12665.html"><strong>22</strong> setTimeout和Promise执行顺序</a></li>
+<li><a href="/1079.html"><strong>21</strong> 原生代码实现文本不可复制及复制监听</a></li>
+<li><a href="/3951.html"><strong>20</strong> js函数判断是否为纯对象</a></li>
+<li><a href="/59940.html"><strong>20</strong> js原生实现防抖&amp;节流</a></li>
+<li><a href="/48125.html"><strong>19</strong> js运算符与隐式类型转换</a></li>
+<li><a href="/9956.html"><strong>18</strong> js类型转换</a></li>
+<li><a href="/63377.html"><strong>17</strong> 继承的多种方式及优缺点</a></li>
+<li><a href="/58919.html"><strong>16</strong> 类数组对象和arguments</a></li>
+<li><a href="/13542.html"><strong>15</strong> 执行上下文栈及变量对象</a></li>
+<li><a href="/36481.html"><strong>14</strong> null和undefined的区别</a></li>
+<li><a href="/25967.html"><strong>13</strong> 原型与原型链</a></li>
+<li><a href="/22053.html"><strong>12</strong> 对象转数组</a></li>
+<li><a href="/65473.html"><strong>11</strong> base64和Blob互转</a></li>
+<li><a href="/34161.html"><strong>10</strong> JS浅拷贝和深拷贝</a></li>
+<li><a href="/17315.html"><strong>9</strong> 对象数组处理</a></li>
+<li><a href="/63659.html"><strong>8</strong> ES6部分特性浅解</a></li>
+<li><a href="/62439.html"><strong>7</strong> 函数柯里化</a></li>
+<li><a href="/23627.html"><strong>6</strong> 使用viewport对页面做响应式处理</a></li>
+<li><a href="/53717.html"><strong>5</strong> 解决网页加载后没有清除css和js缓存的问题</a></li>
+<li><a href="/28714.html"><strong>4</strong> JSONP浅解</a></li>
+<li><a href="/22406.html"><strong>3</strong> 原生页面的一种图片懒加载思路</a></li>
+<li><a href="/16400.html"><strong>2</strong> 解决页面移动端点击延迟的问题</a></li>
+<li><a href="/55792.html"><strong>1</strong> 创建对象的多种方式及优缺点</a></li>
+</ul>
+<h2 id="CSS">CSS</h2>
+<ul>
+<li><a href="/17809.html"><strong>10</strong> 伪类和伪元素的区别</a></li>
+<li><a href="/12144.html"><strong>9</strong> HTML5深色模式自适应</a></li>
+<li><a href="/28283.html"><strong>8</strong> CSS三角形</a></li>
+<li><a href="/29473.html"><strong>7</strong> 样式处理器选型</a></li>
+<li><a href="/57469.html"><strong>6</strong> Html5文字设置渐变色</a></li>
+<li><a href="/8190.html"><strong>5</strong> Scoped</a></li>
+<li><a href="/60642.html"><strong>4</strong> css文本超出隐藏显示省略号</a></li>
+<li><a href="/6329.html"><strong>3</strong> Flex布局属性浅解</a></li>
+<li><a href="/36608.html"><strong>2</strong> 浏览器兼容性问题整理</a></li>
+<li><a href="/16282.html"><strong>1</strong> BFC浅解</a></li>
+</ul>
+<h2 id="框架">框架</h2>
+<ul>
+<li><a href="/48172.html"><strong>30</strong> v-if和v-show的区别</a></li>
+<li><a href="/14022.html"><strong>29</strong> webpack打包项目时会打包已经import但没用到的模块吗</a></li>
+<li><a href="/56565.html"><strong>28</strong> npmi和npmci的区别</a></li>
+<li><a href="/15120.html"><strong>27</strong> 如何删除项目中没有用到的package</a></li>
+<li><a href="/52873.html"><strong>26</strong> React/Vue中的路由(router)基于什么实现原理</a></li>
+<li><a href="/26616.html"><strong>25</strong> Vue时间戳转换函数</a></li>
+<li><a href="/20181.html"><strong>24</strong> axios完整接口调用顺序</a></li>
+<li><a href="/15023.html"><strong>23</strong> 图表插件选型</a></li>
+<li><a href="/56535.html"><strong>22</strong> AntDesign+Vue3.0项目搭建记录</a></li>
+<li><a href="/44983.html"><strong>21</strong> React-create-app项目结构</a></li>
+<li><a href="/12366.html"><strong>20</strong> React生命周期</a></li>
+<li><a href="/16053.html"><strong>19</strong> React入门 : 井字棋</a></li>
+<li><a href="/44250.html"><strong>18</strong> webpack配置文件说明及使用</a></li>
+<li><a href="/15181.html"><strong>17</strong> Vue+Ts项目打包</a></li>
+<li><a href="/35751.html"><strong>16</strong> 配置webpack使项目能在本地打开</a></li>
+<li><a href="/34517.html"><strong>15</strong> Vue删除对象中的某个属性</a></li>
+<li><a href="/60966.html"><strong>14</strong> ESLint的一些报警</a></li>
+<li><a href="/35933.html"><strong>13</strong> 使用ref实现父组件调用子组件方法</a></li>
+<li><a href="/31560.html"><strong>12</strong> Vue动态修改元素样式</a></li>
+<li><a href="/46922.html"><strong>11</strong> Typescript中的Watch与Get、Set</a></li>
+<li><a href="/31754.html"><strong>10</strong> Vue+Ts父子组件传值</a></li>
+<li><a href="/37025.html"><strong>9</strong> Vue-CLI项目结构</a></li>
+<li><a href="/45310.html"><strong>8</strong> 使用Vue-CLI新建Vue+js/Ts项目</a></li>
+<li><a href="/8322.html"><strong>7</strong> vue-property-decorator用法</a></li>
+<li><a href="/57808.html"><strong>6</strong> vue-class-component对TS的支持</a></li>
+<li><a href="/36100.html"><strong>5</strong> Vue插槽浅解</a></li>
+<li><a href="/36398.html"><strong>4</strong> webpack打包+创建本地服务器</a></li>
+<li><a href="/9537.html"><strong>3</strong> Vue生命周期</a></li>
+<li><a href="/61857.html"><strong>2</strong> 个人对于MVVM模型的理解</a></li>
+<li><a href="/57928.html"><strong>1</strong> Grid/treeview控件简要介绍</a></li>
+</ul>
+<h2 id="UI-Components">UI Components</h2>
+<ul>
+<li><a href="/51249.html"><strong>10</strong> 去除elementUI打开drawer自带的蓝色框</a></li>
+<li><a href="/527.html"><strong>9</strong> 监听ElementUItable滚动事件</a></li>
+<li><a href="/33638.html"><strong>8</strong> ElementUI中Cascader级联选择器动态加载时允许选择任意一级任意一项</a></li>
+<li><a href="/29628.html"><strong>7</strong> 解决ElementUI中打开Drawer内的dialog黑色遮罩层优先级过高问题</a></li>
+<li><a href="/37033.html"><strong>6</strong> elementui的el-input按回车键后执行方法</a></li>
+<li><a href="/40759.html"><strong>5</strong> 基于ElementUI的模糊查询</a></li>
+<li><a href="/3264.html"><strong>4</strong> 设置elementUI的table组件滚动条位置</a></li>
+<li><a href="/24161.html"><strong>3</strong> ElementUI获取table选中的行</a></li>
+<li><a href="/21173.html"><strong>2</strong> ElementUI的Table组件判断当前是勾选状态还是取消勾选状态</a></li>
+<li><a href="/51077.html"><strong>1</strong> ElementUI清除el-table的hover样式</a></li>
+</ul>
+<h2 id="Git">Git</h2>
+<ul>
+<li><a href="/10399.html"><strong>6</strong> 列出所有已合并到master的分支并且删除</a></li>
+<li><a href="/46961.html"><strong>5</strong> Git常用操作记录</a></li>
+<li><a href="/60761.html"><strong>4</strong> Gitalk评论插件安装记录</a></li>
+<li><a href="/3681.html"><strong>3</strong> git修改用户名和提交用邮箱</a></li>
+<li><a href="/28110.html"><strong>2</strong> fatal:HttpRequestException encountered解决方法</a></li>
+<li><a href="/43663.html"><strong>1</strong> git更新后出现&quot;Fatal:TaskCanceled Exceptionencountered.&quot;解决方法</a></li>
+</ul>
+<h2 id="Database">Database</h2>
+<ul>
+<li><a href="/47030.html"><strong>5</strong> 数据库死锁产生的原因</a></li>
+<li><a href="/36865.html"><strong>4</strong> 初步认识ETL设计</a></li>
+<li><a href="/59321.html"><strong>3</strong> 初步认识数据仓库</a></li>
+<li><a href="/31076.html"><strong>2</strong> DB2存储过程遍历循环</a></li>
+<li><a href="/58914.html"><strong>1</strong> 工作中遇到的关于DB2/mysql的一些问题及解决办法</a></li>
+</ul>
+<h2 id="其他">其他</h2>
+<ul>
+<li><a href="/9999999999.html">[Tags]</a></li>
+<li><a href="/9239.html"><strong>36</strong> http状态码相关</a></li>
+<li><a href="/44290.html"><strong>35</strong> 在npm发布package</a></li>
+<li><a href="/7354.html"><strong>34</strong> 不同端口的localhost的cookie是否共享</a></li>
+<li><a href="/27682.html"><strong>33</strong> http向https做重定向一般使用哪个状态码</a></li>
+<li><a href="/14581.html"><strong>32</strong> nocache和nostore的区别</a></li>
+<li><a href="/63373.html"><strong>31</strong> linux下查看某一文件夹大小</a></li>
+<li><a href="/53719.html"><strong>30</strong> 算法合辑</a></li>
+<li><a href="/34114.html"><strong>29</strong> 使用lighthouse分析前端页面性能</a></li>
+<li><a href="/24381.html"><strong>28</strong> 浏览器关键渲染路径浅解</a></li>
+<li><a href="/13220.html"><strong>27</strong> localhost和127.0.0.1的区别</a></li>
+<li><a href="/40971.html"><strong>26</strong> 什么情况下会发送options请求</a></li>
+<li><a href="/22665.html"><strong>25</strong> 同一进程的线程共享哪些资源</a></li>
+<li><a href="/47682.html"><strong>24</strong> Chrome开发者工具中Performance的使用</a></li>
+<li><a href="/writings/32529.html"><strong>23</strong> zsh和bash的切换</a></li>
+<li><a href="/21790.html"><strong>22</strong> clipboard.js实现复制功能</a></li>
+<li><a href="/41922.html"><strong>21</strong> Mac常规安装nvm并下载指定版本node</a></li>
+<li><a href="/52608.html"><strong>20</strong> Homebrew大陆安装脚本</a></li>
+<li><a href="/26344.html"><strong>19</strong> Vscode自定义代码片段</a></li>
+<li><a href="/39572.html"><strong>18</strong> 不同文件类型转base64后的前缀</a></li>
+<li><a href="/208.html"><strong>17</strong> VSCode报错<code>Parameter 'xxx' implicitly has an 'any' type</code>解决方法</a></li>
+<li><a href="/9061.html"><strong>16</strong> 解决win10不插电下显示屏忽亮忽暗的问题</a></li>
+<li><a href="/26426.html"><strong>15</strong> IDEA与vscode的标签标题换行显示</a></li>
+<li><a href="/8299.html"><strong>14</strong> Chrome跨域配置</a></li>
+<li><a href="/39020.html"><strong>13</strong> windows关闭被占用的端口</a></li>
+<li><a href="/9328.html"><strong>12</strong> Windows下node.js安装与配置</a></li>
+<li><a href="/48737.html"><strong>11</strong> node is not avalid Win32 application报错解决办法</a></li>
+<li><a href="/27266.html"><strong>10</strong> VSCode快捷键大全</a></li>
+<li><a href="/35468.html"><strong>9</strong> 浏览器MixedContent报错</a></li>
+<li><a href="/57510.html"><strong>8</strong> VSCode个人初始设置</a></li>
+<li><a href="/39968.html"><strong>7</strong> VSCode初使用</a></li>
+<li><a href="/62449.html"><strong>6</strong> 面试问题总结</a></li>
+<li><a href="/53675.html"><strong>5</strong> 跳转到腾讯公益404页面</a></li>
+<li><a href="/1420.html"><strong>4</strong> 前端常用命令行</a></li>
+<li><a href="/13573.html"><strong>3</strong> 修改Mac鼠标滚轮逻辑</a></li>
+<li><a href="/30445.html"><strong>2</strong> HTTP协议详解</a></li>
+<li><a href="/41802.html"><strong>1</strong> AIX开启及关闭Telnet服务</a></li>
+</ul>
+<a id="more"></a>
+<h1 id="分类">分类</h1>
+<h2 id="文章">文章</h2>
+<ul>
+<li><a href="/48446.html">- 2020不正确记忆</a></li>
+<li><a href="/4008.html">- 博客纪录</a></li>
+<li><a href="/34223.html">📄 更新日志</a></li>
+</ul>
+<h2 id="工具">工具</h2>
+<ul>
+<li><a href="/45597.html"><strong>网页设计常用色彩</strong></a></li>
+<li><a href="/60329.html"><strong>HTML转义字符表</strong></a></li>
+<li><a href="/49833.html"><strong>营销号生成器</strong></a></li>
+<li><a href="/61602.html"><strong>今年是闰年还是平年？</strong></a></li>
+<li><a href="https://tinypng.com" target="_blank" rel="noopener"><strong>在线图片压缩</strong> by voormedia</a></li>
+<li><a href="http://test-ipv6.com" target="_blank" rel="noopener"><strong>IPv6连接测试</strong> by Jason Fesler</a></li>
+<li><a href="https://lab.magiconch.com/vaporwave" target="_blank" rel="noopener"><strong>蒸 気 機</strong></a></li>
+<li><a href="https://www.gaoding.com/koutu" target="_blank" rel="noopener"><strong>稿定抠图</strong> by 稿定科技有限公司</a></li>
+</ul>
+<h2 id="图册">图册</h2>
+<ul>
+<li><a href="/21283.html"><strong>随拍</strong></a></li>
+<li><a href="/17773.html"><strong>玩具</strong></a></li>
+<li><a href="/61012.html"><strong>游戏</strong></a></li>
+</ul>
+<!--more-->
+<ul>
+<li><a href="/61412.html">🎁 给点</a></li>
+<li><a href="/41678.html">🎓 Demo</a></li>
+</ul>
+<h1 id="div-class-backlogo-div"><em><a href="/oldsite"><div class="backlogo"></div></a></em></h1>
+
+</div>
+
+<script src="/js/book-menu.js"></script>
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="BFC浅解-font-color-gray-8-font">BFC浅解 <font color="gray">#8</font></h1>
+<p><strong>Anuluca</strong>     <strong>Date :</strong> 2020-05-11   <strong>Tags :</strong> 2</p>
+<div class = "articlehead" style="background-image:url('https://s1.ax1x.com/2020/08/20/dGB4Rx.jpg')"></div>
+<h3 id="1-什么是BFC？">1. 什么是BFC？</h3>
+<p>全称：Block Formatting Context，即“块级格式化上下文”，它是页面中相对独立的一块渲染区域，它决定了内部的子元素如何进行摆放和定位，以及区域内部元素和区域外部元素之间的相互作用关系。</p>
+<h3 id="2-BFC有什么特点？">2. BFC有什么特点？</h3>
+<p>当一个元素容器创建BFC后，主要有以下表现特点：</p>
+<ul>
+<li>BFC可以包含浮动元素（闭合浮动）</li>
+<li>BFC所确定的区域不会与外部浮动元素发生重叠</li>
+<li>位于同一BFC下的相邻块级子元素在垂直方向上会发生margin重叠</li>
+<li>位于不同BFC下的相邻元素之间不会发生margin重叠</li>
+<li>将以上特点一言以蔽之，即BFC在页面上是一个封闭的区域，如同“结界”一般。即便是内部的浮动元素也无法脱离该区域。该区域内部的子元素无法影响区域外部，同时也不受外部影响。</li>
+</ul>
+<h3 id="3-如何触发-创建BFC？">3. 如何触发/创建BFC？</h3>
+<p>若某个元素满足以下任一条件，则会对其创建BFC：</p>
+<ul>
+<li>&lt;html&gt;根元素</li>
+<li><code>float</code>的值不为<code>none</code></li>
+<li><code>overflow</code>的值为<code>auto</code>、<code>scroll</code>或<code>hidden</code></li>
+<li><code>display</code>的值为<code>table-cell</code>、<code>table-caption</code>或<code>inline-block</code></li>
+<li><code>position</code>的值为<code>fixed</code>或<code>absolute</code></li>
+</ul>
+<blockquote>
+<p>关于display的默认值：内联元素: inline 块级元素: block</p>
+</blockquote>
+<blockquote>
+<p>关于display：inline设置padding和margin是否生效？<br>
+<strong>答：inline元素的padding都会生效，margin只有左右生效，上下不会生效。</strong></p>
+</blockquote>
+<h3 id="4-BFC的常见用途">4. BFC的常见用途</h3>
+<p>既然BFC有如上特点，那么该如何将其利用到我们日常的布局中呢？一般来说，BFC的常见用途有如下三个：</p>
+<h5 id="闭合浮动">闭合浮动</h5>
+<p>由于BFC可以包含浮动元素，所以当一个元素容器内部存在浮动元素时，为了防止容器高度“坍塌”，可以对容器创建BFC：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#container</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: auto;  <span class="comment">/* 创建BFC */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="阻止margin重叠">阻止margin重叠</h5>
+<p>假设有如下代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/* HTML代码 */</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box1"</span>&gt;</span>我是box1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box2"</span>&gt;</span>我是box2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* CSS代码 */</span></span><br><span class="line"><span class="selector-id">#box1</span> &#123;</span><br><span class="line">    <span class="attribute">margin-bottom</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: lightskyblue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#box2</span> &#123;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于<code>box1</code>和<code>box2</code>处于同一上下文，所以在垂直方向上会发生margin重叠</p>
+<p>为了阻止两者发生margin重叠，可以为<code>box2</code>添加一个BFC容器：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/* HTML代码 */</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box1"</span>&gt;</span>我是box1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"bfc"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box2"</span>&gt;</span>我是box2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* CSS代码 */</span></span><br><span class="line"><span class="selector-id">#bfc</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: auto;  <span class="comment">/* 创建BFC */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样一来，<code>box1</code>和<code>box2</code>就属于两个不同的上下文，也就不会发生margin重叠了：<br>
+<img src="https://s3.ax1x.com/2020/12/15/rKH8d1.png" alt="BFC阻止margin重叠"><br>
+不过需要注意的是，不要错误地以为BFC容器也能与<code>box1</code>之间发生margin不叠加；事实上由于此时变成了BFC容器与<code>box1</code>在同一上下文中，所以BFC容器仍会与<code>box1</code>发生margin重叠，如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#bfc</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: auto;  <span class="comment">/* 创建BFC */</span></span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>则有：<br>
+<img src="https://s3.ax1x.com/2020/12/15/rKHYi6.png" alt="BFC容器与box1发生margin重叠"></p>
+<h4 id="自适应流体布局">自适应流体布局</h4>
+<p>BFC最强大的用途其实是用于自适应流体布局，这是基于BFC所确定的区域不会与外部浮动元素发生重叠的特性实现的：<br>
+假设我们需要创建一个左侧宽度固定为200px，右侧宽度自适应的两列布局，一般情况下有如下解决方案：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/* HTML代码 */</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"layout"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* CSS代码 */</span></span><br><span class="line"><span class="selector-id">#layout</span>&#123;</span><br><span class="line">    <span class="attribute">overflow</span>: auto;   <span class="comment">/* 创建BFC闭合浮动 */</span> </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#left</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#right</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>虽然这个方案简单有效，但是有一个缺点，那就是需要在<code>#right</code>中设定<code>margin-left</code>值来为左侧留出空间；那如果要修改左侧的宽度，相应地也要修改<code>margin-left</code>，这样就会很麻烦。</p>
+<p>但如果利用BFC的特点，将<code>#right</code>中的代码改为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#right</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: auto;  <span class="comment">/* 创建BFC */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样就既保留了<code>right</code>原有的流体特性（默认占满父元素宽度），也通过BFC根据左侧浮动元素的尺寸对右侧栏的宽度进行自动剪裁，从而完成了自适应的布局效果。</p>
+
+  <a onclick="go_top()"
+    ><div class="to_top"><div class="to-top-triangle"></div></div
+  ></a>
+</div>
+
+<div class="articleBottom">
+  <b>&nbsp;&nbsp;&nbsp;THE END&nbsp;&nbsp;&nbsp;</b>
+</div>
+<div class="combtn">
+  <div class="valine_btn"><b>游客评论</b></div>
+  <div class="gitalk_btn"><b>使用Github账号评论</b></div>
+  <div class="moving"></div>
+</div>
+<div>&nbsp;</div>
+<div class="book-comments">
+
+    <link rel="stylesheet" href="/css/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '9ffd086e729163760a2a',
+          clientSecret: '3dc719eec9759df35f5aa9ecb3bcdefd3f5bf9c6',
+          repo: 'Anuluca.github.io',
+          owner: 'anuluca',
+          admin: ['Anuluca'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+    </script>
+
+
+
+<!--    <link rel="stylesheet" href="https://unpkg.com/valine/dist/Valine.min.js">-->
+    <script src="//unpkg.zhimg.com/valine/dist/Valine.min.js"></script>
+    <div id="vcomments" style="margin-top: 100px;"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'rqHuR8lh2h3Fp2s9v2M8nDYJ-gzGzoHsz',
+            appKey: '9o4oYzzaYVFGG34Vd8ipLztu',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            placeholder: '说点什么'
+        });
+    </script>
+</div>
+<a
+  style="
+    font-size: 10px;
+    color: #999ca8;
+    width: 55%;
+    text-align: center;
+    padding-top: 100px;
+  "
+>
+  © 2018-2021 Anuluca.
+</a>
+<span
+  style="
+    font-size: 10px;
+    color: #999ca8;
+    width: 55%;
+    text-align: right;
+    float: right;
+  "
+>
+  ▌友情链接
+  <a
+    href="https://cutekibry.github.io/"
+    class="friendUrl"
+    style="margin-left: 5px"
+    >Tsuki's blog</a
+  >&nbsp;|
+  <a href="http://www.pokeamice.com/" target="_blank" rel="noopener" class="friendUrl">银河队漫游指南</a
+  >&nbsp;| <a href="https://austinxt.com/" target="_blank" rel="noopener" class="friendUrl">夜航星</a>&nbsp;|
+  <a href="http://www.zoomlgd.com/" target="_blank" rel="noopener" class="friendUrl">州力科技</a>&nbsp;
+</span>
+<div class="town">[小镇建设中]</div>
+
+ <script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure class="avatar avatar-lg">
+          <img src="/me.jpg" alt="...">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Anuluca</div>
+      <div style="font-family: 等线">Update:2020-05-11</div>
+    </div>
+  </div>
+
+  
+    <div class="divider"></div>
+
+    <div class="link">
+      
+
+      <a class="tag-link" href="/tags/javascript/" rel="tag">javascript</a> <a class="tag-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a>
+    </div>
+    
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+
+<div class="book-tocbot-menu" style="position:fixed;bottom:0px;">
+    <div class="bottom">
+        <span>- -</span>
+        <div class="links">
+            <a href="https://twitter.com/TILucario" target="_blank" rel="noopener" class="link_l">
+                <div style="background-image: url('https://s1.ax1x.com/2020/08/22/dabyWQ.png')"></div>
+                <span>推特</span></a>
+            <a href="https://weibo.com/anugamine" target="_blank" rel="noopener" class="link_l">
+                <div style="background-image: url('https://s1.ax1x.com/2020/08/22/dabrFS.png')"></div>
+                <span>微博</span></a>
+            <a href="https://www.instagram.com/anuluca" target="_blank" rel="noopener" class="link_l">
+                <div style="background-image: url('https://s1.ax1x.com/2020/08/22/dabsJg.png')"></div>
+                <span>Instagram</span></a>
+            <a href="https://github.com/Anuluca" target="_blank" rel="noopener" class="link_l">
+                <div style="background-image: url('https://s1.ax1x.com/2020/08/22/dabBo8.png')"></div>
+                <span>Github</span></a>
+        </div>
+        <div class="languages">中文 &nbsp;&nbsp;|&nbsp;&nbsp; <a href="http://Anuluca.github.io" class="english">English</a></div>
+    </div>
+
+</div><script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+<div class="bottomline"></div>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/TweenMax.min.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/onload.js"></script>
+<div class="clipboard_success">&nbsp;&nbsp;复制成功！</div>
+</body>
+</html>
+
+<script src="/js/book.js"></script>
