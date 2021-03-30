@@ -65,6 +65,9 @@ document.addEventListener('DOMContentLoaded', function () {
 <h1 id="笔记">笔记</h1>
 <h2 id="Javascript">Javascript</h2>
 <ul>
+<li><a href="/writings/133%E9%B8%AD%E5%BC%8F%E8%BE%A9%E5%9E%8B"><strong>35</strong> 鸭式辩型</a></li>
+<li><a href="/writings/132js%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E6%95%B0%E7%BB%84%E6%8B%BC%E9%9F%B3%E6%8E%92%E5%BA%8F"><strong>34</strong> js实现中文数组拼音排序</a></li>
+<li><a href="/writings/131ES6%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93"><strong>33</strong> ES6新特性总结</a></li>
 <li><a href="/writings/130js%E5%8E%9F%E7%94%9F%E5%AE%9E%E7%8E%B0bind"><strong>32</strong> js原生实现bind</a></li>
 <li><a href="/writings/127json%E6%95%B0%E6%8D%AE%E5%9C%A8jsonstringify%E5%A4%84%E7%90%86%E5%90%8E%E4%BC%9A%E8%BE%93%E5%87%BA%E4%BB%80%E4%B9%88"><strong>31</strong> json数据在JSON.stringify()处理后会输出什么</a></li>
 <li><a href="/writings/124%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AAcookie"><strong>30</strong> 如何删除一个cookie</a></li>
@@ -310,7 +313,9 @@ function sidebar_toggle() {
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">FOR V AS MYCURSOR CURSOR FOR <span class="keyword">SELECT</span> <span class="keyword">ID</span>,<span class="keyword">NAME</span>,AGE <span class="keyword">FROM</span> PEOPLE</span><br><span class="line"><span class="keyword">DO</span></span><br><span class="line">   <span class="keyword">BEGIN</span></span><br><span class="line">       <span class="comment">--这里进行业务逻辑处理,每行循环的时候,每列的值将会存放于V变量中</span></span><br><span class="line">       <span class="comment">--示例: 把数据插入到另外一张表</span></span><br><span class="line">       <span class="keyword">INSERT</span> <span class="keyword">INTO</span> PERSON(<span class="keyword">NAME</span>,AGE) <span class="keyword">VALUES</span>(V.NAME,V.AGE);</span><br><span class="line">   <span class="keyword">END</span>;</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">FOR</span>;</span><br></pre></td></tr></table></figure>
 <h2 id="二-WHILE循环-DECLARE-游标名-CURSOR-FOR-SELECT…">二.WHILE循环(DECLARE [游标名] CURSOR FOR [SELECT…])</h2>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span> NOTFOUND <span class="built_in">INT</span> <span class="keyword">DEFAULT</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">DECLARE</span> V_NAME <span class="built_in">VARCHAR</span>(<span class="number">20</span>);</span><br><span class="line"><span class="keyword">DECLARE</span> V_AGE <span class="built_in">VARCHAR</span>(<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">DECLARE</span> MYCURSOR <span class="keyword">CURSOR</span> <span class="keyword">FOR</span> <span class="keyword">SELECT</span> <span class="keyword">NAME</span>,AGE <span class="keyword">FROM</span> PEOPLE;</span><br><span class="line"><span class="keyword">DECLARE</span> CONTINUE <span class="keyword">HANDLER</span> <span class="keyword">FOR</span> <span class="keyword">NOT</span> <span class="keyword">FOUND</span> <span class="keyword">SET</span> NOTFOUND = <span class="number">1</span>;</span><br><span class="line">WHILE NOTFOUND = 0 <span class="keyword">DO</span> <span class="keyword">FETCH</span> MYCURSOR <span class="keyword">INTO</span> V_NAME,V_AGE    <span class="comment">--这里的顺序要与查询结果字段顺序一致</span></span><br><span class="line">   <span class="comment">--这里会多循环一次,所以需要加一个判断</span></span><br><span class="line">   <span class="keyword">IF</span>(NOTFOUND = <span class="number">0</span>)</span><br><span class="line">   <span class="keyword">THEN</span></span><br><span class="line">       <span class="keyword">INSERT</span> <span class="keyword">INTO</span> PERSON(<span class="keyword">NAME</span>,AGE) <span class="keyword">VALUES</span>(V_NAME,V_AGE);</span><br><span class="line">   <span class="keyword">END</span> <span class="keyword">IF</span>;</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">WHILE</span>;</span><br></pre></td></tr></table></figure>
-  <a onclick="go_top()"><div class="to_top"><div class = "to-top-triangle"></div></div></a>
+  <a onclick="go_top()"
+    ><div class="to_top"><div class="to-top-triangle"></div></div
+  ></a>
 </div>
 
 <div class="articleBottom">
@@ -335,7 +340,7 @@ function sidebar_toggle() {
 
 
 
-    <link rel="stylesheet" href="https://unpkg.zhimg.com/gitalk/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/gitalk.css">
     <script src="https://unpkg.zhimg.com/gitalk/dist/gitalk.min.js"></script>
     <div id="gitalk-container"></div>
     <script type="text/javascript">
@@ -394,19 +399,14 @@ function sidebar_toggle() {
     class="friendUrl"
     style="margin-left: 5px"
     >Tsuki's blog</a
+  >&nbsp;|
+  <a href="http://www.pokeamice.com/" target="_blank" rel="noopener" class="friendUrl">银河队漫游指南</a
   >&nbsp;| <a href="https://austinxt.com/" target="_blank" rel="noopener" class="friendUrl">夜航星</a>&nbsp;|
   <a href="http://www.zoomlgd.com/" target="_blank" rel="noopener" class="friendUrl">州力科技</a>&nbsp;
 </span>
-<div class="town">
-  [小镇建设中]
-</div>
+<div class="town">[小镇建设中]</div>
 
-
-<script>
-  console.log("这些报错岛主均没看见");
-</script>
-
-<script src="/js/book-post.js"></script>
+ <script src="/js/book-post.js"></script>
 
         </div>
       </div>

@@ -65,6 +65,9 @@ document.addEventListener('DOMContentLoaded', function () {
 <h1 id="笔记">笔记</h1>
 <h2 id="Javascript">Javascript</h2>
 <ul>
+<li><a href="/writings/133%E9%B8%AD%E5%BC%8F%E8%BE%A9%E5%9E%8B"><strong>35</strong> 鸭式辩型</a></li>
+<li><a href="/writings/132js%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E6%95%B0%E7%BB%84%E6%8B%BC%E9%9F%B3%E6%8E%92%E5%BA%8F"><strong>34</strong> js实现中文数组拼音排序</a></li>
+<li><a href="/writings/131ES6%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93"><strong>33</strong> ES6新特性总结</a></li>
 <li><a href="/writings/130js%E5%8E%9F%E7%94%9F%E5%AE%9E%E7%8E%B0bind"><strong>32</strong> js原生实现bind</a></li>
 <li><a href="/writings/127json%E6%95%B0%E6%8D%AE%E5%9C%A8jsonstringify%E5%A4%84%E7%90%86%E5%90%8E%E4%BC%9A%E8%BE%93%E5%87%BA%E4%BB%80%E4%B9%88"><strong>31</strong> json数据在JSON.stringify()处理后会输出什么</a></li>
 <li><a href="/writings/124%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AAcookie"><strong>30</strong> 如何删除一个cookie</a></li>
@@ -303,7 +306,7 @@ function sidebar_toggle() {
         </div>
         <div class="book-content">
           <div class="book-post">
-  <h1 id="￼4-font-color-gray-103-font">json数据在JSON.stringify()处理后会输出什么 <font color="gray">#103</font></h1>
+  <h1 id="￼4-font-color-gray-127-font">json数据在JSON.stringify()处理后会输出什么 <font color="gray">#127</font></h1>
 <p><strong>Anuluca</strong>     <strong>Date :</strong> 2021-03-05   <strong>Tags :</strong> 2</p>
 <div class = "articlehead" style="background-image:url('图片链接')"></div>
 <h2 id="求下列代码输出">求下列代码输出</h2>
@@ -317,7 +320,9 @@ function sidebar_toggle() {
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  a: <span class="number">3</span>,</span><br><span class="line">  b: <span class="number">4</span>,</span><br><span class="line">  c: <span class="literal">null</span>,</span><br><span class="line">  d: <span class="literal">undefined</span>,</span><br><span class="line">  <span class="keyword">get</span> e () &#123;<span class="keyword">return</span> <span class="string">'abc'</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj))</span><br></pre></td></tr></table></figure>
 <h3 id="输出-v2">输出</h3>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"a"</span>:<span class="number">3</span>,<span class="attr">"b"</span>:<span class="number">4</span>,<span class="attr">"c"</span>:<span class="literal">null</span>,<span class="attr">"e"</span>:<span class="string">"abc"</span>&#125;</span><br></pre></td></tr></table></figure>
-  <a onclick="go_top()"><div class="to_top"><div class = "to-top-triangle"></div></div></a>
+  <a onclick="go_top()"
+    ><div class="to_top"><div class="to-top-triangle"></div></div
+  ></a>
 </div>
 
 <div class="articleBottom">
@@ -342,7 +347,7 @@ function sidebar_toggle() {
 
 
 
-    <link rel="stylesheet" href="https://unpkg.zhimg.com/gitalk/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/gitalk.css">
     <script src="https://unpkg.zhimg.com/gitalk/dist/gitalk.min.js"></script>
     <div id="gitalk-container"></div>
     <script type="text/javascript">
@@ -401,19 +406,14 @@ function sidebar_toggle() {
     class="friendUrl"
     style="margin-left: 5px"
     >Tsuki's blog</a
+  >&nbsp;|
+  <a href="http://www.pokeamice.com/" target="_blank" rel="noopener" class="friendUrl">银河队漫游指南</a
   >&nbsp;| <a href="https://austinxt.com/" target="_blank" rel="noopener" class="friendUrl">夜航星</a>&nbsp;|
   <a href="http://www.zoomlgd.com/" target="_blank" rel="noopener" class="friendUrl">州力科技</a>&nbsp;
 </span>
-<div class="town">
-  [小镇建设中]
-</div>
+<div class="town">[小镇建设中]</div>
 
-
-<script>
-  console.log("这些报错岛主均没看见");
-</script>
-
-<script src="/js/book-post.js"></script>
+ <script src="/js/book-post.js"></script>
 
         </div>
       </div>

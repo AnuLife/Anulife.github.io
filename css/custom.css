@@ -607,8 +607,41 @@
 .machine {
   overflow: hidden; }
   .machine > div {
-    width: 450px;
-    height: 150px;
-    background-color: black;
-    float: left;
-    margin: 10px; }
+    overflow: hidden; }
+    .machine > div > a > div {
+      width: 45%;
+      height: 150px;
+      line-height: 232px;
+      margin: 10px;
+      float: left;
+      background-position: center;
+      background-size: 100% auto;
+      overflow: hidden;
+      cursor: pointer; }
+      .machine > div > a > div > span {
+        font-size: 40px;
+        font-weight: bold;
+        font-style: italic;
+        color: #fefefeef;
+        font-family: "Arial Black";
+        margin-left: 10px; }
+  .machine > .nin > a:hover > div {
+    background-image: none !important;
+    background-color: red; }
+    .machine > .nin > a:hover > div > span {
+      color: white; }
+  .machine > .plays > a:hover > div {
+    background-image: none !important;
+    background-color: blue; }
+    .machine > .plays > a:hover > div > span {
+      color: white; }
+  .machine > .xbox > a:hover > div {
+    background-image: none !important;
+    background-color: green; }
+    .machine > .xbox > a:hover > div > span {
+      color: white; }
+  .machine > .oth > a:hover > div {
+    background-image: none !important;
+    background-color: black; }
+    .machine > .oth > a:hover > div > span {
+      color: white; }
