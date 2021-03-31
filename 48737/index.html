@@ -13,7 +13,7 @@
 
     <title>
         
-          实现一个函数将json数据转换为queryString编码 - 路卡的自由庭院岛
+          nodeisnotavalidWin32application报错解决办法 - 路卡的自由庭院岛
         
     </title>
 
@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </ul>
 <!--more-->
 <ul>
-<li><a href="/61412">🎁 给点</a></li>
+<li><a href="/61412">🎁 赞赏</a></li>
 <li><a href="/41678">🎓 Demo</a></li>
 </ul>
 <h1 id="div-class-backlogo-div"><em><a href="/1840"><div class="backlogo"></div></a></em></h1>
@@ -304,22 +304,19 @@ function sidebar_toggle() {
         </div>
         <div class="book-content">
           <div class="book-post">
-  <h1 id="实现一个函数将json数据转换为queryString编码-font-color-gray-59-font">实现一个函数将json数据转换为queryString编码 <font color="gray">#59</font></h1>
+  <h1 id="node-is-not-avalid-Win32-application报错解决办法-font-color-gray-60-font">node is not avalid Win32 application报错解决办法 <font color="gray">#60</font></h1>
 <p><strong>Anuluca</strong>     <strong>Date :</strong> 2020-09-28   <strong>Tags :</strong> 2</p>
-<div class = "articlehead" style="background-image:url('https://s1.ax1x.com/2020/05/27/tku8gI.jpg')"></div>
-<h2 id="该场景适用于不同页面之间传值：如">该场景适用于不同页面之间传值：如</h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a=3&amp;b=4</span></span><br><span class="line"><span class="keyword">const</span> data1 = &#123; <span class="attr">a</span>: <span class="number">3</span>, <span class="attr">b</span>: <span class="number">4</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// a=3&amp;b=</span></span><br><span class="line"><span class="keyword">const</span> data2 = &#123; <span class="attr">a</span>: <span class="number">3</span>, <span class="attr">b</span>: <span class="literal">null</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// a=3&amp;%E5%B1%B1=%E6%9C%88</span></span><br><span class="line"><span class="keyword">const</span> data3 = &#123; <span class="attr">a</span>: <span class="number">3</span>, <span class="string">'山'</span>: <span class="string">'月'</span> &#125;</span><br></pre></td></tr></table></figure>
-<p>此时需要我们写一个函数，满足以下条件：</p>
-<ul>
-<li>对 <code>null/undefined/object</code> 编码为空字符</li>
-<li>对 <code>key/value</code> 记得 <code>encodeURIComponent</code></li>
-</ul>
-<h2 id="函数：">函数：</h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">stringify</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> pairs = <span class="built_in">Object</span>.entries(data)</span><br><span class="line">  <span class="keyword">const</span> qs = pairs.map(<span class="function">(<span class="params">[k, v]</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> noValue = <span class="literal">false</span></span><br><span class="line">    <span class="keyword">if</span> (v === <span class="literal">null</span> || v === <span class="literal">undefined</span> || <span class="keyword">typeof</span> v === <span class="string">'object'</span>) &#123;</span><br><span class="line">      noValue = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="built_in">encodeURIComponent</span>(k)&#125;</span>=<span class="subst">$&#123;noValue ? <span class="string">''</span> : <span class="built_in">encodeURIComponent</span>(v)&#125;</span>`</span></span><br><span class="line">  &#125;).join(<span class="string">'&amp;'</span>)</span><br><span class="line">  <span class="keyword">return</span> qs</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="注释：">注释：</h2>
-<h3 id="Object-entries">Object.entries()</h3>
-<p>Object.entries()方法返回一个给定对象自身可枚举属性的键值对数组，其排列与使用 <code>for...in</code> 循环遍历该对象时返回的顺序一致（区别在于 <code>for-in</code> 循环还会枚举原型链中的属性）。（ <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/entries" target="_blank" rel="noopener">摘自MDN-Object.entries()</a> ）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object1 = &#123;</span><br><span class="line">  a: <span class="string">'somestring'</span>,</span><br><span class="line">  b: <span class="number">42</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> [key, value] <span class="keyword">of</span> <span class="built_in">Object</span>.entries(object1)) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;key&#125;</span>: <span class="subst">$&#123;value&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// "a: somestring"</span></span><br><span class="line"><span class="comment">// "b: 42"</span></span><br></pre></td></tr></table></figure>
+<div class = "articlehead" style="background-image:url('https://s1.ax1x.com/2020/05/27/tku38A.jpg')"></div>
+<h2 id="问题原因">问题原因</h2>
+<p>windows 下 node-sass 编译没通过，导致 <code>node-sass\vendor\win32-x64-57</code> 目录下缺少 <code>binding.node</code> 文件,实际上连 <code>vendor\win32-x64-57</code> 目录也没有。</p>
+<h2 id="解决办法">解决办法</h2>
+<h4 id="1-先重新编译node-sass（已安装配置python环境）">1.先重新编译node-sass（已安装配置python环境）</h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm rebuild node-sass</span><br></pre></td></tr></table></figure>
+<h4 id="2-查看对应的binding-node文件版本">2.查看对应的binding.node文件版本</h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -p "[process.platform, process.arch, process.versions.modules].join('-')"</span><br></pre></td></tr></table></figure>
+<h4 id="3-去官网https-github-com-sass-node-sass-releases-下载相应版本的binding-node文件。并放入到报错项目的-node-sass-vendor文件夹下（注意下载的是-node文件，不要下载错），下载过后，改成对应名字。">3.去官网https://github.com/sass/node-sass/releases 下载相应版本的binding.node文件。并放入到报错项目的 node-sass\vendor文件夹下（注意下载的是.node文件，不要下载错），下载过后，改成对应名字。</h4>
+<p>如：下载的 <code>win32-x64-57_binding.node</code> 文件（这是我的对应版本），则将该文件重命名为 <code>binding.node</code> 后放入到 <code>node-sass\vendor\win32-x64-57</code> 目录下即可。</p>
+<p><img src="https://s1.ax1x.com/2020/09/28/0Et0ht.png" alt=""></p>
 
   <a onclick="go_top()"
     ><div class="to_top"><div class="to-top-triangle"></div></div
@@ -436,7 +433,7 @@ function sidebar_toggle() {
     <div class="link">
       
 
-      <a class="tag-link" href="/tags/javascript/" rel="tag">javascript</a> <a class="tag-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a>
+      <a class="tag-link" href="/tags/node/" rel="tag">node</a> <a class="tag-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a>
     </div>
     
   
