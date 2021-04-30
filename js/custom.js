@@ -174,11 +174,11 @@ $(".shits>div").mouseenter(function () {
     $(this).find(".shit_title_img").animate({ width: "340px", height: "220px", marginTop: "-6px", marginLeft: "-6px" }, 150)
     $(this).find("span:first-of-type").animate({ bottom: "5px", fontSize: "22px" }, 80)
     $(this).find("span:last-of-type").animate({ height: "0px" }, 200)
-}).mouseleave(function () {
+}).stop().mouseleave(function () {
     $(this).find(".shit_title_img").animate({ width: "320px", height: "200px", marginTop: "4px", marginLeft: "4px" }, 150)
     $(this).find("span:first-of-type").animate({ bottom: "20px", fontSize: "18px" }, 80)
     $(this).find("span:last-of-type").animate({ height: "12px" }, 200)
-})
+}).stop()
 $(".shits>.toys_div").click(function () {
     var url = $(this).find("i").html();
     window.open(url)
