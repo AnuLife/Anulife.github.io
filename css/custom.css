@@ -157,7 +157,7 @@
   margin-left: 0px;
   list-style: none;
   float: left;
-  box-shadow: 0px 10px 18px -5px black;
+  box-shadow: 8px 8px 10px -7px #0101015c;
   list-style: none !important; }
 
 #wrap > ul > li {
@@ -360,7 +360,6 @@
   background-color: #3c3f41;
   color: white;
   position: relative;
-  box-shadow: 0px 10px 18px -10px black;
   /*overflow: hidden;*/ }
 
 .shit_title_img {
