@@ -194,8 +194,8 @@ img {
       margin: 0; }
     .off-canvas-content .book-content pre, .off-canvas-content .book-content .highlight {
       font-family: consolas, Menlo, monospace;
-      background: #f7f7f7;
-      color: #4d4d4c;
+      background: #2d2d2d;
+      color: #cccccc;
       line-height: 1.2rem;
       margin: 1rem auto 1rem; }
     .off-canvas-content .book-content .gutter {
@@ -214,14 +214,14 @@ img {
       padding: 10px; }
       .off-canvas-content .book-content pre code {
         background: none;
-        color: #4d4d4c;
+        color: #cccccc;
         padding: 0;
         text-shadow: none; }
     .off-canvas-content .book-content .highlight {
       font-size: 0.6rem;
       overflow: auto; }
       .off-canvas-content .book-content .highlight *::selection {
-        background: #d6d6d6; }
+        background: #515151; }
       .off-canvas-content .book-content .highlight pre {
         border: 0;
         margin: 0;
@@ -235,8 +235,8 @@ img {
         padding: 0; }
       .off-canvas-content .book-content .highlight figcaption {
         position: relative;
-        background: #eff2f3;
-        color: #869194;
+        background: black;
+        color: #999999;
         line-height: 1em;
         margin: 0;
         padding: 0.5em; }
@@ -244,11 +244,11 @@ img {
           content: " ";
           display: table; }
         .off-canvas-content .book-content .highlight figcaption a {
-          color: #4d4d4c;
+          color: #cccccc;
           position: absolute;
           right: 6px; }
           .off-canvas-content .book-content .highlight figcaption a:hover {
-            border-bottom-color: #4d4d4c; }
+            border-bottom-color: #cccccc; }
       .off-canvas-content .book-content .highlight .marked {
         background: #f8e9c0;
         border-bottom: 0.05rem solid #ffe7ab;
@@ -256,13 +256,13 @@ img {
         color: #3b4351;
         padding: 0.05rem 0.1rem 0; }
       .off-canvas-content .book-content .highlight .gutter pre {
-        background: #eff2f3;
-        color: #869194;
+        background: black;
+        color: #999999;
         padding-left: 10px;
         padding-right: 10px;
         text-align: right; }
       .off-canvas-content .book-content .highlight .code pre {
-        background: #f7f7f7;
+        background: #2d2d2d;
         padding-left: 10px;
         width: 100%; }
     .off-canvas-content .book-content .gist table {
@@ -270,13 +270,13 @@ img {
       .off-canvas-content .book-content .gist table td {
         border: 0; }
     .off-canvas-content .book-content pre .deletion {
-      background: if true, #fdd, #800000; }
+      background: if false, #fdd, #800000; }
     .off-canvas-content .book-content pre .addition {
-      background: if true, #dfd, #008000; }
+      background: if false, #dfd, #008000; }
     .off-canvas-content .book-content pre .meta {
-      color: #eab700; }
+      color: #ffcc66; }
     .off-canvas-content .book-content pre .comment {
-      color: #8e908c; }
+      color: #999999; }
     .off-canvas-content .book-content pre .variable,
     .off-canvas-content .book-content pre .attribute,
     .off-canvas-content .book-content pre .tag,
@@ -290,7 +290,7 @@ img {
     .off-canvas-content .book-content pre .css .id,
     .off-canvas-content .book-content pre .css .class,
     .off-canvas-content .book-content pre .css .pseudo {
-      color: #c82829; }
+      color: #f2777a; }
     .off-canvas-content .book-content pre .number,
     .off-canvas-content .book-content pre .preprocessor,
     .off-canvas-content .book-content pre .built_in,
@@ -299,7 +299,7 @@ img {
     .off-canvas-content .book-content pre .params,
     .off-canvas-content .book-content pre .constant,
     .off-canvas-content .book-content pre .command {
-      color: #f5871f; }
+      color: #f99157; }
     .off-canvas-content .book-content pre .ruby .class .title,
     .off-canvas-content .book-content pre .css .rules .attribute,
     .off-canvas-content .book-content pre .string,
@@ -311,10 +311,10 @@ img {
     .off-canvas-content .book-content pre .xml .cdata,
     .off-canvas-content .book-content pre .special,
     .off-canvas-content .book-content pre .formula {
-      color: #718c00; }
+      color: #99cc99; }
     .off-canvas-content .book-content pre .title,
     .off-canvas-content .book-content pre .css .hexcolor {
-      color: #3e999f; }
+      color: #66cccc; }
     .off-canvas-content .book-content pre .function,
     .off-canvas-content .book-content pre .python .decorator,
     .off-canvas-content .book-content pre .python .title,
@@ -323,10 +323,10 @@ img {
     .off-canvas-content .book-content pre .perl .sub,
     .off-canvas-content .book-content pre .javascript .title,
     .off-canvas-content .book-content pre .coffeescript .title {
-      color: #4271ae; }
+      color: #6699cc; }
     .off-canvas-content .book-content pre .keyword,
     .off-canvas-content .book-content pre .javascript .function {
-      color: #8959a8; }
+      color: #cc99cc; }
   .off-canvas-content .book-post-info {
     position: fixed;
     font-size: 0.7rem; }

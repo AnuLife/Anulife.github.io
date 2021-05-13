@@ -14,21 +14,6 @@ $(function () {
     }else{
         showPics()
     }
-
-    $(".shits>div>span").hide()
-    var flag = 1
-    $(window).scroll(function() {
-        var now = $(window).scrollTop();
-        if (now > 150 && flag == 1){
-            $(".shits>div>span").slideDown(800)
-            flag = 0
-        }
-        if (now > 840){
-            $(".to_top").fadeIn()
-        }else{
-            $(".to_top").fadeOut()
-        }
-    });
     setWidth()
     var str = function () {
         /*

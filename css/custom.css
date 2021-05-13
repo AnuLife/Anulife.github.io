@@ -5,13 +5,22 @@
   letter-spacing: 0.6px;
   font-size: 14px; }
 
+a:link,
+a:visited,
+a:hover {
+  text-decoration: none; }
+
 .book-menu h1 {
-  font-weight: 800;
   font-size: 15px;
-  text-shadow: 0 1px 0px #ffffff; }
+  cursor: default; }
+  .book-menu h1 * {
+    font-weight: 800 !important; }
 
 .accordion label {
   margin-left: 11px; }
+
+.accordion {
+  padding: 0.625rem 0.6rem 0.625rem 1.5rem; }
 
 .book-sidebar .book-menu .uncollapsible {
   padding-top: 6px; }
@@ -118,7 +127,6 @@
   display: block;
   margin-top: 30px;
   text-align: center;
-  color: black;
   font-weight: bold;
   margin-top: 200px; }
 
@@ -162,7 +170,7 @@
 
 #wrap > ul > li {
   float: left;
-  width: 50px;
+  width: 100px;
   height: 450px;
   cursor: pointer;
   padding: 0 !important;
@@ -179,23 +187,18 @@
 /*    background: url('/me/images/test_3.jpg') no-repeat center/cover;*/
 /*}*/
 #wrap > ul > li > .text {
-  width: 50px;
+  width: 100px;
   height: 100%;
   float: left;
   background: #000;
   opacity: 0.7; }
 
 #wrap > ul > li > .text p {
-  /*padding: 20px 20px;*/
-  margin: -10px -27px;
+  padding: 20px 40px;
   font-family: "Microsoft yahei";
-  writing-mode: vertical-lr;
-  text-align: center;
   color: #fff;
   font-weight: bold;
-  font-size: 60px;
-  text-indent: 0.125em;
-  margin-top: 180px; }
+  font-size: 30px; }
 
 /*回到旧站*/
 .backtoanulife {
@@ -283,6 +286,9 @@
   width: 100%;
   height: auto; }
 
+.book-sidebar .book-brand a img {
+  width: auto !important; }
+
 .textPC {
   width: 30px;
   height: 1660px;
@@ -345,15 +351,13 @@
 .shits {
   width: 100%;
   height: auto;
-  overflow: hidden;
-  margin-top: 20px;
+  display: inline-block;
   margin-bottom: 10px; }
 
 .myProc {
   width: 328px;
   height: 264px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-right: 40px;
   float: left;
   margin-bottom: 10px;
   cursor: pointer;
@@ -369,12 +373,12 @@
   background-size: cover;
   margin-left: 4px;
   margin-top: 4px;
-  box-shadow: 0px 10px 18px -10px black; }
+  box-shadow: 0px 10px 8px -10px black; }
 
 .shits span:last-of-type {
   display: block;
   text-align: center;
-  line-height: 12px;
+  line-height: 13px;
   font-size: 12px;
   position: absolute;
   width: 328px;
@@ -398,7 +402,6 @@
 .cutline {
   width: 100%;
   height: 22px;
-  border-bottom: 1px solid #bebebe;
   float: none !important;
   color: #bebebe;
   text-align: center; }
@@ -414,13 +417,15 @@
   left: 0 !important;
   width: 100%;
   position: fixed;
-  line-height: calc(3.25rem + 8px);
+  padding-top: 0.9rem;
   border-bottom: 0.5px solid #e7e7e7;
   height: calc(3.25rem + 4px) !important;
-  background-color: white; }
+  background-color: white;
+  border-bottom: 3px solid #343434;
+  box-sizing: border-box; }
   .book-sidebar .book-brand a {
     text-align: center;
-    margin-left: 3rem; }
+    margin-left: 3.2rem; }
 
 .sidebar-toggle {
   left: 16.7rem !important; }
@@ -449,7 +454,8 @@
     line-height: 1.8 !important; }
 
 .book-content {
-  padding: 0 2em !important; }
+  padding: 0 2em !important;
+  margin-top: 7px; }
 
 .off-canvas-content {
   margin-left: 16rem !important; }
@@ -475,6 +481,7 @@
   position: relative; }
 
 .to_top {
+  z-index: 1000;
   width: 49px;
   height: 49px;
   bottom: 4px;
@@ -531,7 +538,7 @@
   float: left;
   /* margin-left: 4px;
   margin-top: 4px; */
-  box-shadow: 0px 10px 18px -10px black; }
+  box-shadow: 0px 10px 8px -10px black; }
 
 .myProjects_introduce {
   float: left;
@@ -551,6 +558,100 @@
 .book-post-info {
   background-color: rgba(255, 255, 255, 0.432);
   border-radius: 20px; }
+
+.book-post-info {
+  background-color: transparent; }
+
+.newGuide {
+  width: 62vw;
+  height: 450px;
+  border-radius: 6px; }
+  .newGuide .guide {
+    box-sizing: border-box;
+    margin-left: 10px;
+    float: left;
+    width: calc(25% - 10px);
+    height: 100%;
+    transition: 0.2s; }
+    .newGuide .guide > a > div {
+      box-sizing: content-box;
+      margin-bottom: 10px;
+      width: 100%;
+      height: calc(25% - 7.5px);
+      background-size: 100% auto;
+      background-position: center;
+      overflow: hidden;
+      box-shadow: 0px 0px 11px 0 #000000;
+      position: relative; }
+      .newGuide .guide > a > div span {
+        width: 100%;
+        text-align: center;
+        letter-spacing: 1.6px;
+        line-height: 105px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: white;
+        z-index: 1;
+        position: absolute;
+        top: 0; }
+      .newGuide .guide > a > div > div {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        opacity: 0.8;
+        cursor: pointer;
+        transition: 0.1s; }
+    .newGuide .guide > a > div:hover {
+      box-shadow: 0px 0px 3px -5px white; }
+      .newGuide .guide > a > div:hover > span {
+        opacity: 0.8; }
+      .newGuide .guide > a > div:hover > div {
+        background-color: rgba(0, 0, 0, 0.8);
+        opacity: 0.4;
+        cursor: pointer;
+        text-decoration: none !important; }
+    .newGuide .guide .note_guide {
+      border-radius: 0 6px 0 0;
+      background-image: url("https://s1.ax1x.com/2020/05/18/YfLHgA.jpg"); }
+    .newGuide .guide .nintendo_guide {
+      background-image: url("https://z3.ax1x.com/2021/05/12/gddtaj.jpg"); }
+    .newGuide .guide .jay_guide {
+      background-image: url("https://s1.ax1x.com/2020/05/18/YfL73d.jpg"); }
+    .newGuide .guide .home_guide {
+      border-radius: 0 0 6px 0;
+      background-image: url("https://s1.ax1x.com/2020/09/12/waoh6O.jpg");
+      background-position: bottom;
+      border: 0; }
+  .newGuide .guidePic {
+    width: 75%;
+    height: 100%;
+    float: left;
+    box-shadow: 0px 0px 4px 0 #000000;
+    border-radius: 6px 0 0 6px;
+    overflow: hidden;
+    background-image: url("https://s1.ax1x.com/2020/05/18/YfLHgA.jpg");
+    background-size: 100% auto; }
+
+.zhegaia,
+.zhegaib,
+.zhegaic,
+.zhegaid {
+  width: 0;
+  height: 100%;
+  position: absolute; }
+
+.zhegaia {
+  background-color: #266083;
+  width: 100%; }
+
+.zhegaib {
+  background-color: #e9a514; }
+
+.zhegaic {
+  background-color: #ac338d; }
+
+.zhegaid {
+  background-color: #6c33ac; }
 
 /* 网页常用颜色 */
 .colorBoard {
@@ -584,6 +685,21 @@
     box-shadow: 0 0 5px 0px #bdbdbd;
     font-weight: bolder;
     z-index: 1; }
+
+.book-sidebar .book-menu .accordion {
+  padding: 0.625rem 0.6rem 0.625rem 1.6rem !important; }
+
+.book-sidebar .book-menu h1 {
+  padding: 0 0.6rem 0 1.1rem !important;
+  margin: 0.8rem 0 0.7rem 0 !important; }
+
+.book-sidebar .book-menu .uncollapsible {
+  padding: 0 0.6rem 0 1.25rem;
+  margin: 0 0 0 0; }
+
+.book-sidebar .book-menu li {
+  margin-top: 0.8rem !important;
+  margin-bottom: 1rem !important; }
 
 .clipboard_success {
   width: 300px;
@@ -644,3 +760,68 @@
     background-color: black; }
     .machine > .oth > a:hover > div > span {
       color: white; }
+
+.book-menu,
+.book-brand {
+  background-color: #242426 !important; }
+
+.off-canvas-content,
+.articleBottom b,
+.cutline b,
+body {
+  background-color: #1c1c1e !important; }
+
+.book-sidebar .book-menu .accordion {
+  border-top: 1px solid #242426 !important; }
+
+body,
+.book-sidebar .book-menu a,
+.book-sidebar .book-brand a,
+.gitalk_btn {
+  color: #ebebeb !important; }
+
+.off-canvas-content .book-content .book-post h1,
+.off-canvas-content .book-content .book-post h2 {
+  border-bottom: 1px solid #5d5d5d; }
+
+.book-sidebar .book-menu .uncollapsible {
+  border-top: 1px solid #343434 !important; }
+
+.book-sidebar {
+  box-shadow: none !important; }
+
+code {
+  background: #000000; }
+
+.v[data-class="v"] .vwrap,
+.vsubmit {
+  border: 1px solid #5d5d5d !important; }
+
+.v[data-class="v"] .vwrap .vheader .vinput {
+  border-bottom: 1px dashed #c8c8c8 !important; }
+
+.off-canvas-content .book-content .book-post h1,
+.off-canvas-content .book-content .book-post h2 {
+  border-bottom: 1px solid #666666 !important; }
+
+.book-sidebar .book-menu .current-tab {
+  color: #ffffff !important; }
+
+.book-sidebar .book-menu h1,
+.book-sidebar .book-menu h2,
+.book-sidebar .book-menu h3,
+.book-sidebar .book-menu h4,
+.book-sidebar .book-menu h5,
+.book-sidebar .book-menu h6 {
+  padding: 0 0.6rem 0 1.25rem;
+  margin: 1.25rem 0 0.7rem 0;
+  font-size: 0.7rem; }
+
+.book-menu h1 {
+  font-size: 15px; }
+
+a {
+  color: #36a5df; }
+
+.attention * {
+  color: #3b4351; }

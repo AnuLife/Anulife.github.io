@@ -5,10 +5,10 @@ $('#wrap li').click(function () {
         $(this).addClass('curr');
 
         $('.curr').stop().animate({
-            width: 900
+            width: 100
         }, 200, 'linear');
         $('#wrap li').not('.curr').stop().animate({
-            width: 50
+            width: 100
         }, 200, 'linear');
     }
 });
@@ -20,105 +20,27 @@ $(".text").mouseleave(function () {
 });
 
 
-//音乐播放器
-$(document).ready(function () {
-    var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', $('.active-song').attr('data-src'));
-
-    var tl = new TimelineMax();
-    tl.to('.player__albumImg', 15, {
-        rotation: '360deg',
-        repeat: -1,
-        ease: Power0.easeNone
-    }, '-=0.2');
-    tl.pause();
-
-    $('.player__play').click(function () {
-
-        if ($('.player').hasClass('play')) {
-            $('.player').removeClass('play');
-            audioElement.pause();
-            TweenMax.to('.player__albumImg', 0.2, {
-                scale: 1,
-                ease: Power0.easeNone
-            })
-            tl.pause();
-        } else {
-            $('.player').addClass('play');
-            audioElement.play();
-            TweenMax.to('.player__albumImg', 0.2, {
-                scale: 1.1,
-                ease: Power0.easeNone
-            })
-            tl.resume();
-        }
-
-    });
-
-
-    var playhead = document.getElementById("playhead");
-    audioElement.addEventListener("timeupdate", function () {
-        var duration = this.duration;
-        var currentTime = this.currentTime;
-        var percentage = (currentTime / duration) * 100;
-        playhead.style.width = percentage * 4 + 'px';
-    });
-
-    function updateInfo() {
-        $('.player__author').text($('.active-song').attr('data-author'));
-        $('.player__song').text($('.active-song').attr('data-song'));
-    }
-    updateInfo();
-
-    $('.player__next').click(function () {
-        if ($('.player .player__albumImg.active-song').is(':last-child')) {
-            $('.player__albumImg.active-song').removeClass('active-song');
-            $('.player .player__albumImg:first-child').addClass('active-song');
-            audioElement.addEventListener("timeupdate", function () {
-                var duration = this.duration;
-                var currentTime = this.currentTime;
-                var percentage = (currentTime / duration) * 100;
-                playhead.style.width = percentage * 4 + 'px';
-            });
-        } else {
-            $('.player__albumImg.active-song').removeClass('active-song').next().addClass('active-song');
-            audioElement.addEventListener("timeupdate", function () {
-                var duration = this.duration;
-                var currentTime = this.currentTime;
-                var percentage = (currentTime / duration) * 100;
-                playhead.style.width = percentage + '%';
-            });
-        }
-        updateInfo();
-        audioElement.setAttribute('src', $('.active-song').attr('data-src'));
-        audioElement.play();
-    });
-
-    $('.player__prev').click(function () {
-        if ($('.player .player__albumImg.active-song').is(':first-child')) {
-            $('.player__albumImg.active-song').removeClass('active-song');
-            $('.player .player__albumImg:last-child').addClass('active-song');
-            audioElement.addEventListener("timeupdate", function () {
-                var duration = this.duration;
-                var currentTime = this.currentTime;
-                var percentage = (currentTime / duration) * 100;
-                playhead.style.width = percentage * 4 + 'px';
-            });
-        } else {
-            $('.player__albumImg.active-song').removeClass('active-song').prev().addClass('active-song');
-            audioElement.addEventListener("timeupdate", function () {
-                var duration = this.duration;
-                var currentTime = this.currentTime;
-                var percentage = (currentTime / duration) * 100;
-                playhead.style.width = percentage + 'px';
-            });
-        }
-        updateInfo();
-        audioElement.setAttribute('src', $('.active-song').attr('data-src'));
-        audioElement.play();
-    });
-
-});
+//新版头图
+$(".note_guide").mouseenter(function(){
+    $('.zhegaia').stop().animate({ width: "100%" }, 150);
+    $('.zhegaib,.zhegaic,.zhegaid').stop().animate({ width: "0" }, 150);
+    $(".guidePic").css({ backgroundImage: "url('https://s1.ax1x.com/2020/05/18/YfLHgA.jpg')" });
+})
+$(".nintendo_guide").mouseenter(function(){
+    $('.zhegaib').stop().animate({ width: "100%" }, 150);
+    $('.zhegaia,.zhegaic,.zhegaid').stop().animate({ width: "0" }, 150);
+    $(".guidePic").css({ backgroundImage: "url('https://z3.ax1x.com/2021/05/12/gddtaj.jpg')" });
+})
+$(".jay_guide").mouseenter(function(){
+    $('.zhegaic').stop().animate({ width: "100%" }, 150);
+    $('.zhegaia,.zhegaib,.zhegaid').stop().animate({ width: "0" }, 150);
+    $(".guidePic").css({ backgroundImage: "url('https://s1.ax1x.com/2020/05/18/YfL73d.jpg')" });
+})
+$(".home_guide").mouseenter(function(){
+    $('.zhegaid').stop().animate({ width: "100%" }, 150);
+    $('.zhegaia,.zhegaib,.zhegaic').stop().animate({ width: "0" }, 150);
+    $(".guidePic").css({ backgroundImage: "url('https://s1.ax1x.com/2020/09/12/waoh6O.jpg')" });
+})
 
 //回到旧站
 $(".backtoanulife").mouseenter(function () {
@@ -211,7 +133,7 @@ function setWidth() {
 //宽度过低时对页面进行调整
 function hidePics() {
     //头图切换
-    $(".pics").hide()
+    $(".newGuide").hide()
     $(".mobileimg").show()
 
     //音乐播放器调整
@@ -231,16 +153,13 @@ function hidePics() {
 //正常展示图片
 function showPics() {
     //头图切换
-    $(".pics").show()
+    $(".newGuide").show()
     $(".mobileimg").hide()
 
     //音乐播放器调整
     $(".player__albumImg.active-song").show()
     $(".player i").show()
     $(".gameto").css({ width: "670px" })
-
-    //作品栏调整
-    $(".shits>div").css({ marginLeft: "20px" })
 
     //图集页调整
     $(".textnintendoswitch").show()

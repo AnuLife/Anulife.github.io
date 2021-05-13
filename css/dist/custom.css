@@ -1,0 +1,974 @@
+@charset "UTF-8";
+/* 博文字体设置 */
+* {
+  scroll-behavior: smooth;
+  letter-spacing: 0.6px;
+  font-size: 14px;
+}
+
+a:link,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+.book-menu h1 {
+  font-size: 15px;
+  cursor: default;
+}
+.book-menu h1 * {
+  font-weight: 800 !important;
+}
+
+.accordion label {
+  margin-left: 11px;
+}
+
+.accordion {
+  padding: 0.625rem 0.6rem 0.625rem 1.5rem;
+}
+
+.book-sidebar .book-menu .uncollapsible {
+  padding-top: 6px;
+}
+
+/* 标签页设置 */
+.tag-list {
+  margin: 0;
+}
+
+.tag-list-item {
+  float: left;
+  margin-right: 10px;
+  padding: 1px 15px 1px 15px;
+  list-style: none;
+  border: 1px solid silver;
+  border-radius: 2px;
+}
+
+.uncollapsible:last-of-type {
+  display: block;
+  border-top: 10px solid red;
+}
+
+.book-brand {
+  margin-top: -2px;
+}
+
+.book-brand span {
+  font-size: 17px;
+}
+
+.book-post img {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.book-tocbot {
+  max-height: calc(100% - 600px);
+  padding: 0;
+}
+
+.book-post-info {
+  max-width: 12rem !important;
+}
+
+.book-sidebar {
+  box-shadow: 0px 0 9px 0px #cacacad9;
+}
+
+.hide-lg {
+  margin-top: -44px;
+  padding-top: 40px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.off-canvas-content .book-post-info .book-post-meta .author {
+  display: flex;
+  padding: 10px 10px;
+}
+
+.off-canvas-content .book-post-info .book-post-meta .author .author-img {
+  display: flex;
+  align-items: center;
+  border: 1px solid #0000008a;
+  border-radius: 50%;
+}
+
+.avatar img {
+  border-radius: 50%;
+  height: 96%;
+  position: relative;
+  width: 96%;
+  z-index: 1;
+  margin: 2%;
+  margin-left: 3%;
+}
+
+.bottom {
+  width: 266px;
+  height: 315px;
+  position: absolute;
+  border-top: 6px solid #2da4e1;
+  left: -23px;
+  bottom: -20px;
+  background-color: rgba(36, 39, 41, 0.69);
+}
+
+.bottom > span {
+  color: white;
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.link_l {
+  padding-left: 15px;
+  display: block;
+  width: 155px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+.bottom a div {
+  width: 28px;
+  height: 28px;
+  float: left;
+  margin-top: 5px;
+}
+
+.bottom a > span {
+  color: white;
+  font-weight: bold;
+  margin-left: 6px;
+  line-height: 38px;
+}
+
+.languages {
+  display: block;
+  margin-top: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 200px;
+}
+
+.english {
+  color: white !important;
+  display: inline !important;
+}
+
+.links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*图片轮播*/
+.pics {
+  width: 100%;
+  height: 450px;
+  position: relative;
+  transition: 0.5s;
+}
+
+.coverblack {
+  width: 951px;
+  height: 450px;
+  background-color: black;
+  position: absolute;
+  top: 8px;
+  z-index: -1000;
+}
+
+#wrap {
+  left: 0;
+  /*margin:auto;*/
+  width: 100%;
+  height: 450px;
+}
+
+#wrap > ul {
+  /*width: 100%;*/
+  margin-left: 0px;
+  list-style: none;
+  float: left;
+  box-shadow: 8px 8px 10px -7px #0101015c;
+  list-style: none !important;
+}
+
+#wrap > ul > li {
+  float: left;
+  width: 100px;
+  height: 450px;
+  cursor: pointer;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+#wrap > ul > li:nth-child(1) {
+  background: url(https://s1.ax1x.com/2020/09/02/w91ixs.jpg) no-repeat center/cover;
+  width: 900px;
+}
+
+#wrap > ul > li:nth-child(2) {
+  background: url(https://s1.ax1x.com/2020/09/02/w91kMn.jpg) no-repeat center/cover;
+}
+
+/*#wrap > ul > li:nth-child(4){*/
+/*    background: url('/me/images/test_3.jpg') no-repeat center/cover;*/
+/*}*/
+#wrap > ul > li > .text {
+  width: 100px;
+  height: 100%;
+  float: left;
+  background: #000;
+  opacity: 0.7;
+}
+
+#wrap > ul > li > .text p {
+  padding: 20px 40px;
+  font-family: "Microsoft yahei";
+  color: #fff;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+/*回到旧站*/
+.backtoanulife {
+  width: 100%;
+  padding-left: 12px;
+  padding-right: 15px;
+  background-color: #fd4300;
+  font-size: 40px;
+  color: white;
+  line-height: 100px;
+  text-align: center;
+  text-shadow: 3px 3px #141145;
+  box-shadow: #141145 2px 2px 0px;
+}
+
+/*gitalk&valine双评论端*/
+.valine_btn {
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  /*background-color: #FFFFFF;*/
+  float: left;
+  text-align: center;
+  color: blue;
+}
+
+.gitalk_btn {
+  width: 180px;
+  height: 40px;
+  line-height: 40px;
+  /*background-color: #FFFFFF;*/
+  float: left;
+  text-align: center;
+  color: black;
+}
+
+.moving {
+  width: 120px;
+  height: 2px;
+  margin-top: 40px;
+  background-color: blue;
+  position: absolute;
+}
+
+#gitalk-container {
+  display: none;
+}
+
+#vcomments {
+  margin-top: 20px !important;
+}
+
+.combtn {
+  width: 302px;
+  height: 42px;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+.backlogo {
+  background-image: url("https://s1.ax1x.com/2020/05/21/YbwVUI.th.png");
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  bottom: 30px;
+  z-index: -1;
+}
+
+/*游戏页面*/
+.textnintendoswitch {
+  width: 30px;
+  height: 1420px;
+  margin-right: 10px;
+  background-color: #fc0001;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  line-height: 30px;
+  letter-spacing: 1px;
+  float: left;
+}
+
+.leftgames a {
+  width: 670px;
+  display: block;
+}
+
+.leftgames {
+  float: left;
+}
+
+.pcgames,
+.switchgames {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+.book-sidebar .book-brand a img {
+  width: auto !important;
+}
+
+.textPC {
+  width: 30px;
+  height: 1660px;
+  margin-right: 10px;
+  background-color: black;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  line-height: 30px;
+  letter-spacing: 1px;
+  float: left;
+  margin-top: 40px;
+}
+
+.gameto {
+  width: 670px;
+  height: 100px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 30px;
+  line-height: 100px;
+  text-align: center;
+  font-weight: bold;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.bp {
+  width: 670px;
+  height: 100px;
+  background-color: black;
+  position: absolute;
+  z-index: 0;
+  opacity: 0;
+}
+
+.gametitle {
+  width: 670px;
+  text-align: center;
+  position: relative;
+  float: left;
+  z-index: 100;
+  font-size: 20px;
+}
+
+.gamepages {
+  width: 80px;
+  height: 100px;
+  position: absolute;
+  float: right;
+  right: -80px;
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  line-height: 100px;
+  text-align: center;
+  font-weight: bold;
+  z-index: 101;
+}
+
+/*作品*/
+.shits {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.myProc {
+  width: 328px;
+  height: 264px;
+  margin-right: 40px;
+  float: left;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: #3c3f41;
+  color: white;
+  position: relative;
+  /*overflow: hidden;*/
+}
+
+.shit_title_img {
+  width: 320px;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  margin-left: 4px;
+  margin-top: 4px;
+  box-shadow: 0px 10px 8px -10px black;
+}
+
+.shits span:last-of-type {
+  display: block;
+  text-align: center;
+  line-height: 13px;
+  font-size: 12px;
+  position: absolute;
+  width: 328px;
+  height: 12px;
+  bottom: 8px;
+  overflow: hidden;
+}
+
+.shits span:first-of-type {
+  display: block;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 18px;
+  width: 328px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.shits i {
+  display: none;
+}
+
+.cutline {
+  width: 100%;
+  height: 22px;
+  float: none !important;
+  color: #bebebe;
+  text-align: center;
+}
+
+.cutline b {
+  background-color: white;
+  line-height: 38px;
+  font-size: 20px;
+}
+
+.book-sidebar .book-brand {
+  display: block !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100%;
+  position: fixed;
+  padding-top: 0.9rem;
+  border-bottom: 0.5px solid #e7e7e7;
+  height: calc(3.25rem + 4px) !important;
+  background-color: white;
+  border-bottom: 3px solid #343434;
+  box-sizing: border-box;
+}
+.book-sidebar .book-brand a {
+  text-align: center;
+  margin-left: 3.2rem;
+}
+
+.sidebar-toggle {
+  left: 16.7rem !important;
+}
+
+.author-title {
+  margin-left: 12px;
+}
+
+.off-canvas-content .book-post-info .book-post-meta .link {
+  margin-left: 5px !important;
+  line-height: 25px;
+}
+.off-canvas-content .book-post-info .book-post-meta .link a {
+  color: white !important;
+  background-color: #686a6b;
+  padding: 0 5px;
+  border-radius: 4px;
+}
+
+.book-sidebar,
+.book-sidebar .book-menu {
+  width: 16rem !important;
+}
+
+.book-sidebar .book-menu ul {
+  padding-left: 24px !important;
+  margin-left: 0 !important;
+  padding-top: 4px !important;
+}
+.book-sidebar .book-menu ul * {
+  line-height: 1.8 !important;
+}
+
+.book-content {
+  padding: 0 2em !important;
+  margin-top: 7px;
+}
+
+.off-canvas-content {
+  margin-left: 16rem !important;
+}
+
+.book-post-meta link {
+  padding-left: 6px;
+}
+
+.off-canvas-content {
+  padding: 1.2rem 2.2rem !important;
+}
+
+.town {
+  width: 100%;
+  height: 100px;
+  border: 1px dotted gray;
+  text-align: center;
+  line-height: 100px;
+  margin-top: 20px;
+  font-size: 19px;
+  color: #00000052;
+}
+
+/*回到顶部*/
+.book-post {
+  position: relative;
+}
+
+.to_top {
+  z-index: 1000;
+  width: 49px;
+  height: 49px;
+  bottom: 4px;
+  right: 297px;
+  background-color: #686a6b;
+  position: fixed;
+  display: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.to_top .to-top-triangle {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 21px solid white;
+  margin-left: 10px;
+  margin-top: 13px;
+}
+
+.to_top:hover {
+  background-color: #686a6b9e;
+}
+
+.articleBottom {
+  width: 100%;
+  height: 28px;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 30px;
+  color: #bebebe;
+  border-bottom: 1px solid #bebebe;
+}
+
+.articleBottom b {
+  background-color: white;
+}
+
+/*文章头图*/
+.articlehead {
+  width: 100%;
+  height: 400px;
+  background-position: center;
+  margin-bottom: 20px;
+}
+
+/* 友情链接 */
+.friendUrl {
+  font-size: 10px;
+  color: #999ca8 !important;
+}
+
+.friendUrl:hover {
+  color: #2da4e1 !important;
+}
+
+.myProjects_shit_title_img {
+  width: 320px;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  float: left;
+  /* margin-left: 4px;
+  margin-top: 4px; */
+  box-shadow: 0px 10px 8px -10px black;
+}
+
+.myProjects_introduce {
+  float: left;
+  height: 200px;
+  margin-left: 20px;
+  padding-left: 15px;
+  border-left: 2px solid #dadee4;
+}
+
+.little_img {
+  width: 84px;
+  height: 26px;
+  margin: -2px 0 0 0 !important;
+  box-shadow: none !important;
+  display: inline-block !important;
+  position: absolute;
+}
+
+.book-post-info {
+  background-color: rgba(255, 255, 255, 0.432);
+  border-radius: 20px;
+}
+
+.book-post-info {
+  background-color: transparent;
+}
+
+.newGuide {
+  width: 62vw;
+  height: 450px;
+  border-radius: 6px;
+}
+.newGuide .guide {
+  box-sizing: border-box;
+  margin-left: 10px;
+  float: left;
+  width: calc(25% - 10px);
+  height: 100%;
+  transition: 0.2s;
+}
+.newGuide .guide > a > div {
+  box-sizing: content-box;
+  margin-bottom: 10px;
+  width: 100%;
+  height: calc(25% - 7.5px);
+  background-size: 100% auto;
+  background-position: center;
+  overflow: hidden;
+  box-shadow: 0px 0px 11px 0 #000000;
+  position: relative;
+}
+.newGuide .guide > a > div span {
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1.6px;
+  line-height: 105px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+}
+.newGuide .guide > a > div > div {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.newGuide .guide > a > div:hover {
+  box-shadow: 0px 0px 3px -5px white;
+}
+.newGuide .guide > a > div:hover > span {
+  opacity: 0.8;
+}
+.newGuide .guide > a > div:hover > div {
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0.4;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+.newGuide .guide .note_guide {
+  border-radius: 0 6px 0 0;
+  background-image: url("https://s1.ax1x.com/2020/05/18/YfLHgA.jpg");
+}
+.newGuide .guide .nintendo_guide {
+  background-image: url("https://z3.ax1x.com/2021/05/12/gddtaj.jpg");
+}
+.newGuide .guide .jay_guide {
+  background-image: url("https://s1.ax1x.com/2020/05/18/YfL73d.jpg");
+}
+.newGuide .guide .home_guide {
+  border-radius: 0 0 6px 0;
+  background-image: url("https://s1.ax1x.com/2020/09/12/waoh6O.jpg");
+  background-position: bottom;
+  border: 0;
+}
+.newGuide .guidePic {
+  width: 75%;
+  height: 100%;
+  float: left;
+  box-shadow: 0px 0px 4px 0 #000000;
+  border-radius: 6px 0 0 6px;
+  overflow: hidden;
+  background-image: url("https://s1.ax1x.com/2020/05/18/YfLHgA.jpg");
+  background-size: 100% auto;
+}
+
+.zhegaia,
+.zhegaib,
+.zhegaic,
+.zhegaid {
+  width: 0;
+  height: 100%;
+  position: absolute;
+}
+
+.zhegaia {
+  background-color: #266083;
+  width: 100%;
+}
+
+.zhegaib {
+  background-color: #e9a514;
+}
+
+.zhegaic {
+  background-color: #ac338d;
+}
+
+.zhegaid {
+  background-color: #6c33ac;
+}
+
+/* 网页常用颜色 */
+.colorBoard {
+  padding: 10px;
+  width: 230px;
+  height: 90px;
+  float: left;
+}
+.colorBoard .btn {
+  width: 70px;
+  height: 70px;
+  float: left;
+  padding: 0;
+  text-align: center;
+  border-radius: 0;
+  line-height: 75px;
+  font-size: 6px;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px #000000;
+  border: 0;
+  color: #fff;
+  position: relative;
+  transition: 0.2s all;
+  box-shadow: 0 1px 3px 0px #00000052;
+}
+.colorBoard .btn:first-of-type {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.colorBoard .btn:last-of-type {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.colorBoard .btn:hover {
+  box-shadow: 0 0 5px 0px #bdbdbd;
+  font-weight: bolder;
+  z-index: 1;
+}
+
+.book-sidebar .book-menu .accordion {
+  padding: 0.625rem 0.6rem 0.625rem 1.6rem !important;
+}
+
+.book-sidebar .book-menu h1 {
+  padding: 0 0.6rem 0 1.1rem !important;
+  margin: 0.8rem 0 0.7rem 0 !important;
+}
+
+.book-sidebar .book-menu .uncollapsible {
+  padding: 0 0.6rem 0 1.25rem;
+  margin: 0 0 0 0;
+}
+
+.book-sidebar .book-menu li {
+  margin-top: 0.8rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.clipboard_success {
+  width: 300px;
+  height: 90px;
+  position: fixed;
+  top: calc(50vh - 50px);
+  left: calc(50vw - 150px);
+  border-radius: 20px;
+  font-size: 50px;
+  line-height: 90px;
+  text-align: center;
+  z-index: 2;
+  box-shadow: 0 0 20px 0px #d6d6d6;
+  background-color: rgba(255, 255, 255, 0.829);
+  display: none;
+  transition: 1s all;
+  cursor: default;
+  opacity: 0;
+}
+
+.machine {
+  overflow: hidden;
+}
+.machine > div {
+  overflow: hidden;
+}
+.machine > div > a > div {
+  width: 45%;
+  height: 150px;
+  line-height: 232px;
+  margin: 10px;
+  float: left;
+  background-position: center;
+  background-size: 100% auto;
+  overflow: hidden;
+  cursor: pointer;
+}
+.machine > div > a > div > span {
+  font-size: 40px;
+  font-weight: bold;
+  font-style: italic;
+  color: #fefefeef;
+  font-family: "Arial Black";
+  margin-left: 10px;
+}
+.machine > .nin > a:hover > div {
+  background-image: none !important;
+  background-color: red;
+}
+.machine > .nin > a:hover > div > span {
+  color: white;
+}
+.machine > .plays > a:hover > div {
+  background-image: none !important;
+  background-color: blue;
+}
+.machine > .plays > a:hover > div > span {
+  color: white;
+}
+.machine > .xbox > a:hover > div {
+  background-image: none !important;
+  background-color: green;
+}
+.machine > .xbox > a:hover > div > span {
+  color: white;
+}
+.machine > .oth > a:hover > div {
+  background-image: none !important;
+  background-color: black;
+}
+.machine > .oth > a:hover > div > span {
+  color: white;
+}
+
+.book-menu,
+.book-brand {
+  background-color: #242426 !important;
+}
+
+.off-canvas-content,
+.articleBottom b,
+.cutline b,
+body {
+  background-color: #1c1c1e !important;
+}
+
+.book-sidebar .book-menu .accordion {
+  border-top: 1px solid #242426 !important;
+}
+
+body,
+.book-sidebar .book-menu a,
+.book-sidebar .book-brand a,
+.gitalk_btn {
+  color: #ebebeb !important;
+}
+
+.off-canvas-content .book-content .book-post h1,
+.off-canvas-content .book-content .book-post h2 {
+  border-bottom: 1px solid #5d5d5d;
+}
+
+.book-sidebar .book-menu .uncollapsible {
+  border-top: 1px solid #343434 !important;
+}
+
+.book-sidebar {
+  box-shadow: none !important;
+}
+
+code {
+  background: #000000;
+}
+
+.v[data-class=v] .vwrap,
+.vsubmit {
+  border: 1px solid #5d5d5d !important;
+}
+
+.v[data-class=v] .vwrap .vheader .vinput {
+  border-bottom: 1px dashed #c8c8c8 !important;
+}
+
+.off-canvas-content .book-content .book-post h1,
+.off-canvas-content .book-content .book-post h2 {
+  border-bottom: 1px solid #666666 !important;
+}
+
+.book-sidebar .book-menu .current-tab {
+  color: #ffffff !important;
+}
+
+.book-sidebar .book-menu h1,
+.book-sidebar .book-menu h2,
+.book-sidebar .book-menu h3,
+.book-sidebar .book-menu h4,
+.book-sidebar .book-menu h5,
+.book-sidebar .book-menu h6 {
+  padding: 0 0.6rem 0 1.25rem;
+  margin: 1.25rem 0 0.7rem 0;
+  font-size: 0.7rem;
+}
+
+.book-menu h1 {
+  font-size: 15px;
+}
+
+a {
+  color: #36a5df;
+}
+
+.attention * {
+  color: #3b4351;
+}
