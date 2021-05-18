@@ -492,10 +492,6 @@ a:hover {
   margin-left: 3.2rem;
 }
 
-.sidebar-toggle {
-  left: 16.7rem !important;
-}
-
 .author-title {
   margin-left: 12px;
 }
@@ -530,18 +526,88 @@ a:hover {
   margin-top: 7px;
 }
 
-.off-canvas-content {
-  margin-left: 16rem !important;
-}
-
 .book-post-meta link {
   padding-left: 6px;
 }
 
+.frsi {
+  font-size: 10px;
+  color: #999ca8;
+  width: 55%;
+  text-align: right;
+  float: right;
+}
+
+@media (min-width: 1280px) {
+  .off-canvas-content {
+    margin-left: 16rem !important;
+  }
+}
 .off-canvas-content {
   padding: 1.2rem 2.2rem !important;
 }
 
+@media (max-width: 959px) {
+  * {
+    letter-spacing: 0.3px !important;
+    font-size: 12px !important;
+  }
+
+  .aaaaa {
+    zoom: 0.7;
+  }
+
+  .book-comments {
+    zoom: 0.8;
+  }
+
+  .frsi {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    zoom: 0.7;
+  }
+
+  .shits {
+    zoom: 0.9;
+  }
+
+  .off-canvas-content {
+    padding: 2.2rem 0.75rem !important;
+  }
+
+  .articlehead {
+    height: 140px !important;
+    background-size: 100% auto;
+  }
+
+  .machine > div > a > div {
+    width: 100% !important;
+  }
+  .machine > div > a > div span {
+    font-size: 21px !important;
+    text-align: center;
+    line-height: 260px;
+  }
+
+  .leftgames {
+    width: 100%;
+    overflow: hidden;
+  }
+  .leftgames a {
+    width: 100%;
+  }
+  .leftgames * {
+    font-size: 10px;
+    line-height: 50px;
+  }
+
+  .gameto {
+    height: 50px;
+    background-size: 100% auto;
+  }
+}
 .town {
   width: 100%;
   height: 100px;
@@ -551,6 +617,7 @@ a:hover {
   margin-top: 20px;
   font-size: 19px;
   color: #00000052;
+  text-shadow: 0 0 1px white;
 }
 
 /*回到顶部*/
@@ -971,4 +1038,8 @@ a {
 
 .attention * {
   color: #3b4351;
+}
+
+.book-navbar i {
+  color: #a1a1a1 !important;
 }

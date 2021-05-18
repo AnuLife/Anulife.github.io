@@ -222,6 +222,7 @@ function setWidth() {
 function hidePics() {
   //头图切换
   $(".newGuide").hide();
+  $(".backlogo").hide();
   $(".mobileimg").show(); //音乐播放器调整
 
   $(".player__albumImg.active-song").hide();
@@ -248,7 +249,8 @@ function hidePics() {
 function showPics() {
   //头图切换
   $(".newGuide").show();
-  $(".mobileimg").hide(); //音乐播放器调整
+  $(".mobileimg").hide();
+  $(".backlogo").show(); //音乐播放器调整
 
   $(".player__albumImg.active-song").show();
   $(".player i").show();
