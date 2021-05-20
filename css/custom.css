@@ -485,6 +485,14 @@ a:hover {
   * {
     letter-spacing: 0.3px !important;
     font-size: 12px !important; }
+  .announce-and-iframe .announce {
+    float: none !important;
+    width: auto !important; }
+  .announce-and-iframe .iframe-div {
+    float: none !important;
+    width: auto !important;
+    margin: 5px !important;
+    margin-top: 30px !important; }
   .aaaaa {
     zoom: 0.7; }
   .book-comments {
