@@ -305,6 +305,19 @@ a:hover {
   z-index: -1;
 }
 
+.announce-and-iframe {
+  overflow: hidden;
+}
+.announce-and-iframe .iframe-div {
+  width: 40%;
+  float: right;
+  margin-right: 10px;
+}
+.announce-and-iframe .announce {
+  float: left;
+  width: 55%;
+}
+
 /*游戏页面*/
 .textnintendoswitch {
   width: 30px;
