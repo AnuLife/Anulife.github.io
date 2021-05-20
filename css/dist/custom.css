@@ -309,13 +309,13 @@ a:hover {
   overflow: hidden;
 }
 .announce-and-iframe .iframe-div {
-  width: 40%;
+  width: 30%;
   float: right;
   margin-right: 10px;
 }
 .announce-and-iframe .announce {
   float: left;
-  width: 55%;
+  width: 65%;
 }
 
 /*游戏页面*/
@@ -684,6 +684,22 @@ a:hover {
   font-size: 30px;
   color: #bebebe;
   border-bottom: 1px solid #bebebe;
+}
+.articleBottom div {
+  display: inline-block;
+  position: relative;
+  width: 67px;
+  height: 30px;
+}
+.articleBottom span {
+  position: absolute;
+  top: 13px;
+  display: block;
+  text-align: center;
+  width: 67px;
+}
+.articleBottom img {
+  margin-top: 10px;
 }
 
 .articleBottom b {
