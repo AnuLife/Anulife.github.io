@@ -19,6 +19,11 @@ $(".text").mouseleave(function () {
     $(this).animate({ opacity: 0.8 }, 150)
 });
 
+//饮茶
+$(".back-to-main").click(function () {
+    $(".drink-time").fadeOut()
+})
+
 
 //新版头图
 $(".note_guide").mouseenter(function(){
