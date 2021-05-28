@@ -479,7 +479,7 @@ a:hover {
     margin-left: 16rem !important; } }
 
 .off-canvas-content {
-  padding: 1.2rem 2.2rem !important; }
+  padding: 1.2rem 2.2rem 0.5em 2.2em !important; }
 
 @media (max-width: 959px) {
   * {
@@ -528,26 +528,17 @@ a:hover {
     height: 50px;
     background-size: 100% auto; } }
 
-.town {
-  width: 100%;
-  height: 100px;
-  border: 1px dotted gray;
-  text-align: center;
-  line-height: 100px;
-  margin-top: 20px;
-  font-size: 19px;
-  color: #00000052;
-  text-shadow: 0 0 1px white; }
-
 .drink-time {
   position: fixed;
   width: 100%;
   height: 100%;
   z-index: 20000;
+  text-align: center;
   top: 0;
   left: 0;
   display: none;
-  background-color: #242424; }
+  color: black;
+  background-color: #eeeeee; }
 
 .back-to-main {
   position: fixed;
@@ -612,16 +603,18 @@ a:hover {
   .articleBottom div {
     display: inline-block;
     position: relative;
-    width: 67px;
+    width: 68px;
     height: 30px; }
   .articleBottom span {
     position: absolute;
     top: 13px;
     display: block;
     text-align: center;
-    width: 67px; }
+    width: 68px; }
   .articleBottom img {
-    margin-top: 10px; }
+    margin-top: 10px;
+    width: auto !important;
+    height: auto !important; }
 
 .articleBottom b {
   background-color: white; }

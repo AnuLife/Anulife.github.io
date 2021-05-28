@@ -11,10 +11,9 @@ var windowWidth = $(window).width(); //获取当前时间
 var ifDrink = new Date().getHours();
 $(function () {
   //如果当前时间是三点或凌晨三点则播放视频
-  if (ifDrink == 15 || ifDrink == 3) {
-    $(".drink-time").show();
-  } //判断访问设备
-
+  // if(ifDrink == 15 || ifDrink == 3){
+  $(".drink-time").show(); // }
+  //判断访问设备
 
   if (isAndroid == true || isiOS == true) {
     // alert('安卓端')

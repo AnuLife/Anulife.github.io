@@ -14,7 +14,7 @@ $('#wrap li').click(function () {
 });
 $(".text").mouseenter(function () {
     $(this).animate({ opacity: 0.5 }, 150)
-});
+}); 
 $(".text").mouseleave(function () {
     $(this).animate({ opacity: 0.8 }, 150)
 });
