@@ -10,7 +10,7 @@ var ifDrink = (new Date()).getHours()
 $(function () {
     //如果当前时间是三点或凌晨三点则播放视频
     // if(ifDrink == 15 || ifDrink == 3){
-        $(".drink-time").show()
+        // $(".drink-time").show()
     // }
 
     

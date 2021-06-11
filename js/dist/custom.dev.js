@@ -1,29 +1,6 @@
 "use strict";
 
-//图片轮播
-$('#wrap li').click(function () {
-  if (!$(this).hasClass('curr')) {
-    $('#wrap li').removeClass('curr');
-    $(this).addClass('curr');
-    $('.curr').stop().animate({
-      width: 100
-    }, 200, 'linear');
-    $('#wrap li').not('.curr').stop().animate({
-      width: 100
-    }, 200, 'linear');
-  }
-});
-$(".text").mouseenter(function () {
-  $(this).animate({
-    opacity: 0.5
-  }, 150);
-});
-$(".text").mouseleave(function () {
-  $(this).animate({
-    opacity: 0.8
-  }, 150);
-}); //饮茶
-
+//饮茶
 $(".back-to-main").click(function () {
   $(".drink-time").fadeOut();
 }); //新版头图
@@ -36,7 +13,7 @@ $(".note_guide").mouseenter(function () {
     width: "0"
   }, 150);
   $(".guidePic").css({
-    backgroundImage: "url('https://s1.ax1x.com/2020/05/18/YfLHgA.jpg')"
+    backgroundImage: "url('https://anuluca.gitee.io/me/other/YfLHgA.jpg')"
   });
 });
 $(".nintendo_guide").mouseenter(function () {
@@ -47,7 +24,7 @@ $(".nintendo_guide").mouseenter(function () {
     width: "0"
   }, 150);
   $(".guidePic").css({
-    backgroundImage: "url('https://z3.ax1x.com/2021/05/12/gddtaj.jpg')"
+    backgroundImage: "url('https://anuluca.gitee.io/me/other/gddtaj.jpg')"
   });
 });
 $(".jay_guide").mouseenter(function () {
@@ -58,7 +35,7 @@ $(".jay_guide").mouseenter(function () {
     width: "0"
   }, 150);
   $(".guidePic").css({
-    backgroundImage: "url('https://s1.ax1x.com/2020/05/18/YfL73d.jpg')"
+    backgroundImage: "url('https://anuluca.gitee.io/me/other/2145F6682FBCE287815AF6DC59D0C5A5.png')"
   });
 });
 $(".home_guide").mouseenter(function () {
@@ -69,7 +46,7 @@ $(".home_guide").mouseenter(function () {
     width: "0"
   }, 150);
   $(".guidePic").css({
-    backgroundImage: "url('https://s1.ax1x.com/2020/09/12/waoh6O.jpg')"
+    backgroundImage: "url('https://anuluca.gitee.io/me/other/waoh6O.jpg')"
   });
 }); //回到旧站
 
@@ -142,11 +119,20 @@ $(".gameto").mouseleave(function () {
   $(this).find('.bp').animate({
     opacity: 0
   }, 150);
-}); // //banner链接
-// $(".gameto").click(function () {
-//     $(location).attr('href', '/me/404/')
-// });
-//作品
+}); //玩具页面
+
+$(".toy_div").mouseenter(function () {
+  // $(this).find('.descrip').animate({ right: "-80" }, 150);
+  $(this).find('.back_black').stop().animate({
+    opacity: 0.3
+  }, 100);
+});
+$(".toy_div").mouseleave(function () {
+  // $(this).find('.descrip').animate({ right: "-80" }, 150);
+  $(this).find('.back_black').stop().animate({
+    opacity: 0
+  }, 100);
+}); //作品
 
 $(".shits>div").mouseenter(function () {
   $(this).find(".shit_title_img").animate({

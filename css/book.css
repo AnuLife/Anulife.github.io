@@ -477,7 +477,7 @@ img {
     .book-sidebar .book-menu ul,
     .book-sidebar .book-menu ol,
     .book-sidebar .book-menu li {
-      margin: 0;
+      margin-top: 0;
       list-style: none; }
     .book-sidebar .book-menu p {
       margin: 0; }

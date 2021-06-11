@@ -1,23 +1,3 @@
-//图片轮播
-$('#wrap li').click(function () {
-    if (!$(this).hasClass('curr')) {
-        $('#wrap li').removeClass('curr');
-        $(this).addClass('curr');
-
-        $('.curr').stop().animate({
-            width: 100
-        }, 200, 'linear');
-        $('#wrap li').not('.curr').stop().animate({
-            width: 100
-        }, 200, 'linear');
-    }
-});
-$(".text").mouseenter(function () {
-    $(this).animate({ opacity: 0.5 }, 150)
-}); 
-$(".text").mouseleave(function () {
-    $(this).animate({ opacity: 0.8 }, 150)
-});
 
 //饮茶
 $(".back-to-main").click(function () {
@@ -29,22 +9,22 @@ $(".back-to-main").click(function () {
 $(".note_guide").mouseenter(function(){
     $('.zhegaia').stop().animate({ width: "100%" }, 150);
     $('.zhegaib,.zhegaic,.zhegaid').stop().animate({ width: "0" }, 150);
-    $(".guidePic").css({ backgroundImage: "url('https://s1.ax1x.com/2020/05/18/YfLHgA.jpg')" });
+    $(".guidePic").css({ backgroundImage: "url('https://anuluca.gitee.io/me/other/YfLHgA.jpg')" });
 })
 $(".nintendo_guide").mouseenter(function(){
     $('.zhegaib').stop().animate({ width: "100%" }, 150);
     $('.zhegaia,.zhegaic,.zhegaid').stop().animate({ width: "0" }, 150);
-    $(".guidePic").css({ backgroundImage: "url('https://z3.ax1x.com/2021/05/12/gddtaj.jpg')" });
+    $(".guidePic").css({ backgroundImage: "url('https://anuluca.gitee.io/me/other/gddtaj.jpg')" });
 })
 $(".jay_guide").mouseenter(function(){
     $('.zhegaic').stop().animate({ width: "100%" }, 150);
     $('.zhegaia,.zhegaib,.zhegaid').stop().animate({ width: "0" }, 150);
-    $(".guidePic").css({ backgroundImage: "url('https://s1.ax1x.com/2020/05/18/YfL73d.jpg')" });
+    $(".guidePic").css({ backgroundImage: "url('https://anuluca.gitee.io/me/other/2145F6682FBCE287815AF6DC59D0C5A5.png')" });
 })
 $(".home_guide").mouseenter(function(){
     $('.zhegaid').stop().animate({ width: "100%" }, 150);
     $('.zhegaia,.zhegaib,.zhegaic').stop().animate({ width: "0" }, 150);
-    $(".guidePic").css({ backgroundImage: "url('https://s1.ax1x.com/2020/09/12/waoh6O.jpg')" });
+    $(".guidePic").css({ backgroundImage: "url('https://anuluca.gitee.io/me/other/waoh6O.jpg')" });
 })
 
 //回到旧站
@@ -91,10 +71,15 @@ $(".gameto").mouseleave(function () {
     $(this).find('.bp').animate({ opacity: 0 }, 150);
 });
 
-// //banner链接
-// $(".gameto").click(function () {
-//     $(location).attr('href', '/me/404/')
-// });
+//玩具页面
+$(".toy_div").mouseenter(function () {
+    // $(this).find('.descrip').animate({ right: "-80" }, 150);
+    $(this).find('.back_black').stop().animate({ opacity: 0.3 }, 100);
+});
+$(".toy_div").mouseleave(function () {
+    // $(this).find('.descrip').animate({ right: "-80" }, 150);
+    $(this).find('.back_black').stop().animate({ opacity: 0 }, 100);
+});
 
 //作品
 $(".shits>div").mouseenter(function () {
