@@ -995,7 +995,8 @@ a {
     margin-top: 200px; }
 
 .machine-pics {
-  text-align: center; }
+  text-align: center;
+  margin-top: 50px; }
   .machine-pics > img {
     width: 300px;
     height: 200px;
@@ -1004,3 +1005,303 @@ a {
     margin: 5px !important; }
   .machine-pics > p {
     text-align: center; }
+
+.ns-cards {
+  overflow: hidden; }
+  .ns-cards .out {
+    width: 220px;
+    height: 398px;
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    transition: all 0.1s;
+    position: relative; }
+    .ns-cards .out .ns-card {
+      width: 220px;
+      height: 358px;
+      display: inline-block;
+      background-size: 100% 100%;
+      padding: 0;
+      margin: 0; }
+    .ns-cards .out .count {
+      width: 0px;
+      height: 40px;
+      background-color: rgba(126, 252, 0, 0.534);
+      overflow: hidden;
+      text-align: center;
+      color: white;
+      font-size: 16px;
+      line-height: 40px;
+      top: 160px;
+      right: 0;
+      z-index: 100;
+      position: absolute;
+      transition: all 0.2s; }
+    .ns-cards .out .no_co {
+      background-color: rgba(255, 0, 0, 0.548); }
+    .ns-cards .out .g-t {
+      width: 220px;
+      height: 30px;
+      font-size: 12px;
+      font-weight: bold;
+      color: white;
+      position: relative; }
+      .ns-cards .out .g-t .tt {
+        width: 190px;
+        display: inline-block;
+        margin-top: 6px; }
+      .ns-cards .out .g-t .ver {
+        position: absolute;
+        right: 0;
+        bottom: 9px;
+        color: #adadad;
+        font-size: 10px;
+        line-height: 10px;
+        font-weight: normal;
+        zoom: 0.81; }
+  .ns-cards .ringfit {
+    width: 358px !important; }
+    .ns-cards .ringfit .ns-card, .ns-cards .ringfit .g-t {
+      width: 358px; }
+  .ns-cards .out:hover .ns-card {
+    opacity: 0.6; }
+  .ns-cards .out:hover .count {
+    width: 220px; }
+
+.pc-cards {
+  overflow: hidden; }
+  .pc-cards .pc-out {
+    width: 220px;
+    height: 314px;
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    transition: all 0.1s;
+    position: relative; }
+    .pc-cards .pc-out .pc-card {
+      width: 220px;
+      height: 274px;
+      display: inline-block;
+      background-size: 100% auto;
+      padding: 0;
+      margin: 0; }
+    .pc-cards .pc-out .count {
+      width: 0px;
+      height: 40px;
+      background-color: rgba(126, 252, 0, 0.534);
+      overflow: hidden;
+      text-align: center;
+      color: white;
+      font-size: 16px;
+      line-height: 40px;
+      top: 120px;
+      right: 0;
+      z-index: 100;
+      position: absolute;
+      transition: all 0.2s; }
+    .pc-cards .pc-out .no_co {
+      background-color: rgba(255, 0, 0, 0.548); }
+    .pc-cards .pc-out .g-t {
+      width: 220px;
+      height: 30px;
+      font-size: 12px;
+      font-weight: bold;
+      color: white;
+      position: relative; }
+      .pc-cards .pc-out .g-t .tt {
+        width: 180px;
+        display: inline-block;
+        margin-top: 6px; }
+      .pc-cards .pc-out .g-t .ver {
+        position: absolute;
+        right: 0;
+        bottom: 9px;
+        color: #adadad;
+        font-size: 10px;
+        line-height: 10px;
+        font-weight: normal;
+        zoom: 0.81; }
+  .pc-cards .pc-out:hover .pc-card {
+    opacity: 0.6; }
+  .pc-cards .pc-out:hover .count {
+    width: 220px; }
+
+.gba-cards {
+  overflow: hidden; }
+  .gba-cards .gba-en {
+    height: 260px !important; }
+    .gba-cards .gba-en .gba-card {
+      height: 220px !important; }
+    .gba-cards .gba-en .count {
+      top: 100px !important; }
+  .gba-cards .gba-out {
+    width: 220px;
+    height: 180px;
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    transition: all 0.1s;
+    position: relative; }
+    .gba-cards .gba-out .gba-card {
+      width: 220px;
+      height: 140px;
+      display: inline-block;
+      background-size: 100% 100%;
+      padding: 0;
+      margin: 0; }
+    .gba-cards .gba-out .count {
+      width: 0px;
+      height: 40px;
+      background-color: rgba(126, 252, 0, 0.534);
+      overflow: hidden;
+      text-align: center;
+      color: white;
+      font-size: 16px;
+      line-height: 40px;
+      top: 50px;
+      right: 0;
+      z-index: 100;
+      position: absolute;
+      transition: all 0.2s; }
+    .gba-cards .gba-out .no_co {
+      background-color: rgba(255, 0, 0, 0.548); }
+    .gba-cards .gba-out .g-t {
+      width: 220px;
+      height: 30px;
+      font-size: 12px;
+      font-weight: bold;
+      color: white;
+      position: relative; }
+      .gba-cards .gba-out .g-t .tt {
+        width: 180px;
+        display: inline-block;
+        margin-top: 6px; }
+      .gba-cards .gba-out .g-t .ver {
+        position: absolute;
+        right: 0;
+        bottom: 9px;
+        color: #adadad;
+        font-size: 10px;
+        line-height: 10px;
+        font-weight: normal;
+        zoom: 0.81; }
+  .gba-cards .gba-out:hover .gba-card {
+    opacity: 0.6; }
+  .gba-cards .gba-out:hover .count {
+    width: 220px; }
+
+.liusi-cards {
+  overflow: hidden; }
+  .liusi-cards .liusi-out {
+    width: 220px;
+    height: 340px;
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    transition: all 0.1s;
+    position: relative; }
+    .liusi-cards .liusi-out .liusi-card {
+      width: 220px;
+      height: 300px;
+      display: inline-block;
+      background-size: 100% auto;
+      padding: 0;
+      margin: 0; }
+    .liusi-cards .liusi-out .count {
+      width: 0px;
+      height: 40px;
+      background-color: rgba(126, 252, 0, 0.534);
+      overflow: hidden;
+      text-align: center;
+      color: white;
+      font-size: 16px;
+      line-height: 40px;
+      top: 120px;
+      right: 0;
+      z-index: 100;
+      position: absolute;
+      transition: all 0.2s; }
+    .liusi-cards .liusi-out .no_co {
+      background-color: rgba(255, 0, 0, 0.548); }
+    .liusi-cards .liusi-out .g-t {
+      width: 220px;
+      height: 30px;
+      font-size: 12px;
+      font-weight: bold;
+      color: white;
+      position: relative; }
+      .liusi-cards .liusi-out .g-t .tt {
+        width: 180px;
+        display: inline-block;
+        margin-top: 6px; }
+      .liusi-cards .liusi-out .g-t .ver {
+        position: absolute;
+        right: 0;
+        bottom: 9px;
+        color: #adadad;
+        font-size: 10px;
+        line-height: 10px;
+        font-weight: normal;
+        zoom: 0.81; }
+  .liusi-cards .liusi-out:hover .liusi-card {
+    opacity: 0.6; }
+  .liusi-cards .liusi-out:hover .count {
+    width: 220px; }
+
+.gb-cards {
+  overflow: hidden; }
+  .gb-cards .gb-out {
+    width: 220px;
+    height: 340px;
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    transition: all 0.1s;
+    position: relative; }
+    .gb-cards .gb-out .gb-card {
+      width: 220px;
+      height: 300px;
+      display: inline-block;
+      background-size: 100% auto;
+      padding: 0;
+      margin: 0; }
+    .gb-cards .gb-out .count {
+      width: 0px;
+      height: 40px;
+      background-color: rgba(126, 252, 0, 0.534);
+      overflow: hidden;
+      text-align: center;
+      color: white;
+      font-size: 16px;
+      line-height: 40px;
+      top: 120px;
+      right: 0;
+      z-index: 100;
+      position: absolute;
+      transition: all 0.2s; }
+    .gb-cards .gb-out .no_co {
+      background-color: rgba(255, 0, 0, 0.548); }
+    .gb-cards .gb-out .g-t {
+      width: 220px;
+      height: 30px;
+      font-size: 12px;
+      font-weight: bold;
+      color: white;
+      position: relative; }
+      .gb-cards .gb-out .g-t .tt {
+        width: 180px;
+        display: inline-block;
+        margin-top: 6px; }
+      .gb-cards .gb-out .g-t .ver {
+        position: absolute;
+        right: 0;
+        bottom: 9px;
+        color: #adadad;
+        font-size: 10px;
+        line-height: 10px;
+        font-weight: normal;
+        zoom: 0.81; }
+  .gb-cards .liusi-out:hover .liusi-card {
+    opacity: 0.6; }
+  .gb-cards .liusi-out:hover .count {
+    width: 220px; }
